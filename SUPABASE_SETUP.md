@@ -27,6 +27,8 @@ VITE_SUPABASE_URL=https://your-project.supabase.co
 VITE_SUPABASE_ANON_KEY=your-anon-key-here
 ```
 
+If you deploy to Vercel with the `/supabase` rewrite enabled, you may omit `VITE_SUPABASE_URL` in production and rely on the same-origin proxy.
+
 ## Step 4: Create Database Tables
 
 Run in Supabase SQL Editor:
