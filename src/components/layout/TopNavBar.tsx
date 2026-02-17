@@ -110,7 +110,7 @@ export function TopNavBar({ onMenuToggle }: TopNavBarProps) {
           const cleared = sessionStorage.getItem('demo_notifs_cleared') === '1';
           if (!cleared) {
             await clearAllNotifications();
-            await addNotification({ title: 'Welcome to the Folonite Track Demo', message: 'Explore the app with sample data. Changes are not saved.', type: 'system' }, { silent: true });
+            await addNotification({ title: 'Welcome to the Folonite Demo', message: 'Explore the app with sample data. Changes are not saved.', type: 'system' }, { silent: true });
             await addNotification({ title: 'QR generated', message: 'QR for AST-005 is ready to download.', type: 'qr' }, { silent: true });
             await addNotification({ title: 'Report ready', message: 'Monthly Asset Report has been generated.', type: 'report' }, { silent: true });
           }

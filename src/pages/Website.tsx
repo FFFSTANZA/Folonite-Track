@@ -4,17 +4,16 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 
 const BaseUrl = "https://folonite.in";
 const HeroDescription =
-  "Folonite Track centralizes the entire asset lifecycle with QR-enabled tracking, collaborative workflows, and audit-ready reporting in a responsive, open-source platform.";
+  "Folonite centralizes the entire asset lifecycle with QR-enabled tracking, collaborative workflows, and audit-ready reporting in a responsive, open-source platform.";
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "Folonite Track — Smart Asset Management System",
+  name: "Folonite — Smart Asset Management System",
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   url: BaseUrl,
   description: HeroDescription,
-  image: `${BaseUrl}/folonite_track_logo.png`,
   offers: {
     "@type": "Offer",
     price: "0.00",
@@ -28,7 +27,7 @@ const structuredData = {
   },
   publisher: {
     "@type": "Organization",
-    name: "Folonite Track",
+    name: "Folonite",
     url: BaseUrl,
   },
 };
@@ -37,7 +36,7 @@ export default function Website() {
   return (
     <SiteLayout>
       <Helmet>
-        <title>Folonite Track — Smart Asset Management System</title>
+        <title>Folonite — Smart Asset Management System</title>
         <meta name="description" content={HeroDescription} />
         <meta
           name="keywords"
@@ -45,15 +44,13 @@ export default function Website() {
         />
         <meta name="author" content="Karthik Lal" />
         <link rel="canonical" href={BaseUrl} />
-        <meta property="og:title" content="Folonite Track — Smart Asset Management System" />
+        <meta property="og:title" content="Folonite — Smart Asset Management System" />
         <meta property="og:description" content={HeroDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={BaseUrl} />
-        <meta property="og:image" content={`${BaseUrl}/folonite_track_logo.png`} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Folonite Track — Smart Asset Management System" />
+        <meta name="twitter:title" content="Folonite — Smart Asset Management System" />
         <meta name="twitter:description" content={HeroDescription} />
-        <meta name="twitter:image" content={`${BaseUrl}/folonite_track_logo.png`} />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
 
@@ -68,7 +65,7 @@ export default function Website() {
                   <span className="text-primary">Simplified.</span>
                 </h1>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl leading-relaxed">
-                  Folonite Track provides a unified platform to track assets, manage audits, and ensure compliance across your entire organization.
+                  Folonite provides a unified platform to track assets, manage audits, and ensure compliance across your entire organization.
                   Move beyond spreadsheets to a system designed for accuracy and accountability.
                 </p>
               </div>
@@ -213,7 +210,7 @@ export default function Website() {
             </div>
 
             <p className="text-primary-foreground/80 max-w-2xl mx-auto mb-8 text-lg">
-              Join organizations that trust Folonite Track for their asset management and audit requirements.
+              Join organizations that trust Folonite for their asset management and audit requirements.
             </p>
             <Link
               to="/demo/login"

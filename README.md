@@ -1,8 +1,8 @@
 <div align="center">
-  <img src="public/folonite_track_logo.png" alt="Folonite Track" />
+  <img src="public/folonite_track_logo.png" alt="Folonite" />
 </div>
 <div align="center">
-  <h1>Folonite Track &mdash; Smart Asset Management System</h1>
+  <h1>Folonite &mdash; Smart Asset Management System</h1>
   <p>Centralized asset lifecycle management, QR-enabled tracking, and collaborative operations for modern teams.</p>
   <p>
     <a href="https://folonitetrack.in/demo/login" target="_blank" rel="noopener">
@@ -19,9 +19,9 @@
 
 ## Overview
 
-Folonite Track streamlines how enterprises catalogue, monitor, audit, and label fixed assets across locations. Assets, properties, users, tickets, and audit workflows live in a cohesive UI backed by modern tooling (React, TypeScript, Supabase).
+Folonite streamlines how enterprises catalogue, monitor, audit, and label fixed assets across locations. Assets, properties, users, tickets, and audit workflows live in a cohesive UI backed by modern tooling (React, TypeScript, Supabase).
 
-### Why Folonite Track
+### Why Folonite
 
 - Replace spreadsheets with a single source of truth for asset history and ownership.
 - Enable facilities, finance, and audit teams to collaborate with guardrails.
@@ -121,7 +121,7 @@ VITE_SUPABASE_SERVICE_KEY=
 VITE_SUPABASE_ANON_KEY=
 ```
 
-When the environment variables are absent, Folonite Track gracefully falls back to seeded demo data, allowing evaluation without backend services.
+When the environment variables are absent, Folonite gracefully falls back to seeded demo data, allowing evaluation without backend services.
 
 ## Everyday Development
 
@@ -182,4 +182,4 @@ This project is open source under the MIT License. Contributions adhere to the c
 
 ---
 
-© Folonite Track Contributors. Built for resilient asset operations.
+© Folonite Contributors. Built for resilient asset operations.

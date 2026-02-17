@@ -1,6 +1,6 @@
 /**
- * Email Templates for Folonite Track
- * Professional, responsive HTML email templates with Folonite Track branding
+ * Email Templates for Folonite
+ * Professional, responsive HTML email templates with Folonite branding
  */
 
 export type EmailTemplate = {
@@ -10,7 +10,7 @@ export type EmailTemplate = {
 };
 
 /**
- * Base email wrapper with Folonite Track branding
+ * Base email wrapper with Folonite branding
  */
 function wrapTemplate(content: string, preheader?: string): string {
   return `
@@ -20,7 +20,7 @@ function wrapTemplate(content: string, preheader?: string): string {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Folonite Track Notification</title>
+  <title>Folonite Notification</title>
   <style>
     * {
       margin: 0;
@@ -229,7 +229,7 @@ function wrapTemplate(content: string, preheader?: string): string {
     <div class="email-container">
       <div class="email-header">
         <div class="logo-container">
-          <img src="https://folonite.in/folonite_track_logo.png" alt="Folonite Track Logo" class="logo" />
+          <span class="text-xl font-bold" style="color: #cc7c5e;">Folonite</span>
         </div>
       </div>
       ${content}
@@ -243,7 +243,7 @@ function wrapTemplate(content: string, preheader?: string): string {
             This is an automated notification. Please do not reply to this email.
           </p>
           <p style="margin-top: 12px; font-size: 12px;">
-            © 2025 Folonite Track. All rights reserved.
+            © 2025 Folonite. All rights reserved.
           </p>
         </div>
       </div>
@@ -551,7 +551,7 @@ export function newsletterPublishedTemplate(data: {
       <div class="divider"></div>
       
       <p style="font-size: 12px; color: #6c757d;">
-        You're receiving this because you're subscribed to Folonite Track newsletters.
+        You're receiving this because you're subscribed to Folonite newsletters.
       </p>
     </div>
   `, `New update: ${data.title}`);
@@ -766,11 +766,11 @@ export function welcomeEmailTemplate(data: {
   temporaryPassword?: string;
   dashboardUrl?: string;
 }): EmailTemplate {
-  const subject = `Welcome to Folonite Track - Your Account is Ready`;
+  const subject = `Welcome to Folonite - Your Account is Ready`;
 
   const html = wrapTemplate(`
     <div class="email-body">
-      <h2>Welcome to Folonite Track</h2>
+      <h2>Welcome to Folonite</h2>
       <p>Hello <strong>${data.userName}</strong>,</p>
       <p>Your account has been created successfully. Welcome to the Smart Asset Management System!</p>
       
@@ -795,10 +795,10 @@ export function welcomeEmailTemplate(data: {
       • Review your assigned assets and responsibilities<br/>
       • Configure your notification preferences in settings</p>
     </div>
-  `, `Welcome to Folonite Track! Your account is ready.`);
+  `, `Welcome to Folonite! Your account is ready.`);
 
   const text = `
-Welcome to Folonite Track
+Welcome to Folonite
 
 Hello ${data.userName},
 
@@ -822,7 +822,7 @@ export function passwordResetTemplate(data: {
   expiresIn: string;
   dashboardUrl?: string;
 }): EmailTemplate {
-  const subject = `Password Reset Request - Folonite Track`;
+  const subject = `Password Reset Request - Folonite`;
 
   const resetUrl = `${data.dashboardUrl || 'https://folonite.in'}/reset-password?token=${data.resetToken}`;
 
@@ -830,7 +830,7 @@ export function passwordResetTemplate(data: {
     <div class="email-body">
       <h2>Password Reset Request</h2>
       <p>Hello <strong>${data.userName}</strong>,</p>
-      <p>We received a request to reset your password for your Folonite Track account.</p>
+      <p>We received a request to reset your password for your Folonite account.</p>
       
       <div class="warning-box">
         <p>This password reset link will expire in <strong>${data.expiresIn}</strong>.</p>
@@ -844,14 +844,14 @@ export function passwordResetTemplate(data: {
         If you didn't request a password reset, you can safely ignore this email. Your password will remain unchanged.
       </p>
     </div>
-  `, `Password reset requested for your Folonite Track account`);
+  `, `Password reset requested for your Folonite account`);
 
   const text = `
 Password Reset Request
 
 Hello ${data.userName},
 
-We received a request to reset your password for your Folonite Track account.
+We received a request to reset your password for your Folonite account.
 
 Reset your password: ${resetUrl}
 
@@ -870,7 +870,7 @@ export function passwordResetOtpTemplate(data: {
   attemptsAllowed?: number;
   dashboardUrl?: string;
 }): EmailTemplate {
-  const subject = `Your Folonite Track verification code`;
+  const subject = `Your Folonite verification code`;
   const attempts = data.attemptsAllowed ?? 3;
   const expiresText = data.expiresInMinutes === 1 ? "1 minute" : `${data.expiresInMinutes} minutes`;
 
@@ -878,7 +878,7 @@ export function passwordResetOtpTemplate(data: {
     <div class="email-body">
       <h2>Reset your password</h2>
       <p>Hello <strong>${data.userName || "there"}</strong>,</p>
-      <p>Use the verification code below to reset the password for your Folonite Track account.</p>
+      <p>Use the verification code below to reset the password for your Folonite account.</p>
 
       <div class="info-box" style="font-size: 28px; letter-spacing: 12px; text-align: center;">
         <strong style="font-family: 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">
@@ -893,13 +893,13 @@ export function passwordResetOtpTemplate(data: {
       <p>If you didn’t request a password reset, you can safely ignore this email. Your password will stay the same.</p>
 
       <p style="font-size: 13px; color: #6c757d;">
-        For security, do not share this code. Enter it only on the official Folonite Track portal: ${data.dashboardUrl || "https://folonite.in/login"}.
+        For security, do not share this code. Enter it only on the official Folonite portal: ${data.dashboardUrl || "https://folonite.in/login"}.
       </p>
     </div>
-  `, `Folonite Track verification code: ${data.code}`);
+  `, `Folonite verification code: ${data.code}`);
 
   const text = `
-Reset your Folonite Track password
+Reset your Folonite password
 
 Hello ${data.userName || "there"},
 

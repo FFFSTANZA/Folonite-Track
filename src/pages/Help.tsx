@@ -196,14 +196,14 @@ const knowledgeCategories: KnowledgeCategory[] = [
 const supportChannels: SupportChannel[] = [
   {
     title: "Raise a ticket",
-    description: "Create an issue or request with attachments so the Folonite Track team can respond quickly.",
+    description: "Create an issue or request with attachments so the Folonite team can respond quickly.",
     to: "/tickets",
     icon: Ticket,
     cta: "Open tickets",
   },
   {
     title: "Contact your administrator",
-    description: "Reach out to your Folonite Track administrator for role updates, onboarding, or environment configuration.",
+    description: "Reach out to your Folonite administrator for role updates, onboarding, or environment configuration.",
     icon: ShieldCheck,
     cta: "View directory",
     to: "/users",
@@ -335,7 +335,7 @@ export default function Help() {
             How can we help you today?
           </h1>
           <p className="text-xl text-muted-foreground">
-            Explore guides, documentation, and support resources to get the most out of Folonite Track.
+            Explore guides, documentation, and support resources to get the most out of Folonite.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-4">

@@ -614,7 +614,7 @@ export function Sidebar({ className, isMobile, onNavigate }: SidebarProps) {
                   aria-label="Go to dashboard"
                 >
                   <span className="text-xl font-bold text-sidebar-primary whitespace-nowrap">
-                    Folonite Track
+                    Folonite
                   </span>
                 </Link>
               </div>
@@ -746,7 +746,7 @@ export function Sidebar({ className, isMobile, onNavigate }: SidebarProps) {
             </Button>
           </div>
           <p className="text-xs text-center text-sidebar-foreground/50">
-            © 2025 Folonite Track. All rights reserved.
+            © 2025 Folonite. All rights reserved.
           </p>
         </div>
       </div>
@@ -772,7 +772,7 @@ export function Sidebar({ className, isMobile, onNavigate }: SidebarProps) {
               aria-label="Go to dashboard"
             >
               <span className="text-xl font-bold text-sidebar-primary whitespace-nowrap">
-                Folonite Track
+                Folonite
               </span>
             </Link>
           )}
@@ -988,7 +988,7 @@ export function Sidebar({ className, isMobile, onNavigate }: SidebarProps) {
                 </Button>
               </div>
               <p className="mt-4 text-xs text-center text-sidebar-foreground/50">
-                © 2025 Folonite Track. All rights reserved.
+                © 2025 Folonite. All rights reserved.
               </p>
             </>
           )}

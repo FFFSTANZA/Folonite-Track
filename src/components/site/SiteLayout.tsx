@@ -12,45 +12,10 @@ export function SiteLayout({ children }: SiteLayoutProps) {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <a href="/" className="flex items-center gap-2">
-            {/* Logo with accent color filter */}
-            <div className="relative flex items-center justify-center">
-              <img
-                src="/folonite_track_logo.png"
-                alt="Folonite Track"
-                className="h-9 w-auto"
-                style={{
-                  filter: "sepia(100%) saturate(300%) hue-rotate(320deg) brightness(0.8) contrast(1.2)"
-                }}
-              />
-              {/*
-                 Note: The filter above is an approximation for #c07e62 (Terracotta/Orange-ish).
-                 Since we can't easily colorize a PNG perfectly with CSS filters without trial and error,
-                 we will use a mask approach if the logo is black/transparent, or just a tint.
-
-                 Better approach for exact color if the image is black:
-                 mask-image: url(/folonite_track_logo.png); background-color: #c07e62;
-              */}
-              <div
-                className="absolute inset-0 bg-[#c07e62]"
-                style={{
-                  maskImage: 'url("/folonite_track_logo.png")',
-                  maskSize: 'contain',
-                  maskRepeat: 'no-repeat',
-                  maskPosition: 'center',
-                  WebkitMaskImage: 'url("/folonite_track_logo.png")',
-                  WebkitMaskSize: 'contain',
-                  WebkitMaskRepeat: 'no-repeat',
-                  WebkitMaskPosition: 'center',
-                }}
-              />
-              {/* Hide the original image but keep it for layout/alt text if mask fails, 
-                  or just use the mask div on top of a transparent placeholder? 
-                  Actually, if we use the mask div, we don't need the img tag visible, 
-                  but we need the dimensions. 
-                  
-                  Let's try the mask approach on a div that has the same dimensions.
-              */}
-            </div>
+            {/* Folonite Text Logo */}
+            <span className="text-xl font-bold text-primary whitespace-nowrap">
+              Folonite
+            </span>
           </a>
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground">
             <a href="#overview" className="transition-colors hover:text-foreground">Overview</a>
@@ -79,19 +44,9 @@ export function SiteLayout({ children }: SiteLayoutProps) {
         <div className="container flex flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left">
           <div className="flex flex-col gap-2">
             <div className="flex items-center justify-center gap-2 md:justify-start">
-              <div
-                className="h-8 w-24 bg-[#c07e62]"
-                style={{
-                  maskImage: 'url("/folonite_track_logo.png")',
-                  maskSize: 'contain',
-                  maskRepeat: 'no-repeat',
-                  maskPosition: 'left center',
-                  WebkitMaskImage: 'url("/folonite_track_logo.png")',
-                  WebkitMaskSize: 'contain',
-                  WebkitMaskRepeat: 'no-repeat',
-                  WebkitMaskPosition: 'left center',
-                }}
-              />
+              <span className="text-lg font-bold text-primary">
+                Folonite
+              </span>
             </div>
             <p className="max-w-xs text-muted-foreground">
               Modern asset operations platform for distributed teams.
@@ -112,7 +67,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
           </div>
         </div>
         <div className="container mt-8 border-t pt-8 text-center text-muted-foreground md:text-left">
-          <p>© {new Date().getFullYear()} Folonite Track. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Folonite. All rights reserved.</p>
         </div>
       </footer>
     </div>
