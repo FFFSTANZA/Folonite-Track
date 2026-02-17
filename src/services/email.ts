@@ -1,5 +1,5 @@
 /**
- * Email Service for Folonite Track
+ * Email Service for Folonite
  * Handles sending emails via SMTP with beautiful templates
  */
 

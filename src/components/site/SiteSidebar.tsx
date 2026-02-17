@@ -104,7 +104,7 @@ export function SiteSidebar({ className, isMobile, onNavigate }: SiteSidebarProp
         )}>
           {isMobile ? (
             <>
-              <img src="/favicon.png" alt="Folonite Track" className="h-6 w-6" />
+              <img src="/favicon.png" alt="Folonite" className="h-6 w-6" />
               <button
                 type="button"
                 aria-label="Toggle navigation"
@@ -118,7 +118,7 @@ export function SiteSidebar({ className, isMobile, onNavigate }: SiteSidebarProp
           ) : (
             <>
               <Package className="h-6 w-6 text-primary" />
-              <span className="text-base md:text-lg font-bold text-foreground">Folonite Track</span>
+              <span className="text-base md:text-lg font-bold text-foreground">Folonite</span>
             </>
           )}
         </div>
@@ -192,7 +192,7 @@ export function SiteSidebar({ className, isMobile, onNavigate }: SiteSidebarProp
                 rel="noopener noreferrer"
                 className="text-primary hover:underline"
               >
-                Folonite Track
+                Folonite
               </a>
               . All rights reserved.
             </p>

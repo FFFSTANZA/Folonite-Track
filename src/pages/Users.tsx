@@ -859,7 +859,7 @@ export default function Users() {
             <h1 className="text-3xl font-bold tracking-tight">People & Access</h1>
             <PageHeader
               title="User Management"
-              description="Curate roles, onboarding, and audit trails for everyone using Folonite Track"
+              description="Curate roles, onboarding, and audit trails for everyone using Folonite"
             />
           </div>
           <Dialog

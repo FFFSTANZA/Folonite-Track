@@ -117,7 +117,7 @@ export function Header({ onMenuClick }: HeaderProps) {
           if (!cleared) {
             // Seed 3 notifications; store to local service storage
             await clearAllNotifications();
-            await addNotification({ title: 'Welcome to the Folonite Track Demo', message: 'Explore the app with sample data. Changes are not saved.', type: 'system' }, { silent: true });
+            await addNotification({ title: 'Welcome to the Folonite Demo', message: 'Explore the app with sample data. Changes are not saved.', type: 'system' }, { silent: true });
             await addNotification({ title: 'QR generated', message: 'QR for AST-005 is ready to download.', type: 'qr' }, { silent: true });
             await addNotification({ title: 'Report ready', message: 'Monthly Asset Report has been generated.', type: 'report' }, { silent: true });
           }
@@ -485,7 +485,7 @@ export function Header({ onMenuClick }: HeaderProps) {
             aria-label="Go to dashboard"
           >
             <span className="text-lg font-bold text-primary whitespace-nowrap">
-              Folonite Track
+              Folonite
             </span>
           </Link>
           <div className="ml-auto flex items-center gap-1.5">

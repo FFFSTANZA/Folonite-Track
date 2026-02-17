@@ -1,16 +1,12 @@
 <div align="center">
-  <img src="public/folonite_track_logo.png" alt="Folonite Track" />
+  <img src="public/folonite_track_logo.png" alt="Folonite" />
 </div>
 <div align="center">
-  <h1>Folonite Track &mdash; Smart Asset Management System</h1>
+  <h1>Folonite &mdash; Smart Asset Management System</h1>
   <p>Centralized asset lifecycle management, QR-enabled tracking, and collaborative operations for modern teams.</p>
   <p>
     <a href="https://folonitetrack.in/demo/login" target="_blank" rel="noopener">
       <img src="https://img.shields.io/badge/Live%20Demo-Open-2ea44f?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
-    </a>
-    &nbsp;
-    <a href="#overview">
-      <img src="https://img.shields.io/badge/Open%20Source-100%25-2962FF?style=for-the-badge&logo=github&logoColor=white" alt="Open Source" />
     </a>
   </p>
 </div>
@@ -19,9 +15,9 @@
 
 ## Overview
 
-Folonite Track streamlines how enterprises catalogue, monitor, audit, and label fixed assets across locations. Assets, properties, users, tickets, and audit workflows live in a cohesive UI backed by modern tooling (React, TypeScript, Supabase).
+Folonite streamlines how enterprises catalogue, monitor, audit, and label fixed assets across locations. Assets, properties, users, tickets, and audit workflows live in a cohesive UI backed by modern tooling (React, TypeScript, Supabase).
 
-### Why Folonite Track
+### Why Folonite
 
 - Replace spreadsheets with a single source of truth for asset history and ownership.
 - Enable facilities, finance, and audit teams to collaborate with guardrails.
@@ -121,7 +117,7 @@ VITE_SUPABASE_SERVICE_KEY=
 VITE_SUPABASE_ANON_KEY=
 ```
 
-When the environment variables are absent, Folonite Track gracefully falls back to seeded demo data, allowing evaluation without backend services.
+When the environment variables are absent, Folonite gracefully falls back to seeded demo data, allowing evaluation without backend services.
 
 ## Everyday Development
 
@@ -178,8 +174,8 @@ Need help, feature guidance, or a tailored walkthrough?
 
 ## License & Conduct
 
-This project is open source under the MIT License. Contributions adhere to the community Code of Conduct; please review both before submitting pull requests.
+This project is proprietary software. All rights reserved.
 
 ---
 
-© Folonite Track Contributors. Built for resilient asset operations.
+© Folonite Contributors. Built for resilient asset operations.

@@ -1062,7 +1062,7 @@ const Index = () => {
                 </span>
                 <div>
                   <CardTitle className="text-sm font-semibold text-foreground">Announcements</CardTitle>
-                  <CardDescription>Latest from the Folonite Track team</CardDescription>
+                  <CardDescription>Latest from the Folonite team</CardDescription>
                 </div>
               </div>
               <Button

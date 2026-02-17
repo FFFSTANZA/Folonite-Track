@@ -1,6 +1,6 @@
 # Authentication & User Management
 
-This document outlines how users are authenticated, added, and managed within the Folonite Track application.
+This document outlines how users are authenticated, added, and managed within the Folonite application.
 
 ## Authentication Overview
 

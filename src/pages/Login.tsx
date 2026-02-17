@@ -175,7 +175,7 @@ export default function Login() {
         if (!result.userFound) {
           toast({
             title: "Account not found",
-            description: "We couldn't find a Folonite Track account with that email address.",
+            description: "We couldn't find a Folonite account with that email address.",
             variant: "destructive",
           });
           setResetStep("email");
@@ -331,7 +331,7 @@ export default function Login() {
       <div className="relative hidden w-0 flex-1 lg:block">
         <img
           src="/login_image.png"
-          alt="Folonite Track Workspace"
+          alt="Folonite Workspace"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-background/40 via-background/55 to-primary/25" />
@@ -440,7 +440,7 @@ export default function Login() {
           </div>
 
           <p className="mt-10 text-center text-xs text-muted-foreground">
-            © {currentYear} Folonite Track. All rights reserved.
+            © {currentYear} Folonite. All rights reserved.
           </p>
         </div>
       </div>
@@ -589,7 +589,7 @@ export default function Login() {
             )}
           </div>
           <DialogFooter className="px-6 pb-5 text-xs text-muted-foreground">
-            Need a hand? Reach your Folonite Track admin or email{" "}
+            Need a hand? Reach your Folonite admin or email{" "}
             <span className="font-medium text-foreground">support@folonitetrack.in</span>.
           </DialogFooter>
         </DialogContent>

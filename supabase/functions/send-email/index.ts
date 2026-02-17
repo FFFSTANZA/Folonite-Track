@@ -59,7 +59,7 @@ serve(async (req: Request) => {
 
     // Resend-only implementation
   const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY") || "";
-  const FROM = Deno.env.get("RESEND_FROM") || "Folonite Track <noreply@folonite.in>";
+  const FROM = Deno.env.get("RESEND_FROM") || "Folonite <noreply@folonite.in>";
     if (!RESEND_API_KEY) {
       throw new Error("RESEND_API_KEY is not configured in server environment");
     }
