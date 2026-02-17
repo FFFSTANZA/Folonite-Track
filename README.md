@@ -8,10 +8,6 @@
     <a href="https://folonitetrack.in/demo/login" target="_blank" rel="noopener">
       <img src="https://img.shields.io/badge/Live%20Demo-Open-2ea44f?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
     </a>
-    &nbsp;
-    <a href="#overview">
-      <img src="https://img.shields.io/badge/Open%20Source-100%25-2962FF?style=for-the-badge&logo=github&logoColor=white" alt="Open Source" />
-    </a>
   </p>
 </div>
 
@@ -178,7 +174,7 @@ Need help, feature guidance, or a tailored walkthrough?
 
 ## License & Conduct
 
-This project is open source under the MIT License. Contributions adhere to the community Code of Conduct; please review both before submitting pull requests.
+This project is proprietary software. All rights reserved.
 
 ---
 
