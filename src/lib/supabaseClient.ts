@@ -3,9 +3,9 @@ import { createClient } from "@supabase/supabase-js";
 // Prefer a same-origin rewrite base in the browser to bypass CORS/firewall blocks
 const BROWSER_ORIGIN = typeof window !== 'undefined' ? window.location.origin : undefined;
 const REWRITE_BASE = BROWSER_ORIGIN ? `${BROWSER_ORIGIN}/supabase` : undefined;
-// Enable rewrite automatically on production deployments of sams.karthiklal.in unless explicitly disabled
+// Enable rewrite automatically on production deployments of folonitetrack.in unless explicitly disabled
 const AUTO_REWRITE = typeof window !== 'undefined' && typeof location !== 'undefined'
-  ? (/sams\.[^/]*karthiklal\.in$/i.test(location.host) && import.meta.env.PROD)
+  ? (/folonitetrack\.in$/i.test(location.host) && import.meta.env.PROD)
   : false;
 const USE_SUPABASE_REWRITE = ((): boolean => {
   const v = (import.meta.env.VITE_USE_SUPABASE_REWRITE as any);

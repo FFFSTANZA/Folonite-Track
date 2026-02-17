@@ -8,7 +8,7 @@ import { demoAuthKeys } from "@/lib/demo";
 
 export default function DemoLogin() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("demo@demo.com");
+  const [email, setEmail] = useState("demo@folonite.in");
   const [password, setPassword] = useState("demo@123");
   const [error, setError] = useState<string>("");
 
@@ -68,10 +68,10 @@ export default function DemoLogin() {
                 onSubmit={(e) => {
                   e.preventDefault();
                   setError("");
-                  if (email.trim().toLowerCase() === "demo@demo.com" && password === "demo@123") {
+                  if (email.trim().toLowerCase() === "demo@folonite.in" && password === "demo@123") {
                     try {
                       const keys = demoAuthKeys();
-                      const user = { id: "demo-user", name: "Demo User", email: "demo@demo.com", role: "admin" };
+                      const user = { id: "demo-user", name: "Demo User", email: "demo@folonite.in", role: "admin" };
                       // Demo-scoped keys (session only for isolation; no cross-contamination)
                       sessionStorage.setItem(keys.current, user.id);
                       sessionStorage.setItem(keys.auth, JSON.stringify(user));

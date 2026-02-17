@@ -1,5 +1,5 @@
 /**
- * Email Service for SAMS
+ * Email Service for Folonite Track
  * Handles sending emails via SMTP with beautiful templates
  */
 
@@ -327,7 +327,7 @@ export async function sendNewsletterEmail(params: {
 
   // Send as BCC to protect recipient privacy
   await sendEmail({
-    to: "noreply@sams.local", // Placeholder
+    to: "noreply@folonite.in", // Placeholder
     bcc: params.recipientEmails,
     subject: template.subject,
     html: template.html,

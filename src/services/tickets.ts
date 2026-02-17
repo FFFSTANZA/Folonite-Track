@@ -113,10 +113,10 @@ function seedDemoTicketsOnce() {
     description: descs[i % descs.length],
     targetRole: roles[i % roles.length],
     status: statuses[i % statuses.length],
-    assignee: i % 3 === 0 ? 'admin@sams.demo' : i % 3 === 1 ? 'manager@sams.demo' : null,
+    assignee: i % 3 === 0 ? 'admin@folonite.in' : i % 3 === 1 ? 'manager@folonite.in' : null,
     priority: (['low','medium','high','urgent'] as const)[i % 4],
     slaDueAt: i % 2 === 0 ? mkDate(-(i%3), 18) : null,
-    createdBy: i % 2 === 0 ? 'demo.user1@example.com' : 'demo.user2@example.com',
+    createdBy: i % 2 === 0 ? 'demo.user1@folonite.in' : 'demo.user2@folonite.in',
     createdAt: mkDate((i % 5), 9 + (i % 4)),
     updatedAt: mkDate((i % 4), 12 + (i % 6)),
   }));

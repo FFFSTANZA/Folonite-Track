@@ -32,7 +32,7 @@ function loadDemoActivity(): Activity[] {
             ? `Generated QR codes for Property ${((i % 5) + 1).toString().padStart(3, "0")}`
             : i % 4 === 3
             ? `Report export completed`
-            : "Welcome to SAMS Demo",
+            : "Welcome to Folonite Track Demo",
         user_name: i % 3 === 0 ? "Admin" : i % 3 === 1 ? "Manager" : "System",
         created_at: new Date(now.getFullYear(), now.getMonth(), now.getDate(), 9 + i, (i * 7) % 60, 0).toISOString(),
       }));
