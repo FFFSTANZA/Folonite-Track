@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: https://*.supabase.co; connect-src 'self' ws: wss: https://*.supabase.co; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; base-uri 'self'; form-action 'self'">
+  <meta http-equiv="Referrer-Policy" content="no-referrer" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Folonite Track — Smart Asset Management System</title>
+  <meta name="description"
+    content="Folonite Track centralizes asset lifecycle management with QR-enabled tracking, collaborative workflows, and audit-friendly reporting." />
+  <meta name="keywords"
+    content="smart asset management system, qr asset labels, equipment management, supabase asset tracking, audit ready reporting, open source asset platform" />
+  <meta name="author" content="Karthik Lal" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#1f2937" />
+  <link rel="canonical" href="https://folonitetrack.in/" />
+
+  <meta property="og:title" content="Folonite Track — Smart Asset Management System" />
+  <meta property="og:description"
+    content="Folonite Track centralizes asset lifecycle management with QR-enabled tracking, collaborative workflows, and audit-friendly reporting." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://folonitetrack.in/" />
+  <meta property="og:image" content="https://folonitetrack.in/folonite_track_logo.png" />
+  <meta property="og:site_name" content="Folonite Track" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Folonite Track — Smart Asset Management System" />
+  <meta name="twitter:description"
+    content="Folonite Track centralizes asset lifecycle management with QR-enabled tracking, collaborative workflows, and audit-friendly reporting." />
+  <meta name="twitter:image" content="https://folonitetrack.in/folonite_track_logo.png" />
+  <link rel="icon" type="image/png" href="/favicon.png" sizes="any" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="shortcut icon" href="/favicon.png" />
+</head>
+
+<body>
+  <style>
+    /* Preloader overlay styles */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: hsl(var(--background));
+      z-index: 9999;
+      transition: opacity .25s ease, visibility .25s linear
+    }
+
+    /* .dark #preloader{background:#272725} - Removed to let var(--background) handle it */
+    #preloader .spinner {
+      width: 64px;
+      height: 64px;
+      display: inline-block;
+      animation: spin 1.1s linear infinite;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg)
+      }
+
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    #preloader.preloader-hide {
+      opacity: 0;
+      visibility: hidden
+    }
+  </style>
+  <script type="module" src="/src/theme-init.ts"></script>
+  <!-- App preloader (hidden after React mounts) -->
+  <div id="preloader" aria-hidden="true">
+    <img class="spinner" src="spinner.png" alt="Loading" />
+  </div>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>
