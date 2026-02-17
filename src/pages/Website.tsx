@@ -203,7 +203,7 @@ export default function Website() {
               <div className="space-y-3">
                 <div className="flex justify-between items-center bg-background/10 p-3 rounded">
                   <span className="text-sm opacity-90">Email</span>
-                  <code className="font-mono font-bold">demo@demo.com</code>
+                  <code className="font-mono font-bold">demo@folonite.in</code>
                 </div>
                 <div className="flex justify-between items-center bg-background/10 p-3 rounded">
                   <span className="text-sm opacity-90">Password</span>

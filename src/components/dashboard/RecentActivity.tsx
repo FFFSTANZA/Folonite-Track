@@ -10,7 +10,7 @@ import { listActivity, subscribeActivity, type Activity } from "@/services/activ
 import { History } from "lucide-react";
 
 const mockActivities = [
-  { id: 1, type: "seed", message: "Welcome to SAMS", user_name: "System", created_at: new Date().toISOString() },
+  { id: 1, type: "seed", message: "Welcome to Folonite Track", user_name: "System", created_at: new Date().toISOString() },
 ];
 
 export function RecentActivity() {

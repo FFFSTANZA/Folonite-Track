@@ -14,7 +14,7 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-const BASE_TITLE = "SAMS";
+const BASE_TITLE = "Folonite Track";
 const ROUTE_TITLE_MAP: Record<string, string> = {
   "/": "Dashboard",
   "/assets": "Assets",

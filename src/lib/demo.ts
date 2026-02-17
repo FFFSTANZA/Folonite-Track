@@ -66,7 +66,7 @@ function seedOnce() {
   demoUsers = Array.from({ length: 15 }, (_, i) => ({
     id: `U-${String(i + 1).padStart(3, '0')}`,
     name: `Demo User ${i + 1}`,
-    email: `demo.user${i + 1}@example.com`,
+    email: `demo.user${i + 1}@folonite.in`,
     role: i === 0 ? 'admin' : i % 3 === 0 ? 'manager' : 'user',
     department: i % 2 === 0 ? 'Operations' : 'IT',
   }));

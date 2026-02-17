@@ -953,7 +953,7 @@ export default function Tickets() {
                     'Please create a new user account.',
                     '',
                     'User details:',
-                    '- Email: user@example.com',
+                    '- Email: user@folonite.in',
                     '- Full name: First Last',
                     '- Department: <Department>',
                     '',

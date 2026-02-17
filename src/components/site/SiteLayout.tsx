@@ -15,29 +15,29 @@ export function SiteLayout({ children }: SiteLayoutProps) {
             {/* Logo with accent color filter */}
             <div className="relative flex items-center justify-center">
               <img
-                src="/sams_logo.png"
+                src="/folonite_track_logo.png"
                 alt="Folonite Track"
                 className="h-9 w-auto"
                 style={{
                   filter: "sepia(100%) saturate(300%) hue-rotate(320deg) brightness(0.8) contrast(1.2)"
                 }}
               />
-              {/* 
+              {/*
                  Note: The filter above is an approximation for #c07e62 (Terracotta/Orange-ish).
                  Since we can't easily colorize a PNG perfectly with CSS filters without trial and error,
                  we will use a mask approach if the logo is black/transparent, or just a tint.
-                 
+
                  Better approach for exact color if the image is black:
-                 mask-image: url(/sams_logo.png); background-color: #c07e62;
+                 mask-image: url(/folonite_track_logo.png); background-color: #c07e62;
               */}
               <div
                 className="absolute inset-0 bg-[#c07e62]"
                 style={{
-                  maskImage: 'url("/sams_logo.png")',
+                  maskImage: 'url("/folonite_track_logo.png")',
                   maskSize: 'contain',
                   maskRepeat: 'no-repeat',
                   maskPosition: 'center',
-                  WebkitMaskImage: 'url("/sams_logo.png")',
+                  WebkitMaskImage: 'url("/folonite_track_logo.png")',
                   WebkitMaskSize: 'contain',
                   WebkitMaskRepeat: 'no-repeat',
                   WebkitMaskPosition: 'center',
@@ -82,11 +82,11 @@ export function SiteLayout({ children }: SiteLayoutProps) {
               <div
                 className="h-8 w-24 bg-[#c07e62]"
                 style={{
-                  maskImage: 'url("/sams_logo.png")',
+                  maskImage: 'url("/folonite_track_logo.png")',
                   maskSize: 'contain',
                   maskRepeat: 'no-repeat',
                   maskPosition: 'left center',
-                  WebkitMaskImage: 'url("/sams_logo.png")',
+                  WebkitMaskImage: 'url("/folonite_track_logo.png")',
                   WebkitMaskSize: 'contain',
                   WebkitMaskRepeat: 'no-repeat',
                   WebkitMaskPosition: 'left center',

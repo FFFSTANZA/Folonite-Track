@@ -48,7 +48,7 @@ const COLUMN_CONFIG = [
   { header: "Description", key: "description", required: false, width: 40 },
 ] as const;
 
-export async function downloadAssetTemplate(filename = "SAMS_Bulk_Import_Template.xlsx") {
+export async function downloadAssetTemplate(filename = "Folonite_Track_Bulk_Import_Template.xlsx") {
   // Gather dropdown sources
   const types = (await listItemTypes()).map(t => t.name);
   let properties: { id: string; name: string }[] = [];

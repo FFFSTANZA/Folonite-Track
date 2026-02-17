@@ -103,9 +103,9 @@ export async function listNewsletterPosts(limit = 20): Promise<NewsletterPost[]>
         const now = Date.now();
         const mk = (minsAgo: number) => new Date(now - minsAgo * 60000).toISOString();
         const seed: NewsletterPost[] = [
-          { id: 'NEWS-900003', title: 'Homepage Refresh Now Live', body: 'Our primary landing page has been updated with the new hero layout, improved typography scale, and refined call-to-action block. Let us know if you spot spacing issues on tablet breakpoints.', author: 'design@sams.demo', published: true, created_at: mk(90), updated_at: null, category: 'design_refresh' },
-          { id: 'NEWS-900002', title: 'Pricing Page Performance Win', body: 'Lazy loading and responsive image sets cut LCP to 1.6s on the pricing page. Marketing assets were recompressed and the testimonials carousel now defers below-the-fold rendering.', author: 'webops@sams.demo', published: true, created_at: mk(240), updated_at: null, category: 'performance' },
-          { id: 'NEWS-900001', title: 'New Resource Center Navigation', body: 'We rolled out a streamlined navigation for resources with audience tags and contextual breadcrumbs. Content owners should review featured cards before Friday.', author: 'content@sams.demo', published: true, created_at: mk(480), updated_at: null, category: 'content_update' },
+          { id: 'NEWS-900003', title: 'Homepage Refresh Now Live', body: 'Our primary landing page has been updated with the new hero layout, improved typography scale, and refined call-to-action block. Let us know if you spot spacing issues on tablet breakpoints.', author: 'design@folonite.in', published: true, created_at: mk(90), updated_at: null, category: 'design_refresh' },
+          { id: 'NEWS-900002', title: 'Pricing Page Performance Win', body: 'Lazy loading and responsive image sets cut LCP to 1.6s on the pricing page. Marketing assets were recompressed and the testimonials carousel now defers below-the-fold rendering.', author: 'webops@folonite.in', published: true, created_at: mk(240), updated_at: null, category: 'performance' },
+          { id: 'NEWS-900001', title: 'New Resource Center Navigation', body: 'We rolled out a streamlined navigation for resources with audience tags and contextual breadcrumbs. Content owners should review featured cards before Friday.', author: 'content@folonite.in', published: true, created_at: mk(480), updated_at: null, category: 'content_update' },
         ];
         saveLocal(seed);
       }
@@ -150,9 +150,9 @@ export async function listAllNewsletterPosts(limit = 200): Promise<NewsletterPos
         const now = Date.now();
         const mk = (minsAgo: number) => new Date(now - minsAgo * 60000).toISOString();
         const seed: NewsletterPost[] = [
-          { id: 'NEWS-900003', title: 'Homepage Refresh Now Live', body: 'Our primary landing page has been updated with the new hero layout, improved typography scale, and refined call-to-action block. Let us know if you spot spacing issues on tablet breakpoints.', author: 'design@sams.demo', published: true, created_at: mk(90), updated_at: null, category: 'design_refresh' },
-          { id: 'NEWS-900002', title: 'Pricing Page Performance Win', body: 'Lazy loading and responsive image sets cut LCP to 1.6s on the pricing page. Marketing assets were recompressed and the testimonials carousel now defers below-the-fold rendering.', author: 'webops@sams.demo', published: true, created_at: mk(240), updated_at: null, category: 'performance' },
-          { id: 'NEWS-900001', title: 'New Resource Center Navigation', body: 'We rolled out a streamlined navigation for resources with audience tags and contextual breadcrumbs. Content owners should review featured cards before Friday.', author: 'content@sams.demo', published: true, created_at: mk(480), updated_at: null, category: 'content_update' },
+          { id: 'NEWS-900003', title: 'Homepage Refresh Now Live', body: 'Our primary landing page has been updated with the new hero layout, improved typography scale, and refined call-to-action block. Let us know if you spot spacing issues on tablet breakpoints.', author: 'design@folonite.in', published: true, created_at: mk(90), updated_at: null, category: 'design_refresh' },
+          { id: 'NEWS-900002', title: 'Pricing Page Performance Win', body: 'Lazy loading and responsive image sets cut LCP to 1.6s on the pricing page. Marketing assets were recompressed and the testimonials carousel now defers below-the-fold rendering.', author: 'webops@folonite.in', published: true, created_at: mk(240), updated_at: null, category: 'performance' },
+          { id: 'NEWS-900001', title: 'New Resource Center Navigation', body: 'We rolled out a streamlined navigation for resources with audience tags and contextual breadcrumbs. Content owners should review featured cards before Friday.', author: 'content@folonite.in', published: true, created_at: mk(480), updated_at: null, category: 'content_update' },
         ];
         saveLocal(seed);
       }

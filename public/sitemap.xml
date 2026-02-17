@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://samsproject.in/</loc>
+    <loc>https://folonitetrack.in/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://samsproject.in/site</loc>
+    <loc>https://folonitetrack.in/site</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://samsproject.in/login</loc>
+    <loc>https://folonitetrack.in/login</loc>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://samsproject.in/demo/login</loc>
+    <loc>https://folonitetrack.in/demo/login</loc>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://samsproject.in/scan</loc>
+    <loc>https://folonitetrack.in/scan</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

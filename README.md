@@ -1,11 +1,11 @@
 <div align="center">
-  <img src="public/sams_logo.png" alt="SAMS" />
+  <img src="public/folonite_track_logo.png" alt="Folonite Track" />
 </div>
 <div align="center">
-  <h1>SAMS &mdash; Smart Asset Management System</h1>
+  <h1>Folonite Track &mdash; Smart Asset Management System</h1>
   <p>Centralized asset lifecycle management, QR-enabled tracking, and collaborative operations for modern teams.</p>
   <p>
-    <a href="https://samsproject.in/demo/login" target="_blank" rel="noopener">
+    <a href="https://folonitetrack.in/demo/login" target="_blank" rel="noopener">
       <img src="https://img.shields.io/badge/Live%20Demo-Open-2ea44f?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
     </a>
     &nbsp;
@@ -19,9 +19,9 @@
 
 ## Overview
 
-SAMS streamlines how enterprises catalogue, monitor, audit, and label fixed assets across locations. Assets, properties, users, tickets, and audit workflows live in a cohesive UI backed by modern tooling (React, TypeScript, Supabase).
+Folonite Track streamlines how enterprises catalogue, monitor, audit, and label fixed assets across locations. Assets, properties, users, tickets, and audit workflows live in a cohesive UI backed by modern tooling (React, TypeScript, Supabase).
 
-### Why SAMS
+### Why Folonite Track
 
 - Replace spreadsheets with a single source of truth for asset history and ownership.
 - Enable facilities, finance, and audit teams to collaborate with guardrails.
@@ -121,7 +121,7 @@ VITE_SUPABASE_SERVICE_KEY=
 VITE_SUPABASE_ANON_KEY=
 ```
 
-When the environment variables are absent, SAMS gracefully falls back to seeded demo data, allowing evaluation without backend services.
+When the environment variables are absent, Folonite Track gracefully falls back to seeded demo data, allowing evaluation without backend services.
 
 ## Everyday Development
 
@@ -157,17 +157,17 @@ These items are actively tracked for upcoming releases:
 ## Live Demo
 
 <div align="left">
-  <a href="https://samsproject.in/demo/login" target="_blank" rel="noopener">
+  <a href="https://folonitetrack.in/demo/login" target="_blank" rel="noopener">
     <img src="https://img.shields.io/badge/LIVE%20DEMO-OPEN-orange?style=for-the-badge" alt="Live Demo" />
   </a>
   <br />
-  <strong>Demo credentials</strong>: Username <code>demo@demo.com</code> &nbsp;&bull;&nbsp; Password <code>demo@123</code>
+  <strong>Demo credentials</strong>: Username <code>demo@folonite.in</code> &nbsp;&bull;&nbsp; Password <code>demo@123</code>
 </div>
 
 ## Support
 
 Need help, feature guidance, or a tailored walkthrough?
-- Email: <a href="mailto:karthik@samsproject.in">karthik@samsproject.in</a>
+- Email: <a href="mailto:support@folonite.in">support@folonite.in</a>
 - Issues: open a GitHub ticket to report bugs or request enhancements.
 
 ## Browser & Device Support
@@ -182,5 +182,4 @@ This project is open source under the MIT License. Contributions adhere to the c
 
 ---
 
-© SAMS Contributors. Built for resilient asset operations.
-# Folonite-Track
+© Folonite Track Contributors. Built for resilient asset operations.

@@ -31,7 +31,7 @@ export default async function handler(req: any, res: any) {
     }
 
     const apiKey = process.env.RESEND_API_KEY || "";
-    const from = process.env.RESEND_FROM || "SAMS <noreply@example.com>";
+    const from = process.env.RESEND_FROM || "Folonite Track <noreply@folonite.in>";
     if (!apiKey) {
       return res.status(500).json({ error: "RESEND_API_KEY not configured" });
     }

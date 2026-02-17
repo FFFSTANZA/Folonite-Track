@@ -110,7 +110,7 @@ export function TopNavBar({ onMenuToggle }: TopNavBarProps) {
           const cleared = sessionStorage.getItem('demo_notifs_cleared') === '1';
           if (!cleared) {
             await clearAllNotifications();
-            await addNotification({ title: 'Welcome to the SAMS Demo', message: 'Explore the app with sample data. Changes are not saved.', type: 'system' }, { silent: true });
+            await addNotification({ title: 'Welcome to the Folonite Track Demo', message: 'Explore the app with sample data. Changes are not saved.', type: 'system' }, { silent: true });
             await addNotification({ title: 'QR generated', message: 'QR for AST-005 is ready to download.', type: 'qr' }, { silent: true });
             await addNotification({ title: 'Report ready', message: 'Monthly Asset Report has been generated.', type: 'report' }, { silent: true });
           }
@@ -330,14 +330,14 @@ export function TopNavBar({ onMenuToggle }: TopNavBarProps) {
           className="hidden md:inline-flex items-center justify-center rounded-md transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
           aria-label="Dashboard"
         >
-          <div 
-            className="h-8 w-24 bg-primary transition-colors" 
+          <div
+            className="h-8 w-24 bg-primary transition-colors"
             style={{
-              maskImage: 'url("/sams_logo.png")',
+              maskImage: 'url("/folonite_track_logo.png")',
               maskSize: 'contain',
               maskRepeat: 'no-repeat',
               maskPosition: 'center',
-              WebkitMaskImage: 'url("/sams_logo.png")',
+              WebkitMaskImage: 'url("/folonite_track_logo.png")',
               WebkitMaskSize: 'contain',
               WebkitMaskRepeat: 'no-repeat',
               WebkitMaskPosition: 'center'
