@@ -117,7 +117,7 @@ VITE_SUPABASE_SERVICE_KEY=
 VITE_SUPABASE_ANON_KEY=
 ```
 
-When the environment variables are absent, Folonite gracefully falls back to seeded demo data, allowing evaluation without backend services.
+If you deploy on Vercel with the `/supabase` rewrite in `vercel.json`, the URL can be omitted in production (the app will default to the same-origin rewrite). When the environment variables are absent, Folonite gracefully falls back to seeded demo data, allowing evaluation without backend services.
 
 ## Everyday Development
 

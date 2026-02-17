@@ -2,6 +2,8 @@
  * Utility to diagnose and fix localStorage/cache issues
  */
 
+import { supabaseConfigStatus } from "@/lib/supabaseClient";
+
 export function clearAllAppData() {
   try {
     // Clear localStorage
@@ -25,14 +27,13 @@ export function clearAllAppData() {
 
 export function diagnoseSupabaseConnection() {
   const issues = [];
-  
+
   // Check environment variables
-  const hasUrl = Boolean(import.meta.env.VITE_SUPABASE_URL);
-  const hasKey = Boolean(import.meta.env.VITE_SUPABASE_ANON_KEY);
-  
-  if (!hasUrl) issues.push('Missing VITE_SUPABASE_URL');
-  if (!hasKey) issues.push('Missing VITE_SUPABASE_ANON_KEY');
-  
+  const { urlPresent, keyPresent } = supabaseConfigStatus;
+
+  if (!urlPresent) issues.push('Missing Supabase URL configuration');
+  if (!keyPresent) issues.push('Missing VITE_SUPABASE_ANON_KEY');
+
   // Check localStorage size
   try {
     const size = JSON.stringify(localStorage).length;

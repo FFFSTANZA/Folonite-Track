@@ -1075,7 +1075,7 @@ export default function Users() {
                             <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Property Access</Label>
                             <label className="flex items-center gap-1.5 text-xs cursor-pointer hover:text-primary transition-colors">
                               <Checkbox
-                                checked={!!permView['all_properties']}
+                                checked={permView['all_properties'] ?? false}
                                 disabled={authRole !== 'admin'}
                                 onCheckedChange={(v: any) => {
                                   setPermView((s) => ({ ...s, all_properties: Boolean(v) }));
@@ -1088,9 +1088,9 @@ export default function Users() {
                           </div>
                           <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                              <Button variant="outline" className="justify-between w-full bg-background" disabled={authRole !== 'admin' || !!permView['all_properties']}>
+                              <Button variant="outline" className="justify-between w-full bg-background" disabled={authRole !== 'admin' || (permView['all_properties'] ?? false)}>
                                 <span className="truncate text-left flex-1 min-w-0 text-sm">
-                                  {!!permView['all_properties']
+                                  {permView['all_properties'] ?? false
                                     ? "All properties selected"
                                     : (selectedPropertyIds.length > 0
                                       ? `${selectedPropertyIds.length} properties selected`
@@ -1152,7 +1152,7 @@ export default function Users() {
                             <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Department Access</Label>
                             <label className="flex items-center gap-1.5 text-xs cursor-pointer hover:text-primary transition-colors">
                               <Checkbox
-                                checked={!!permView['all_departments']}
+                                checked={permView['all_departments'] ?? false}
                                 disabled={authRole !== 'admin'}
                                 onCheckedChange={(v: any) => {
                                   setPermView((s) => ({ ...s, all_departments: Boolean(v) }));
@@ -1165,9 +1165,9 @@ export default function Users() {
                           </div>
                           <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                              <Button variant="outline" className="justify-between w-full bg-background" disabled={authRole !== 'admin' || !!permView['all_departments']}>
+                              <Button variant="outline" className="justify-between w-full bg-background" disabled={authRole !== 'admin' || (permView['all_departments'] ?? false)}>
                                 <span className="truncate text-left flex-1 min-w-0 text-sm">
-                                  {!!permView['all_departments']
+                                  {permView['all_departments'] ?? false
                                     ? "All departments selected"
                                     : (selectedDepartments.length > 0
                                       ? `${selectedDepartments.length} departments selected`
@@ -1964,7 +1964,7 @@ export default function Users() {
                         <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Property Access</Label>
                         <label className="flex items-center gap-1.5 text-xs cursor-pointer hover:text-primary transition-colors">
                           <Checkbox
-                            checked={!!ePermView['all_properties']}
+                            checked={ePermView['all_properties'] ?? false}
                             disabled={authRole !== 'admin'}
                             onCheckedChange={(v: any) => {
                               setEPermView((s) => ({ ...s, all_properties: Boolean(v) }));
@@ -1977,9 +1977,9 @@ export default function Users() {
                       </div>
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                          <Button variant="outline" className="justify-between w-full bg-background" disabled={authRole !== 'admin' || !!ePermView['all_properties']}>
+                          <Button variant="outline" className="justify-between w-full bg-background" disabled={authRole !== 'admin' || (ePermView['all_properties'] ?? false)}>
                             <span className="truncate text-left flex-1 min-w-0 text-sm">
-                              {!!ePermView['all_properties']
+                              {ePermView['all_properties'] ?? false
                                 ? "All properties selected"
                                 : (editSelectedPropertyIds.length > 0
                                   ? `${editSelectedPropertyIds.length} properties selected`
@@ -2041,7 +2041,7 @@ export default function Users() {
                         <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Department Access</Label>
                         <label className="flex items-center gap-1.5 text-xs cursor-pointer hover:text-primary transition-colors">
                           <Checkbox
-                            checked={!!ePermView['all_departments']}
+                            checked={ePermView['all_departments'] ?? false}
                             disabled={authRole !== 'admin'}
                             onCheckedChange={(v: any) => {
                               setEPermView((s) => ({ ...s, all_departments: Boolean(v) }));
@@ -2054,9 +2054,9 @@ export default function Users() {
                       </div>
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                          <Button variant="outline" className="justify-between w-full bg-background" disabled={authRole !== 'admin' || !!ePermView['all_departments']}>
+                          <Button variant="outline" className="justify-between w-full bg-background" disabled={authRole !== 'admin' || (ePermView['all_departments'] ?? false)}>
                             <span className="truncate text-left flex-1 min-w-0 text-sm">
-                              {!!ePermView['all_departments']
+                              {ePermView['all_departments'] ?? false
                                 ? "All departments selected"
                                 : (editSelectedDepartments.length > 0
                                   ? `${editSelectedDepartments.length} departments selected`

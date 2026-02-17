@@ -7,13 +7,15 @@ const REWRITE_BASE = BROWSER_ORIGIN ? `${BROWSER_ORIGIN}/supabase` : undefined;
 const AUTO_REWRITE = typeof window !== 'undefined' && typeof location !== 'undefined'
   ? (/folonitetrack\.in$/i.test(location.host) && import.meta.env.PROD)
   : false;
+
+const SUPABASE_URL_DIRECT = import.meta.env.VITE_SUPABASE_URL as string | undefined;
+const SHOULD_FORCE_REWRITE = Boolean(import.meta.env.PROD && !SUPABASE_URL_DIRECT && REWRITE_BASE);
 const USE_SUPABASE_REWRITE = ((): boolean => {
   const v = (import.meta.env.VITE_USE_SUPABASE_REWRITE as any);
   if (typeof v === 'string') return v === 'true';
-  return AUTO_REWRITE; // default
+  return AUTO_REWRITE || SHOULD_FORCE_REWRITE; // default
 })();
 
-const SUPABASE_URL_DIRECT = import.meta.env.VITE_SUPABASE_URL as string | undefined;
 const SUPABASE_URL = (USE_SUPABASE_REWRITE && REWRITE_BASE) ? REWRITE_BASE : SUPABASE_URL_DIRECT;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
 const SUPABASE_PROXY_URL = (import.meta.env.VITE_SUPABASE_PROXY_URL as string | undefined) || 
