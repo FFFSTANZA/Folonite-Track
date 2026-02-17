@@ -184,7 +184,7 @@ export default function Website() {
                   Email <a href="mailto:support@folonite.in" className="text-primary hover:underline">support@folonite.in</a> for guided walkthroughs or implementation planning.
                 </p>
 
-                <p>The project ships under the MIT License with a community Code of Conduct.</p>
+
               </div>
             </div>
           </div>
