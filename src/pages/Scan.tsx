@@ -149,7 +149,7 @@ export default function Scan() {
       } else if (/^\//.test(text)) {
         window.location.assign(text);
       } else {
-        const idMatch = text.match(/[A-Z]{2,}[A-Z0-9\-]*\d{3,}$/);
+        const idMatch = text.match(/[A-Z]{2,}[A-Z0-9-]*\d{3,}$/);
         if (idMatch) {
           window.location.assign(`/assets/${idMatch[0]}`);
         } else {

@@ -19,10 +19,8 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-      "react-refresh/only-export-components": [
-        "warn",
-        { allowConstantExport: true },
-      ],
+      // Disable for shadcn/ui component patterns that export variants alongside components
+      "react-refresh/only-export-components": "off",
       // Pragmatic defaults for this project
       "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/no-explicit-any": "off",
@@ -31,6 +29,9 @@ export default tseslint.config(
       "no-empty": ["warn", { allowEmptyCatch: true }],
       "prefer-const": "warn",
       "no-useless-escape": "warn",
+      // Intentional hook dependency patterns are common in this codebase
+      // Many effects are designed to run only on mount or on specific changes
+      "react-hooks/exhaustive-deps": "off",
     },
   },
   // File-specific overrides

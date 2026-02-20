@@ -96,8 +96,8 @@ export function useSystemStatus() {
     }
 
     // 5. Check Cloudflare/DNS (Simulated)
-    let dnsStatus: ServiceStatus = 'operational';
-    let dnsLatency = Math.floor(Math.random() * 15) + 5;
+    const dnsStatus: ServiceStatus = 'operational';
+    const dnsLatency = Math.floor(Math.random() * 15) + 5;
 
     // 6. API (Simulated)
     const apiLatency = dbLatency + Math.floor(Math.random() * 20);
@@ -115,14 +115,12 @@ export function useSystemStatus() {
     }
 
     // 8. Check Edge Functions (Simulated based on API/DB)
-    let edgeStatus: ServiceStatus = 'operational';
-    let edgeLatency = Math.floor(Math.random() * 50) + 20;
-    if (dbStatus === 'degraded' || apiLatency > 500) edgeStatus = 'degraded';
+    const edgeLatency = Math.floor(Math.random() * 50) + 20;
+    const edgeStatus: ServiceStatus = (dbStatus === 'degraded' || apiLatency > 500) ? 'degraded' : 'operational';
 
     // 9. Check Build (Simulated based on Repo)
-    let buildStatus: ServiceStatus = 'operational';
-    let buildLatency = Math.floor(Math.random() * 100) + 50;
-    if (gitStatus === 'degraded') buildStatus = 'degraded';
+    const buildLatency = Math.floor(Math.random() * 100) + 50;
+    const buildStatus: ServiceStatus = gitStatus === 'degraded' ? 'degraded' : 'operational';
 
     setServices(prev => prev.map(s => {
       if (s.id === 'db') return { ...s, status: dbStatus, latency: dbLatency };

@@ -81,7 +81,7 @@ export async function createReport(payload: Omit<Report, "id" | "created_at">): 
   }
   if (!hasSupabaseEnv) throw new Error("NO_SUPABASE");
   // Attempt insert with all fields; if columns are missing in DB, retry without filter_* fields
-  let result = await supabase.from(table).insert(payload).select().single();
+  const result = await supabase.from(table).insert(payload).select().single();
   if (result.error) {
     const msg = (result.error.message || '').toString();
     const code = (result.error as any).code || '';
@@ -139,7 +139,7 @@ export async function clearReports(): Promise<void> {
     try { localStorage.removeItem('report_meta'); } catch {}
     return;
   }
-  let { error } = await supabase.from(table).delete().neq('id', '');
+  const { error } = await supabase.from(table).delete().neq('id', '');
   if (error) {
     // Try RPC with SECURITY DEFINER function as a fallback
     const rpc = await supabase.rpc('delete_all_reports');

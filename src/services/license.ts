@@ -114,7 +114,7 @@ function derivedAllowanceForPlan(plan: LicensePlan): number | null {
 
 export async function updateGlobalLimits(patch: Partial<GlobalLicenseLimits>): Promise<GlobalLicenseLimits> {
   const current = await getGlobalLimits();
-  let next: GlobalLicenseLimits = { ...current, ...patch };
+  const next: GlobalLicenseLimits = { ...current, ...patch };
 
   // Plan change logic
   if (patch.plan) {

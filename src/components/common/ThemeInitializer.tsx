@@ -41,7 +41,7 @@ export function ThemeInitializer() {
         root.style.setProperty('--sidebar-background', level.card);
 
         // Adjust dashboard card headers for dark mode depth
-        // @ts-ignore
+        // @ts-expect-error headerOpacity is optional on DarkLevel
         const opacity = level.headerOpacity || 0.1;
         root.style.setProperty('--header-amc', `hsl(30 100% 50% / ${opacity})`);
         root.style.setProperty('--header-food', `hsl(150 100% 50% / ${opacity})`);
