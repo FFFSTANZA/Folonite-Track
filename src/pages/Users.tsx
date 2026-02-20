@@ -296,7 +296,7 @@ export default function Users() {
       }
     })();
     return () => { cancelled = true; };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, []);
 
   useEffect(() => {
@@ -419,7 +419,7 @@ export default function Users() {
     const defaults = roleDefaults(role);
     setPermView(Object.fromEntries(allPages.map(p => [p, defaults[p].v])) as any);
     setPermEdit(Object.fromEntries(allPages.map(p => [p, defaults[p].e])) as any);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [role]);
 
   const toTitle = (v?: string) => (v ? v.charAt(0).toUpperCase() + v.slice(1) : "");

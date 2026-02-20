@@ -146,7 +146,6 @@ export const supabaseConfigStatus = {
 
 if (!hasSupabaseEnv && typeof window !== 'undefined') {
   // Helpful console hint during development
-  // eslint-disable-next-line no-console
   console.warn("Supabase env not set: ", {
     urlPresent: Boolean(SUPABASE_URL),
     keyPresent: Boolean(SUPABASE_ANON_KEY),

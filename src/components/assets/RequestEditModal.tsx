@@ -323,7 +323,7 @@ export default function RequestEditModal({ open, asset, onClose, onSubmitted }: 
             let changed = 0;
             for (const k of keys) {
               const b = (asset as any)[k] ?? "";
-              let a = (form as any)[k];
+              const a = (form as any)[k];
               // Normalize dates to YYYY-MM-DD
               const bStr = (k === "purchaseDate" || k === "expiryDate") ? normalizeDateStr(b) : String(b ?? "");
               const aStr = (k === "purchaseDate" || k === "expiryDate") ? normalizeDateStr(a) : String(a ?? "");

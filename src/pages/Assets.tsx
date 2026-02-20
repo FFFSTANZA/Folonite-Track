@@ -254,7 +254,7 @@ export default function Assets() {
       ]));
       prefs.setVisibleCols(merged);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, []);
 
   // One-time bootstrap: if user already has saved prefs but Department is missing, add it once
@@ -444,7 +444,7 @@ export default function Assets() {
       const pruned = deptFilter.filter(d => visibleDeptOptions.includes(d));
       if (pruned.length !== deptFilter.length) setDeptFilter(pruned);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [visibleDeptOptions, deptAll]);
 
   // Load pending approvals per asset for indicator
