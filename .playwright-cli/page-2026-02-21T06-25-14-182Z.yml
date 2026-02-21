@@ -1,0 +1,161 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]: Folonite Loading...
+  - generic [ref=e4]:
+    - region "Notifications (F8)":
+      - list
+    - region "Notifications alt+T"
+    - button "Connection Lost" [ref=e6] [cursor=pointer]:
+      - img
+      - generic [ref=e7]: Connection Lost
+    - generic [ref=e8]:
+      - link "Skip to content" [ref=e9] [cursor=pointer]:
+        - /url: "#main-content"
+      - banner [ref=e10]:
+        - generic [ref=e11]:
+          - link "Folonite" [ref=e12] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e13]: Folonite
+          - navigation [ref=e14]:
+            - link "Overview" [ref=e15] [cursor=pointer]:
+              - /url: "#overview"
+            - link "Features" [ref=e16] [cursor=pointer]:
+              - /url: "#features"
+            - link "Modules" [ref=e17] [cursor=pointer]:
+              - /url: "#modules"
+            - link "Demo" [ref=e18] [cursor=pointer]:
+              - /url: "#demo"
+          - link "Login" [ref=e20] [cursor=pointer]:
+            - /url: /login
+      - main [ref=e21]:
+        - generic [ref=e22]:
+          - generic [ref=e24]:
+            - generic [ref=e25]: Smart asset management
+            - generic [ref=e26]:
+              - heading "Asset operations, beautifully organized." [level=1] [ref=e27]
+              - paragraph [ref=e28]: Folonite keeps every asset, audit, and approval in one place. Track ownership in real time, verify inventory with QR workflows, and keep finance aligned without the spreadsheet chaos.
+            - generic [ref=e29]:
+              - link "Access the platform" [ref=e30] [cursor=pointer]:
+                - /url: /login
+              - link "Explore capabilities" [ref=e31] [cursor=pointer]:
+                - /url: "#features"
+          - generic [ref=e33]:
+            - generic [ref=e34]:
+              - paragraph [ref=e35]: Built for high-trust teams
+              - heading "Everything you need to run asset programs at scale." [level=2] [ref=e36]
+              - paragraph [ref=e37]: Keep operations, finance, and audit teams in lockstep with shared visibility and automated audit trails.
+            - generic [ref=e38]:
+              - generic [ref=e39]:
+                - heading "Lifecycle clarity" [level=3] [ref=e40]
+                - paragraph [ref=e41]: See procurement, assignments, maintenance, and end-of-life records in one timeline for every asset.
+              - generic [ref=e42]:
+                - heading "Audit-ready verification" [level=3] [ref=e43]
+                - paragraph [ref=e44]: Plan audits by location, scan assets with QR codes, and close gaps with evidence captured in minutes.
+              - generic [ref=e45]:
+                - heading "Compliance reporting" [level=3] [ref=e46]
+                - paragraph [ref=e47]: Generate depreciation schedules, compliance exports, and audit summaries that finance can rely on.
+          - generic [ref=e50]:
+            - generic [ref=e51]:
+              - text: Dashboard preview
+              - heading "See the health of your asset portfolio at a glance." [level=2] [ref=e52]
+              - paragraph [ref=e53]: "Live metrics surface what matters most: utilization, audit progress, and outstanding maintenance, all in a single view."
+            - generic [ref=e55]:
+              - generic [ref=e56]:
+                - generic [ref=e57]:
+                  - generic [ref=e58]: Assets tracked
+                  - generic [ref=e59]: +12%
+                - paragraph [ref=e60]: 14,832
+              - generic [ref=e61]:
+                - generic [ref=e62]:
+                  - generic [ref=e63]: Audit completion
+                  - generic [ref=e64]: On track
+                - paragraph [ref=e65]: 96%
+              - generic [ref=e66]:
+                - generic [ref=e67]:
+                  - generic [ref=e68]: Active tickets
+                  - generic [ref=e69]: "-9%"
+                - paragraph [ref=e70]: "38"
+              - generic [ref=e71]:
+                - generic [ref=e72]:
+                  - generic [ref=e73]: Compliance score
+                  - generic [ref=e74]: Stable
+                - paragraph [ref=e75]: "98.7"
+          - generic [ref=e77]:
+            - generic [ref=e78]:
+              - heading "System modules" [level=2] [ref=e79]
+              - paragraph [ref=e80]: Pick the modules you need today and grow into new workflows without replatforming your asset register.
+            - generic [ref=e81]:
+              - generic [ref=e82]:
+                - heading "Asset registry" [level=4] [ref=e83]
+                - paragraph [ref=e84]: Centralize IT and fixed assets with QR labels, ownership history, and depreciation fields.
+              - generic [ref=e85]:
+                - heading "Property directory" [level=4] [ref=e86]
+                - paragraph [ref=e87]: Organize assets by site, branch, or facility with map-ready location metadata.
+              - generic [ref=e88]:
+                - heading "Audit center" [level=4] [ref=e89]
+                - paragraph [ref=e90]: Coordinate verification drives, capture evidence, and resolve missing items fast.
+              - generic [ref=e91]:
+                - heading "Help desk" [level=4] [ref=e92]
+                - paragraph [ref=e93]: Log repairs and requests with SLA awareness and a clear status trail.
+              - generic [ref=e94]:
+                - heading "Analytics" [level=4] [ref=e95]
+                - paragraph [ref=e96]: Track asset value, utilization trends, and compliance status in real time.
+              - generic [ref=e97]:
+                - heading "Approvals" [level=4] [ref=e98]
+                - paragraph [ref=e99]: Route sensitive actions through role-based approvals and audit-ready signoffs.
+          - generic [ref=e102]:
+            - generic [ref=e103]:
+              - heading "Reliable by design" [level=3] [ref=e104]
+              - list [ref=e105]:
+                - listitem [ref=e106]:
+                  - generic [ref=e107]: "Testing:"
+                  - text: Core modules ship with component-level tests for every release.
+                - listitem [ref=e108]:
+                  - generic [ref=e109]: "Accessibility:"
+                  - text: Keyboard-first flows and ARIA defaults keep teams efficient.
+                - listitem [ref=e110]:
+                  - generic [ref=e111]: "Observability:"
+                  - text: Every status change and approval is captured in audit trails.
+            - generic [ref=e112]:
+              - heading "Support & governance" [level=3] [ref=e113]
+              - generic [ref=e114]:
+                - paragraph [ref=e115]:
+                  - text: Email
+                  - link "support@folonite.in" [ref=e116] [cursor=pointer]:
+                    - /url: mailto:support@folonite.in
+                  - text: for implementation planning, onboarding guidance, or security reviews.
+                - paragraph [ref=e117]: We provide rollout checklists, asset import templates, and dedicated stakeholder walkthroughs.
+          - generic [ref=e121]:
+            - generic [ref=e122]:
+              - heading "See Folonite in action." [level=2] [ref=e123]
+              - paragraph [ref=e124]: Experience the full workflow in the demo environment and share it with your finance, operations, or audit stakeholders.
+              - link "Access demo environment" [ref=e125] [cursor=pointer]:
+                - /url: /demo/login
+            - generic [ref=e126]:
+              - heading "Demo credentials" [level=3] [ref=e127]
+              - generic [ref=e128]:
+                - generic [ref=e129]:
+                  - generic [ref=e130]: Email
+                  - code [ref=e131]: demo@folonite.in
+                - generic [ref=e132]:
+                  - generic [ref=e133]: Password
+                  - code [ref=e134]: demo@123
+              - paragraph [ref=e135]: Demo data resets regularly to keep the experience clean and relevant.
+      - contentinfo [ref=e136]:
+        - generic [ref=e137]:
+          - generic [ref=e138]:
+            - generic [ref=e139]: Folonite
+            - paragraph [ref=e140]: Calm, compliant asset operations for distributed teams.
+          - generic [ref=e141]:
+            - generic [ref=e142]:
+              - generic [ref=e143]: Product
+              - link "Features" [ref=e144] [cursor=pointer]:
+                - /url: "#features"
+              - link "Modules" [ref=e145] [cursor=pointer]:
+                - /url: "#modules"
+              - link "Demo" [ref=e146] [cursor=pointer]:
+                - /url: "#demo"
+            - generic [ref=e147]:
+              - generic [ref=e148]: Support
+              - link "Contact" [ref=e149] [cursor=pointer]:
+                - /url: mailto:support@folonite.in
+        - paragraph [ref=e151]: © 2026 Folonite. All rights reserved.
