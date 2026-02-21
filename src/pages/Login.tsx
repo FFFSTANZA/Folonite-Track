@@ -342,8 +342,8 @@ export default function Login() {
       <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
         <div className="mx-auto w-full max-w-sm lg:w-96">
           <div className="mb-10">
-            <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-primary/5 p-3 shadow-sm ring-1 ring-inset ring-primary/10">
-              <span className="text-2xl font-bold text-primary">FT</span>
+            <div className="mb-6">
+              <span className="text-2xl font-semibold tracking-tight text-[#111111]">Folonite</span>
             </div>
             <h2 className="text-3xl font-bold tracking-tight text-foreground">Welcome back</h2>
             <p className="mt-2 text-sm text-muted-foreground">
@@ -413,7 +413,7 @@ export default function Login() {
               <Button
                 type="submit"
                 disabled={loading}
-                className="h-11 w-full text-base font-medium transition-all hover:scale-[1.02] active:scale-[0.98]"
+                className="h-11 w-full rounded-full bg-[#111111] text-sm font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-all hover:opacity-90"
               >
                 {loading ? "Signing in..." : "Sign in"}
               </Button>
@@ -429,10 +429,9 @@ export default function Login() {
             </div>
 
             <Button
-              variant="outline"
               type="button"
               onClick={() => navigate("/scan")}
-              className="h-11 w-full border-muted bg-background hover:bg-muted/50"
+              className="h-11 w-full rounded-full bg-[#EAEAEA] text-sm font-medium text-[#111111] shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-80"
             >
               <QrCode className="mr-2 h-4 w-4" />
               Scan QR Code
@@ -487,7 +486,7 @@ export default function Login() {
                 </div>
                 <Button
                   type="submit"
-                  className="h-11 w-full rounded-xl bg-primary text-primary-foreground shadow-soft transition hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 disabled:opacity-60"
+                  className="h-11 w-full rounded-full bg-[#111111] text-sm font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition hover:opacity-90 disabled:opacity-60"
                   disabled={requestingCode}
                 >
                   {requestingCode ? "Sending…" : "Send security code"}
@@ -536,7 +535,7 @@ export default function Login() {
                 </div>
                 <Button
                   type="submit"
-                  className="h-11 w-full rounded-xl bg-primary text-primary-foreground shadow-soft transition hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 disabled:opacity-60"
+                  className="h-11 w-full rounded-full bg-[#111111] text-sm font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition hover:opacity-90 disabled:opacity-60"
                   disabled={otpLoading}
                 >
                   {otpLoading ? "Verifying…" : "Confirm identity"}
@@ -580,7 +579,7 @@ export default function Login() {
                 </div>
                 <Button
                   type="submit"
-                  className="h-11 w-full rounded-xl bg-primary text-primary-foreground shadow-soft transition hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 disabled:opacity-60"
+                  className="h-11 w-full rounded-full bg-[#111111] text-sm font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition hover:opacity-90 disabled:opacity-60"
                   disabled={passwordLoading}
                 >
                   {passwordLoading ? "Updating…" : "Save & continue"}

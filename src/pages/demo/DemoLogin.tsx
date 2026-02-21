@@ -33,6 +33,7 @@ export default function DemoLogin() {
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-background via-background/85 to-transparent" />
         <div className="relative z-10 flex h-full flex-col justify-between p-10">
           <div className="max-w-[200px]">
+            <span className="text-2xl font-semibold tracking-tight text-[#111111]">Folonite</span>
           </div>
           <p className="text-xs text-foreground/70">
             © {currentYear} Folonite Demo. Experience the platform risk-free.
@@ -57,6 +58,9 @@ export default function DemoLogin() {
           </div>
           <Card className="rounded-2xl border border-border/60 bg-card/95 shadow-soft">
             <CardHeader className="space-y-2 text-center">
+              <div className="mb-4">
+                <span className="text-2xl font-semibold tracking-tight text-[#111111]">Folonite</span>
+              </div>
               <CardTitle className="text-2xl font-semibold">Demo Login</CardTitle>
               <p className="text-sm text-muted-foreground">
                 Use the prefilled credentials or tweak them to simulate sign-in.
@@ -93,7 +97,7 @@ export default function DemoLogin() {
                   <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
                 {error && <p className="text-sm text-destructive">{error}</p>}
-                <Button type="submit" className="w-full">Sign in to Demo</Button>
+                <Button type="submit" className="h-11 w-full rounded-full bg-[#111111] text-sm font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-90">Sign in to Demo</Button>
               </form>
             </CardContent>
           </Card>

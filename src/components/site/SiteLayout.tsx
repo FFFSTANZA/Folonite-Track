@@ -6,7 +6,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-[#111111] focus:px-4 focus:py-2 focus:text-white">
         Skip to content
       </a>
-      <header className="sticky top-0 z-50 w-full bg-transparent">
+      <header className="sticky top-0 z-50 w-full bg-[#F3F4F6] border-b border-[rgba(0,0,0,0.04)]">
         <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-6">
           <a href="/" className="flex items-center gap-2">
             <span className="text-lg font-semibold tracking-tight">Folonite</span>
@@ -20,7 +20,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
           <div className="flex items-center">
             <a
               href="/login"
-              className="inline-flex items-center justify-center rounded-full bg-[#111111] px-6 py-2.5 text-sm font-medium text-white shadow-[0_8px_20px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-90"
+              className="inline-flex items-center justify-center rounded-full bg-[#111111] px-5 py-2.5 text-sm font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-90"
             >
               Login
             </a>

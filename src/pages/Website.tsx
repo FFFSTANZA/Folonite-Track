@@ -72,13 +72,13 @@ export default function Website() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 to="/login"
-                className="inline-flex items-center justify-center rounded-full bg-[#111111] px-7 py-3.5 text-sm font-medium text-white shadow-[0_8px_20px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-90"
+                className="inline-flex items-center justify-center rounded-full bg-[#111111] px-5 py-2.5 text-sm font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-90"
               >
                 Access the platform
               </Link>
               <a
                 href="#features"
-                className="inline-flex items-center justify-center rounded-full bg-[#EAEAEA] px-7 py-3.5 text-sm font-medium text-[#111111] shadow-[0_8px_20px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-80"
+                className="inline-flex items-center justify-center rounded-full bg-[#EAEAEA] px-5 py-2.5 text-sm font-medium text-[#111111] shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-80"
               >
                 Explore capabilities
               </a>
@@ -266,7 +266,7 @@ export default function Website() {
                   </p>
                   <Link
                     to="/demo/login"
-                    className="mt-8 inline-flex items-center justify-center rounded-full bg-[#111111] px-7 py-3.5 text-sm font-medium text-white shadow-[0_8px_20px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-90"
+                    className="mt-8 inline-flex items-center justify-center rounded-full bg-[#111111] px-5 py-2.5 text-sm font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-90"
                   >
                     Access demo environment
                   </Link>
