@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { useState } from "react";
 
 const BaseUrl = "https://folonite.in";
 const HeroDescription =
@@ -33,6 +35,8 @@ const structuredData = {
 };
 
 export default function Website() {
+  const [activeTab, setActiveTab] = useState("overview");
+
   return (
     <SiteLayout>
       <Helmet>
@@ -128,40 +132,143 @@ export default function Website() {
 
         <section className="py-20 lg:py-28">
           <div className="mx-auto w-full max-w-7xl px-6">
-            <div className="grid items-center gap-12 lg:grid-cols-[1fr,1.2fr]">
-              <div className="space-y-6">
-                <span className="text-xs font-medium uppercase tracking-[0.28em] text-[#2563EB]">
-                  Dashboard preview
-                </span>
-                <h2 className="text-3xl font-semibold text-[#111111] md:text-4xl">
-                  See the health of your asset portfolio at a glance.
-                </h2>
-                <p className="text-[17px] leading-[1.6] text-[#6B7280]">
-                  Live metrics surface what matters most: utilization, audit progress, and outstanding
-                  maintenance, all in a single view.
-                </p>
-              </div>
-              <div className="rounded-3xl bg-[#F3F4F6] p-6 lg:p-8">
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                  {[
-                    { label: "Assets tracked", value: "14,832", trend: "+12%" },
-                    { label: "Audit completion", value: "96%", trend: "On track" },
-                    { label: "Active tickets", value: "38", trend: "-9%" },
-                    { label: "Compliance score", value: "98.7", trend: "Stable" },
-                  ].map((metric) => (
-                    <div
-                      key={metric.label}
-                      className="flex flex-col justify-between rounded-2xl bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)] h-full"
-                    >
-                      <div className="flex items-center justify-between text-xs font-medium text-[#6B7280] mb-4">
-                        <span>{metric.label}</span>
-                        <span className="text-[#2563EB]">{metric.trend}</span>
+            <div className="mb-8 space-y-4">
+              <span className="text-xs font-medium uppercase tracking-[0.28em] text-[#2563EB]">
+                Dashboard preview
+              </span>
+              <h2 className="text-3xl font-semibold text-[#111111] md:text-4xl">
+                See the health of your asset portfolio at a glance.
+              </h2>
+              <p className="text-[17px] leading-[1.6] text-[#6B7280]">
+                Live metrics surface what matters most: utilization, audit progress, and outstanding
+                maintenance, all in a single view.
+              </p>
+            </div>
+            <div className="rounded-3xl bg-[#F3F4F6] p-6 lg:p-8">
+              <Tabs defaultValue="overview" className="w-full">
+                <TabsList className="inline-flex h-10 items-center justify-center rounded-lg bg-white p-1 text-[#6B7280] mb-6 shadow-sm">
+                  <TabsTrigger
+                    value="overview"
+                    className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-[#111111] data-[state=active]:text-white data-[state=active]:shadow-sm"
+                  >
+                    Overview
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="assets"
+                    className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-[#111111] data-[state=active]:text-white data-[state=active]:shadow-sm"
+                  >
+                    Assets
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="audit"
+                    className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-[#111111] data-[state=active]:text-white data-[state=active]:shadow-sm"
+                  >
+                    Audit
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="tickets"
+                    className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-[#111111] data-[state=active]:text-white data-[state=active]:shadow-sm"
+                  >
+                    Tickets
+                  </TabsTrigger>
+                </TabsList>
+
+                <TabsContent value="overview" className="mt-0">
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                    {[
+                      { label: "Assets tracked", value: "14,832", trend: "+12%" },
+                      { label: "Audit completion", value: "96%", trend: "On track" },
+                      { label: "Active tickets", value: "38", trend: "-9%" },
+                      { label: "Compliance score", value: "98.7", trend: "Stable" },
+                    ].map((metric) => (
+                      <div
+                        key={metric.label}
+                        className="flex flex-col justify-between rounded-2xl bg-white p-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] h-full min-h-[120px]"
+                      >
+                        <div className="flex items-start justify-between">
+                          <span className="text-xs font-medium text-[#6B7280]">{metric.label}</span>
+                          <span className="text-xs font-semibold text-[#2563EB]">{metric.trend}</span>
+                        </div>
+                        <p className="mt-4 text-2xl font-semibold text-[#111111]">{metric.value}</p>
                       </div>
-                      <p className="text-2xl font-semibold text-[#111111]">{metric.value}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+                    ))}
+                  </div>
+                </TabsContent>
+
+                <TabsContent value="assets" className="mt-0">
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {[
+                      { label: "Total assets", value: "14,832", icon: "📦" },
+                      { label: "By category", value: "8", icon: "📂" },
+                      { label: "By location", value: "12", icon: "📍" },
+                      { label: "Active", value: "12,456", icon: "✅" },
+                      { label: "Under maintenance", value: "1,234", icon: "🔧" },
+                      { label: "Retired", value: "1,142", icon: "🗑️" },
+                    ].map((metric) => (
+                      <div
+                        key={metric.label}
+                        className="flex items-center gap-4 rounded-2xl bg-white p-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] h-full"
+                      >
+                        <span className="text-2xl">{metric.icon}</span>
+                        <div className="flex-1">
+                          <p className="text-xs font-medium text-[#6B7280]">{metric.label}</p>
+                          <p className="mt-1 text-xl font-semibold text-[#111111]">{metric.value}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </TabsContent>
+
+                <TabsContent value="audit" className="mt-0">
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                    {[
+                      { label: "Active audits", value: "3", status: "In progress" },
+                      { label: "Completion rate", value: "94%", status: "On track" },
+                      { label: "Items verified", value: "13,942", status: "+8%" },
+                      { label: "Discrepancies", value: "24", status: "Attention" },
+                    ].map((metric) => (
+                      <div
+                        key={metric.label}
+                        className="flex flex-col justify-between rounded-2xl bg-white p-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] h-full min-h-[120px]"
+                      >
+                        <div className="flex items-start justify-between">
+                          <span className="text-xs font-medium text-[#6B7280]">{metric.label}</span>
+                          <span className={`text-xs font-semibold ${
+                            metric.status === "Attention" ? "text-amber-600" :
+                            metric.status === "On track" ? "text-emerald-600" :
+                            "text-[#2563EB]"
+                          }`}>{metric.status}</span>
+                        </div>
+                        <p className="mt-4 text-2xl font-semibold text-[#111111]">{metric.value}</p>
+                      </div>
+                    ))}
+                  </div>
+                </TabsContent>
+
+                <TabsContent value="tickets" className="mt-0">
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {[
+                      { label: "Open tickets", value: "38", priority: "High: 12" },
+                      { label: "In progress", value: "24", priority: "Medium: 15" },
+                      { label: "Resolved (7d)", value: "156", priority: "Low: 11" },
+                      { label: "Avg. response", value: "2.4h", priority: "Target: 4h" },
+                      { label: "SLA compliance", value: "98%", priority: "Above target" },
+                      { label: "Escalated", value: "3", priority: "Requires action" },
+                    ].map((metric) => (
+                      <div
+                        key={metric.label}
+                        className="flex flex-col justify-between rounded-2xl bg-white p-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] h-full min-h-[120px]"
+                      >
+                        <div className="flex items-start justify-between">
+                          <span className="text-xs font-medium text-[#6B7280]">{metric.label}</span>
+                          <span className="text-xs font-semibold text-[#2563EB]">{metric.priority}</span>
+                        </div>
+                        <p className="mt-4 text-2xl font-semibold text-[#111111]">{metric.value}</p>
+                      </div>
+                    ))}
+                  </div>
+                </TabsContent>
+              </Tabs>
             </div>
           </div>
         </section>
