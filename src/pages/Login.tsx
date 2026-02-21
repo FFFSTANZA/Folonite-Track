@@ -326,14 +326,14 @@ export default function Login() {
   };
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center bg-[#F6F6F6] px-4 py-12">
+    <div className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-primary/5 via-primary/10 to-background px-4 py-12">
       <div className="w-full max-w-md">
         <div className="mb-10 text-center">
           <div className="mb-6">
-            <span className="text-3xl font-serif font-medium tracking-tight text-[#111111]">Folonite</span>
+            <span className="text-3xl font-serif font-medium tracking-tight text-foreground">Folonite</span>
           </div>
-          <h2 className="font-serif text-3xl font-medium tracking-tight text-[#111111]">Welcome back</h2>
-          <p className="mt-3 text-[17px] leading-[1.6] text-[#6B7280]">
+          <h2 className="font-serif text-3xl font-medium tracking-tight text-foreground">Welcome back</h2>
+          <p className="mt-3 text-[17px] leading-[1.6] text-muted-foreground">
             Please sign in to your account to continue.
           </p>
         </div>
@@ -341,7 +341,7 @@ export default function Login() {
           <div className="space-y-6">
             <form onSubmit={handleLogin} className="space-y-5">
               <div className="space-y-2">
-                <Label htmlFor="email" className="text-sm font-medium text-[#111111]">
+                <Label htmlFor="email" className="text-sm font-medium text-foreground">
                   Email or Username
                 </Label>
                 <Input
@@ -351,19 +351,19 @@ export default function Login() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   autoFocus
-                  className="h-11 rounded-xl border border-[rgba(0,0,0,0.08)] bg-white px-4 transition-all focus:bg-white focus:ring-2 focus:ring-[#111111]/10 focus:border-[#111111]/20"
+                  className="h-11 rounded-xl border border-border/60 bg-background px-4 transition-all focus:bg-background focus:ring-2 focus:ring-primary/10 focus:border-primary/20"
                 />
               </div>
 
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="password" className="text-sm font-medium text-[#111111]">
+                  <Label htmlFor="password" className="text-sm font-medium text-foreground">
                     Password
                   </Label>
                   <button
                     type="button"
                     onClick={handleForgotPassword}
-                    className="text-xs font-medium text-[#2563EB] hover:opacity-70"
+                    className="text-xs font-medium text-primary hover:opacity-70"
                   >
                     Forgot password?
                   </button>
@@ -375,12 +375,12 @@ export default function Login() {
                     placeholder="••••••••"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="h-11 rounded-xl border border-[rgba(0,0,0,0.08)] bg-white px-4 pr-10 transition-all focus:bg-white focus:ring-2 focus:ring-[#111111]/10 focus:border-[#111111]/20"
+                    className="h-11 rounded-xl border border-border/60 bg-background px-4 pr-10 transition-all focus:bg-background focus:ring-2 focus:ring-primary/10 focus:border-primary/20"
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-0 top-0 flex h-full w-10 items-center justify-center text-[#6B7280] hover:text-[#111111]"
+                    className="absolute right-0 top-0 flex h-full w-10 items-center justify-center text-muted-foreground hover:text-foreground"
                   >
                     {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                   </button>
@@ -391,7 +391,7 @@ export default function Login() {
                 <Checkbox id="remember" />
                 <label
                   htmlFor="remember"
-                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-[#6B7280]"
+                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-muted-foreground"
                 >
                   Remember me for 30 days
                 </label>
@@ -400,7 +400,7 @@ export default function Login() {
               <Button
                 type="submit"
                 disabled={loading}
-                className="h-11 w-full rounded-full bg-[#111111] text-sm font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-90"
+                className="h-11 w-full rounded-full bg-primary text-sm font-medium text-primary-foreground shadow-soft transition-opacity hover:opacity-90"
               >
                 {loading ? "Signing in..." : "Sign in"}
               </Button>
@@ -408,24 +408,24 @@ export default function Login() {
 
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
-                <span className="w-full border-t border-[rgba(0,0,0,0.08)]" />
+                <span className="w-full border-t border-border/60" />
               </div>
               <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-[#F6F6F6] px-2 text-[#6B7280]">Or continue with</span>
+                <span className="bg-gradient-to-br from-primary/5 via-primary/10 to-background px-2 text-muted-foreground">Or continue with</span>
               </div>
             </div>
 
             <Button
               type="button"
               onClick={() => navigate("/scan")}
-              className="h-11 w-full rounded-full bg-[#EAEAEA] text-sm font-medium text-[#111111] shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-80"
+              className="h-11 w-full rounded-full bg-muted text-sm font-medium text-foreground shadow-soft transition-opacity hover:opacity-80"
             >
               <QrCode className="mr-2 h-4 w-4" />
               Scan QR Code
             </Button>
           </div>
 
-          <p className="mt-10 text-center text-xs text-[#6B7280]">
+          <p className="mt-10 text-center text-xs text-muted-foreground">
             © {currentYear} Folonite. All rights reserved.
           </p>
       </div>
@@ -442,10 +442,10 @@ export default function Login() {
           }
         }}
       >
-        <DialogContent className="w-[calc(100vw-2rem)] max-w-md rounded-2xl border border-[rgba(0,0,0,0.08)] bg-white p-0 shadow-2xl sm:w-full">
-          <DialogHeader className="space-y-1 border-b border-[rgba(0,0,0,0.08)] px-6 py-5 text-left">
-            <DialogTitle className="text-lg font-semibold text-[#111111]">Reset your access</DialogTitle>
-            <DialogDescription className="text-sm text-[#6B7280]">
+        <DialogContent className="w-[calc(100vw-2rem)] max-w-md rounded-2xl border border-border/60 bg-card p-0 shadow-2xl sm:w-full">
+          <DialogHeader className="space-y-1 border-b border-border/60 px-6 py-5 text-left">
+            <DialogTitle className="text-lg font-semibold text-foreground">Reset your access</DialogTitle>
+            <DialogDescription className="text-sm text-muted-foreground">
               {resetStep === "email"
                 ? "Security check before we let you back in."
                 : resetStep === "code"
@@ -457,7 +457,7 @@ export default function Login() {
             {resetStep === "email" && (
               <form onSubmit={handleSendResetEmail} className="space-y-6">
                 <div className="space-y-2">
-                  <Label htmlFor="reset-email" className="text-xs uppercase tracking-wide text-[#6B7280]">
+                  <Label htmlFor="reset-email" className="text-xs uppercase tracking-wide text-muted-foreground">
                     Work Email
                   </Label>
                   <Input
@@ -467,12 +467,12 @@ export default function Login() {
                     value={resetEmail}
                     onChange={(e) => setResetEmail(e.target.value)}
                     placeholder="you@company.com"
-                    className="h-11 rounded-xl border border-[rgba(0,0,0,0.08)] bg-white focus-visible:ring-[#111111]/10"
+                    className="h-11 rounded-xl border border-border/60 bg-background focus-visible:ring-primary/10"
                   />
                 </div>
                 <Button
                   type="submit"
-                  className="h-11 w-full rounded-full bg-[#111111] text-sm font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-90 disabled:opacity-60"
+                  className="h-11 w-full rounded-full bg-primary text-sm font-medium text-primary-foreground shadow-soft transition-opacity hover:opacity-90 disabled:opacity-60"
                   disabled={requestingCode}
                 >
                   {requestingCode ? "Sending…" : "Send security code"}
@@ -482,17 +482,17 @@ export default function Login() {
 
             {resetStep === "code" && (
               <form onSubmit={handleVerifyCode} className="space-y-6">
-                <div className="space-y-2 text-sm text-[#6B7280]">
+                <div className="space-y-2 text-sm text-muted-foreground">
                   <p className="leading-relaxed">
                     A one-time passcode was sent to{" "}
-                    <span className="font-medium text-[#111111]">
+                    <span className="font-medium text-foreground">
                       {maskedEmail || maskEmailAddress(resetEmail)}
                     </span>
                     . It remains valid for the next {PASSWORD_RESET_CODE_TTL_MINUTES} minutes.
                   </p>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="reset-code" className="text-xs uppercase tracking-wide text-[#6B7280]">
+                  <Label htmlFor="reset-code" className="text-xs uppercase tracking-wide text-muted-foreground">
                     Passcode
                   </Label>
                   <Input
@@ -503,25 +503,25 @@ export default function Login() {
                     onChange={(e) => setOtpCode(e.target.value.replace(/\D/g, ""))}
                     placeholder="••••••"
                     autoFocus
-                    className="h-11 rounded-xl border border-[rgba(0,0,0,0.08)] bg-white text-center tracking-[0.6em] text-lg font-semibold focus-visible:ring-[#111111]/10"
+                    className="h-11 rounded-xl border border-border/60 bg-background text-center tracking-[0.6em] text-lg font-semibold focus-visible:ring-primary/10"
                   />
                 </div>
-                <div className="flex items-center justify-between text-xs text-[#6B7280]">
-                  <span className="rounded-full border border-dashed border-[rgba(0,0,0,0.15)] px-3 py-1">
-                    Attempts remaining: <span className="font-semibold text-[#111111]">{attemptsRemaining}</span>
+                <div className="flex items-center justify-between text-xs text-muted-foreground">
+                  <span className="rounded-full border border-dashed border-border px-3 py-1">
+                    Attempts remaining: <span className="font-semibold text-foreground">{attemptsRemaining}</span>
                   </span>
                   <button
                     type="button"
                     onClick={handleResendCode}
                     disabled={requestingCode || cooldown > 0}
-                    className="font-medium text-[#2563EB] transition-opacity hover:opacity-70 disabled:cursor-not-allowed disabled:opacity-60"
+                    className="font-medium text-primary transition-opacity hover:opacity-70 disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {cooldown > 0 ? `Resend in ${cooldown}s` : "Resend code"}
                   </button>
                 </div>
                 <Button
                   type="submit"
-                  className="h-11 w-full rounded-full bg-[#111111] text-sm font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-90 disabled:opacity-60"
+                  className="h-11 w-full rounded-full bg-primary text-sm font-medium text-primary-foreground shadow-soft transition-opacity hover:opacity-90 disabled:opacity-60"
                   disabled={otpLoading}
                 >
                   {otpLoading ? "Verifying…" : "Confirm identity"}
@@ -531,15 +531,15 @@ export default function Login() {
 
             {resetStep === "password" && (
               <form onSubmit={handleResetPassword} className="space-y-6">
-                <div className="space-y-1 text-sm text-[#6B7280] leading-relaxed">
+                <div className="space-y-1 text-sm text-muted-foreground leading-relaxed">
                   <p>
                     You’re updating credentials for{" "}
-                    <span className="font-medium text-[#111111]">{maskEmailAddress(resetEmail)}</span>.
+                    <span className="font-medium text-foreground">{maskEmailAddress(resetEmail)}</span>.
                   </p>
                   <p>Use a phrase that mixes letters, numbers, and symbols.</p>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="new-password" className="text-xs uppercase tracking-wide text-[#6B7280]">
+                  <Label htmlFor="new-password" className="text-xs uppercase tracking-wide text-muted-foreground">
                     New password
                   </Label>
                   <Input
@@ -548,11 +548,11 @@ export default function Login() {
                     value={newPasswordValue}
                     onChange={(e) => setNewPasswordValue(e.target.value)}
                     autoFocus
-                    className="h-11 rounded-xl border border-[rgba(0,0,0,0.08)] bg-white focus-visible:ring-[#111111]/10"
+                    className="h-11 rounded-xl border border-border/60 bg-background focus-visible:ring-primary/10"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="confirm-password" className="text-xs uppercase tracking-wide text-[#6B7280]">
+                  <Label htmlFor="confirm-password" className="text-xs uppercase tracking-wide text-muted-foreground">
                     Confirm password
                   </Label>
                   <Input
@@ -560,12 +560,12 @@ export default function Login() {
                     type="password"
                     value={confirmPasswordValue}
                     onChange={(e) => setConfirmPasswordValue(e.target.value)}
-                    className="h-11 rounded-xl border border-[rgba(0,0,0,0.08)] bg-white focus-visible:ring-[#111111]/10"
+                    className="h-11 rounded-xl border border-border/60 bg-background focus-visible:ring-primary/10"
                   />
                 </div>
                 <Button
                   type="submit"
-                  className="h-11 w-full rounded-full bg-[#111111] text-sm font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-90 disabled:opacity-60"
+                  className="h-11 w-full rounded-full bg-primary text-sm font-medium text-primary-foreground shadow-soft transition-opacity hover:opacity-90 disabled:opacity-60"
                   disabled={passwordLoading}
                 >
                   {passwordLoading ? "Updating…" : "Save & continue"}
@@ -573,9 +573,9 @@ export default function Login() {
               </form>
             )}
           </div>
-          <DialogFooter className="px-6 pb-5 text-xs text-[#6B7280]">
+          <DialogFooter className="px-6 pb-5 text-xs text-muted-foreground">
             Need a hand? Reach your Folonite admin or email{" "}
-            <span className="font-medium text-[#111111]">support@folonitetrack.in</span>.
+            <span className="font-medium text-foreground">support@folonitetrack.in</span>.
           </DialogFooter>
         </DialogContent>
       </Dialog>
