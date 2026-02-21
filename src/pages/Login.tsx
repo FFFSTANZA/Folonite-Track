@@ -326,30 +326,17 @@ export default function Login() {
   };
 
   return (
-    <div className="flex min-h-screen w-full bg-background">
-      {/* Left Panel - Visual */}
-      <div className="relative hidden w-0 flex-1 lg:block">
-        <img
-          src="/login_image.png"
-          alt="Folonite Workspace"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-background/40 via-background/55 to-primary/25" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-background via-background/85 to-transparent" />
-      </div>
-
-      {/* Right Panel - Form */}
-      <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
-        <div className="mx-auto w-full max-w-sm lg:w-96">
-          <div className="mb-10">
-            <div className="mb-6">
-              <span className="text-2xl font-semibold tracking-tight text-[#111111]">Folonite</span>
-            </div>
-            <h2 className="text-3xl font-bold tracking-tight text-foreground">Welcome back</h2>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Please sign in to your account to continue.
-            </p>
+    <div className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-primary/5 via-primary/10 to-background px-4 py-12">
+      <div className="w-full max-w-md">
+        <div className="mb-10 text-center">
+          <div className="mb-6">
+            <span className="text-3xl font-serif font-medium tracking-tight text-[#111111]">Folonite</span>
           </div>
+          <h2 className="font-serif text-3xl font-medium tracking-tight text-foreground">Welcome back</h2>
+          <p className="mt-3 text-[17px] leading-[1.6] text-muted-foreground">
+            Please sign in to your account to continue.
+          </p>
+        </div>
 
           <div className="space-y-6">
             <form onSubmit={handleLogin} className="space-y-5">
@@ -441,7 +428,6 @@ export default function Login() {
           <p className="mt-10 text-center text-xs text-muted-foreground">
             © {currentYear} Folonite. All rights reserved.
           </p>
-        </div>
       </div>
 
       <Dialog

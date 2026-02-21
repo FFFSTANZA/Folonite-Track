@@ -141,8 +141,8 @@ export default function Website() {
                   maintenance, all in a single view.
                 </p>
               </div>
-              <div className="rounded-3xl bg-[#F3F4F6] p-8">
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="rounded-3xl bg-[#F3F4F6] p-6 lg:p-8">
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                   {[
                     { label: "Assets tracked", value: "14,832", trend: "+12%" },
                     { label: "Audit completion", value: "96%", trend: "On track" },
@@ -151,13 +151,13 @@ export default function Website() {
                   ].map((metric) => (
                     <div
                       key={metric.label}
-                      className="rounded-2xl bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+                      className="flex flex-col justify-between rounded-2xl bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)] h-full"
                     >
-                      <div className="flex items-center justify-between text-xs font-medium text-[#6B7280]">
+                      <div className="flex items-center justify-between text-xs font-medium text-[#6B7280] mb-4">
                         <span>{metric.label}</span>
                         <span className="text-[#2563EB]">{metric.trend}</span>
                       </div>
-                      <p className="mt-4 text-2xl font-semibold text-[#111111]">{metric.value}</p>
+                      <p className="text-2xl font-semibold text-[#111111]">{metric.value}</p>
                     </div>
                   ))}
                 </div>
