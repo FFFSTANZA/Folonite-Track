@@ -61,14 +61,14 @@ export default function Website() {
       <div className="flex flex-col">
         <section id="overview" className="pt-32 pb-20 lg:pt-40">
           <div className="mx-auto flex w-full max-w-7xl flex-col items-center px-6 text-center">
-            <span className="text-xs font-medium uppercase tracking-[0.28em] text-[#6B7280]">
+            <span className="text-xs font-medium uppercase tracking-[0.28em] text-muted-foreground">
               Smart asset management
             </span>
             <div className="mt-6 space-y-6">
-              <h1 className="max-w-4xl font-serif text-[clamp(3.5rem,6vw,5rem)] font-medium leading-[1.1] tracking-[-0.5px] text-[#111111]">
+              <h1 className="max-w-4xl font-serif text-[clamp(3.5rem,6vw,5rem)] font-medium leading-[1.1] tracking-[-0.5px] text-foreground">
                 Asset operations, beautifully organized.
               </h1>
-              <p className="mx-auto max-w-[700px] text-[17px] leading-[1.6] text-[#333333]">
+              <p className="mx-auto max-w-[700px] text-[17px] leading-[1.6] text-muted-foreground">
                 Folonite keeps every asset, audit, and approval in one place. Track ownership in real time,
                 verify inventory with QR workflows, and keep finance aligned without the spreadsheet chaos.
               </p>
@@ -76,13 +76,13 @@ export default function Website() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 to="/login"
-                className="inline-flex items-center justify-center rounded-full bg-[#111111] px-5 py-2.5 text-sm font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-90"
+                className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft transition-opacity hover:opacity-90"
               >
                 Access the platform
               </Link>
               <a
                 href="#features"
-                className="inline-flex items-center justify-center rounded-full bg-[#EAEAEA] px-5 py-2.5 text-sm font-medium text-[#111111] shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-80"
+                className="inline-flex items-center justify-center rounded-full bg-muted px-5 py-2.5 text-sm font-medium text-foreground shadow-soft transition-opacity hover:opacity-80"
               >
                 Explore capabilities
               </a>
@@ -93,35 +93,35 @@ export default function Website() {
         <section id="features" className="py-20 lg:py-28">
           <div className="mx-auto w-full max-w-7xl px-6">
             <div className="max-w-2xl space-y-4">
-              <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#6B7280]">
+              <p className="text-xs font-medium uppercase tracking-[0.28em] text-muted-foreground">
                 Built for high-trust teams
               </p>
-              <h2 className="text-3xl font-semibold text-[#111111] md:text-4xl">
+              <h2 className="text-3xl font-semibold text-foreground md:text-4xl">
                 Everything you need to run asset programs at scale.
               </h2>
-              <p className="text-[17px] leading-[1.6] text-[#6B7280]">
+              <p className="text-[17px] leading-[1.6] text-muted-foreground">
                 Keep operations, finance, and audit teams in lockstep with shared visibility and automated
                 audit trails.
               </p>
             </div>
             <div className="mt-12 grid gap-12 md:grid-cols-3">
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-[#111111]">Lifecycle clarity</h3>
-                <p className="text-[#6B7280] leading-[1.6]">
+                <h3 className="text-lg font-semibold text-foreground">Lifecycle clarity</h3>
+                <p className="text-muted-foreground leading-[1.6]">
                   See procurement, assignments, maintenance, and end-of-life records in one timeline for
                   every asset.
                 </p>
               </div>
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-[#111111]">Audit-ready verification</h3>
-                <p className="text-[#6B7280] leading-[1.6]">
+                <h3 className="text-lg font-semibold text-foreground">Audit-ready verification</h3>
+                <p className="text-muted-foreground leading-[1.6]">
                   Plan audits by location, scan assets with QR codes, and close gaps with evidence captured
                   in minutes.
                 </p>
               </div>
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-[#111111]">Compliance reporting</h3>
-                <p className="text-[#6B7280] leading-[1.6]">
+                <h3 className="text-lg font-semibold text-foreground">Compliance reporting</h3>
+                <p className="text-muted-foreground leading-[1.6]">
                   Generate depreciation schedules, compliance exports, and audit summaries that finance can
                   rely on.
                 </p>
@@ -133,41 +133,41 @@ export default function Website() {
         <section className="py-20 lg:py-28">
           <div className="mx-auto w-full max-w-7xl px-6">
             <div className="mb-8 space-y-4">
-              <span className="text-xs font-medium uppercase tracking-[0.28em] text-[#2563EB]">
+              <span className="text-xs font-medium uppercase tracking-[0.28em] text-primary">
                 Dashboard preview
               </span>
-              <h2 className="text-3xl font-semibold text-[#111111] md:text-4xl">
+              <h2 className="text-3xl font-semibold text-foreground md:text-4xl">
                 See the health of your asset portfolio at a glance.
               </h2>
-              <p className="text-[17px] leading-[1.6] text-[#6B7280]">
+              <p className="text-[17px] leading-[1.6] text-muted-foreground">
                 Live metrics surface what matters most: utilization, audit progress, and outstanding
                 maintenance, all in a single view.
               </p>
             </div>
-            <div className="rounded-3xl bg-[#F3F4F6] p-6 lg:p-8">
+            <div className="rounded-3xl bg-muted/30 p-6 lg:p-8">
               <Tabs defaultValue="overview" className="w-full">
-                <TabsList className="inline-flex h-10 items-center justify-center rounded-lg bg-white p-1 text-[#6B7280] mb-6 shadow-sm">
+                <TabsList className="inline-flex h-10 items-center justify-center rounded-lg bg-card p-1 text-muted-foreground mb-6 shadow-sm">
                   <TabsTrigger
                     value="overview"
-                    className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-[#111111] data-[state=active]:text-white data-[state=active]:shadow-sm"
+                    className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm"
                   >
                     Overview
                   </TabsTrigger>
                   <TabsTrigger
                     value="assets"
-                    className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-[#111111] data-[state=active]:text-white data-[state=active]:shadow-sm"
+                    className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm"
                   >
                     Assets
                   </TabsTrigger>
                   <TabsTrigger
                     value="audit"
-                    className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-[#111111] data-[state=active]:text-white data-[state=active]:shadow-sm"
+                    className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm"
                   >
                     Audit
                   </TabsTrigger>
                   <TabsTrigger
                     value="tickets"
-                    className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-[#111111] data-[state=active]:text-white data-[state=active]:shadow-sm"
+                    className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm"
                   >
                     Tickets
                   </TabsTrigger>
@@ -183,13 +183,13 @@ export default function Website() {
                     ].map((metric) => (
                       <div
                         key={metric.label}
-                        className="flex flex-col justify-between rounded-2xl bg-white p-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] h-full min-h-[120px]"
+                        className="flex flex-col justify-between rounded-2xl bg-card p-5 shadow-medium h-full min-h-[120px]"
                       >
                         <div className="flex items-start justify-between">
-                          <span className="text-xs font-medium text-[#6B7280]">{metric.label}</span>
-                          <span className="text-xs font-semibold text-[#2563EB]">{metric.trend}</span>
+                          <span className="text-xs font-medium text-muted-foreground">{metric.label}</span>
+                          <span className="text-xs font-semibold text-primary">{metric.trend}</span>
                         </div>
-                        <p className="mt-4 text-2xl font-semibold text-[#111111]">{metric.value}</p>
+                        <p className="mt-4 text-2xl font-semibold text-foreground">{metric.value}</p>
                       </div>
                     ))}
                   </div>
@@ -207,12 +207,12 @@ export default function Website() {
                     ].map((metric) => (
                       <div
                         key={metric.label}
-                        className="flex items-center gap-4 rounded-2xl bg-white p-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] h-full"
+                        className="flex items-center gap-4 rounded-2xl bg-card p-5 shadow-medium h-full"
                       >
                         <span className="text-2xl">{metric.icon}</span>
                         <div className="flex-1">
-                          <p className="text-xs font-medium text-[#6B7280]">{metric.label}</p>
-                          <p className="mt-1 text-xl font-semibold text-[#111111]">{metric.value}</p>
+                          <p className="text-xs font-medium text-muted-foreground">{metric.label}</p>
+                          <p className="mt-1 text-xl font-semibold text-foreground">{metric.value}</p>
                         </div>
                       </div>
                     ))}
@@ -229,17 +229,17 @@ export default function Website() {
                     ].map((metric) => (
                       <div
                         key={metric.label}
-                        className="flex flex-col justify-between rounded-2xl bg-white p-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] h-full min-h-[120px]"
+                        className="flex flex-col justify-between rounded-2xl bg-card p-5 shadow-medium h-full min-h-[120px]"
                       >
                         <div className="flex items-start justify-between">
-                          <span className="text-xs font-medium text-[#6B7280]">{metric.label}</span>
+                          <span className="text-xs font-medium text-muted-foreground">{metric.label}</span>
                           <span className={`text-xs font-semibold ${
                             metric.status === "Attention" ? "text-amber-600" :
                             metric.status === "On track" ? "text-emerald-600" :
-                            "text-[#2563EB]"
+                            "text-primary"
                           }`}>{metric.status}</span>
                         </div>
-                        <p className="mt-4 text-2xl font-semibold text-[#111111]">{metric.value}</p>
+                        <p className="mt-4 text-2xl font-semibold text-foreground">{metric.value}</p>
                       </div>
                     ))}
                   </div>
@@ -257,13 +257,13 @@ export default function Website() {
                     ].map((metric) => (
                       <div
                         key={metric.label}
-                        className="flex flex-col justify-between rounded-2xl bg-white p-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] h-full min-h-[120px]"
+                        className="flex flex-col justify-between rounded-2xl bg-card p-5 shadow-medium h-full min-h-[120px]"
                       >
                         <div className="flex items-start justify-between">
-                          <span className="text-xs font-medium text-[#6B7280]">{metric.label}</span>
-                          <span className="text-xs font-semibold text-[#2563EB]">{metric.priority}</span>
+                          <span className="text-xs font-medium text-muted-foreground">{metric.label}</span>
+                          <span className="text-xs font-semibold text-primary">{metric.priority}</span>
                         </div>
-                        <p className="mt-4 text-2xl font-semibold text-[#111111]">{metric.value}</p>
+                        <p className="mt-4 text-2xl font-semibold text-foreground">{metric.value}</p>
                       </div>
                     ))}
                   </div>
@@ -276,8 +276,8 @@ export default function Website() {
         <section id="modules" className="py-20 lg:py-28">
           <div className="mx-auto w-full max-w-7xl px-6">
             <div className="mb-12 max-w-2xl space-y-4">
-              <h2 className="text-3xl font-semibold text-[#111111] md:text-4xl">System modules</h2>
-              <p className="text-[17px] leading-[1.6] text-[#6B7280]">
+              <h2 className="text-3xl font-semibold text-foreground md:text-4xl">System modules</h2>
+              <p className="text-[17px] leading-[1.6] text-muted-foreground">
                 Pick the modules you need today and grow into new workflows without replatforming your
                 asset register.
               </p>
@@ -312,10 +312,10 @@ export default function Website() {
               ].map((module) => (
                 <div
                   key={module.title}
-                  className="rounded-2xl bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+                  className="rounded-2xl bg-card p-6 shadow-medium"
                 >
-                  <h4 className="text-lg font-semibold text-[#111111]">{module.title}</h4>
-                  <p className="mt-3 text-sm leading-[1.6] text-[#6B7280]">{module.copy}</p>
+                  <h4 className="text-lg font-semibold text-foreground">{module.title}</h4>
+                  <p className="mt-3 text-sm leading-[1.6] text-muted-foreground">{module.copy}</p>
                 </div>
               ))}
             </div>
@@ -326,25 +326,25 @@ export default function Website() {
           <div className="mx-auto w-full max-w-7xl px-6">
             <div className="grid gap-12 md:grid-cols-2">
               <div>
-                <h3 className="text-xl font-semibold text-[#111111]">Reliable by design</h3>
-                <ul className="mt-6 space-y-4 text-[#6B7280]">
+                <h3 className="text-xl font-semibold text-foreground">Reliable by design</h3>
+                <ul className="mt-6 space-y-4 text-muted-foreground">
                   <li className="flex gap-2">
-                    <span className="font-semibold text-[#111111]">Testing:</span> Core modules ship with component-level tests for every release.
+                    <span className="font-semibold text-foreground">Testing:</span> Core modules ship with component-level tests for every release.
                   </li>
                   <li className="flex gap-2">
-                    <span className="font-semibold text-[#111111]">Accessibility:</span> Keyboard-first flows and ARIA defaults keep teams efficient.
+                    <span className="font-semibold text-foreground">Accessibility:</span> Keyboard-first flows and ARIA defaults keep teams efficient.
                   </li>
                   <li className="flex gap-2">
-                    <span className="font-semibold text-[#111111]">Observability:</span> Every status change and approval is captured in audit trails.
+                    <span className="font-semibold text-foreground">Observability:</span> Every status change and approval is captured in audit trails.
                   </li>
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-[#111111]">Support & governance</h3>
-                <div className="mt-6 space-y-4 text-[#6B7280]">
+                <h3 className="text-xl font-semibold text-foreground">Support & governance</h3>
+                <div className="mt-6 space-y-4 text-muted-foreground">
                   <p>
                     Email{" "}
-                    <a href="mailto:support@folonite.in" className="text-[#2563EB] hover:opacity-70">
+                    <a href="mailto:support@folonite.in" className="text-primary hover:opacity-70">
                       support@folonite.in
                     </a>{" "}
                     for implementation planning, onboarding guidance, or security reviews.
@@ -361,36 +361,36 @@ export default function Website() {
 
         <section id="demo" className="py-20 lg:py-28">
           <div className="mx-auto w-full max-w-7xl px-6">
-            <div className="rounded-3xl bg-white p-10 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
+            <div className="rounded-3xl bg-card p-10 shadow-medium">
               <div className="grid gap-10 lg:grid-cols-[1.2fr,0.8fr] lg:items-center">
                 <div>
-                  <h2 className="text-3xl font-semibold text-[#111111] md:text-4xl">
+                  <h2 className="text-3xl font-semibold text-foreground md:text-4xl">
                     See Folonite in action.
                   </h2>
-                  <p className="mt-6 text-[17px] leading-[1.6] text-[#6B7280]">
+                  <p className="mt-6 text-[17px] leading-[1.6] text-muted-foreground">
                     Experience the full workflow in the demo environment and share it with your finance,
                     operations, or audit stakeholders.
                   </p>
                   <Link
                     to="/demo/login"
-                    className="mt-8 inline-flex items-center justify-center rounded-full bg-[#111111] px-5 py-2.5 text-sm font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-90"
+                    className="mt-8 inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft transition-opacity hover:opacity-90"
                   >
                     Access demo environment
                   </Link>
                 </div>
-                <div className="rounded-2xl bg-[#F3F4F6] p-6">
-                  <h3 className="text-sm font-semibold text-[#111111]">Demo credentials</h3>
+                <div className="rounded-2xl bg-muted/30 p-6">
+                  <h3 className="text-sm font-semibold text-foreground">Demo credentials</h3>
                   <div className="mt-4 space-y-3">
-                    <div className="flex items-center justify-between rounded-xl bg-white px-4 py-3 text-sm">
-                      <span className="text-[#6B7280]">Email</span>
-                      <code className="font-mono font-semibold text-[#111111]">demo@folonite.in</code>
+                    <div className="flex items-center justify-between rounded-xl bg-card px-4 py-3 text-sm">
+                      <span className="text-muted-foreground">Email</span>
+                      <code className="font-mono font-semibold text-foreground">demo@folonite.in</code>
                     </div>
-                    <div className="flex items-center justify-between rounded-xl bg-white px-4 py-3 text-sm">
-                      <span className="text-[#6B7280]">Password</span>
-                      <code className="font-mono font-semibold text-[#111111]">demo@123</code>
+                    <div className="flex items-center justify-between rounded-xl bg-card px-4 py-3 text-sm">
+                      <span className="text-muted-foreground">Password</span>
+                      <code className="font-mono font-semibold text-foreground">demo@123</code>
                     </div>
                   </div>
-                  <p className="mt-4 text-xs text-[#6B7280]">
+                  <p className="mt-4 text-xs text-muted-foreground">
                     Demo data resets regularly to keep the experience clean and relevant.
                   </p>
                 </div>
