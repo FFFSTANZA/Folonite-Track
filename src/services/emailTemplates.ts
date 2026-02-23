@@ -48,7 +48,7 @@ function wrapTemplate(content: string, preheader?: string): string {
       background-color: #ffffff;
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 2px 16px rgba(204, 124, 94, 0.08);
+      box-shadow: 0 2px 16px rgba(17, 17, 17, 0.08);
     }
     .email-header {
       background-color: #ffffff;
@@ -144,7 +144,7 @@ function wrapTemplate(content: string, preheader?: string): string {
     .button {
       display: inline-block;
       padding: 14px 32px;
-      background-color: #cc7c5e;
+      background-color: #111111;
       color: #ffffff !important;
       text-decoration: none;
       border-radius: 6px;
@@ -155,7 +155,7 @@ function wrapTemplate(content: string, preheader?: string): string {
       transition: background-color 0.2s ease;
     }
     .button:hover {
-      background-color: #d68b70;
+      background-color: #27272a;
     }
     .success-box {
       background-color: #d4edda;
@@ -191,12 +191,12 @@ function wrapTemplate(content: string, preheader?: string): string {
       font-weight: 600;
     }
     .email-footer a {
-      color: #cc7c5e;
+      color: #111111;
       text-decoration: none;
       transition: color 0.2s ease;
     }
     .email-footer a:hover {
-      color: #d68b70;
+      color: #27272a;
     }
     .footer-links {
       margin-top: 20px;
@@ -229,7 +229,7 @@ function wrapTemplate(content: string, preheader?: string): string {
     <div class="email-container">
       <div class="email-header">
         <div class="logo-container">
-          <span class="text-xl font-bold" style="color: #cc7c5e;">Folonite</span>
+          <span class="text-xl font-bold" style="color: #111111;">Folonite</span>
         </div>
       </div>
       ${content}

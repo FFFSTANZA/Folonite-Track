@@ -330,7 +330,7 @@ export default function Login() {
       <div className="w-full max-w-md">
         <div className="mb-10 text-center">
           <div className="mb-6">
-            <span className="text-3xl font-serif font-medium tracking-tight text-[#111111]">Folonite</span>
+            <span className="text-3xl font-serif font-medium tracking-tight text-foreground">Folonite</span>
           </div>
           <h2 className="font-serif text-3xl font-medium tracking-tight text-foreground">Welcome back</h2>
           <p className="mt-3 text-[17px] leading-[1.6] text-muted-foreground">
@@ -338,96 +338,96 @@ export default function Login() {
           </p>
         </div>
 
-          <div className="space-y-6">
-            <form onSubmit={handleLogin} className="space-y-5">
-              <div className="space-y-2">
-                <Label htmlFor="email" className="text-sm font-medium">
-                  Email or Username
+        <div className="space-y-6">
+          <form onSubmit={handleLogin} className="space-y-5">
+            <div className="space-y-2">
+              <Label htmlFor="email" className="text-sm font-medium">
+                Email or Username
+              </Label>
+              <Input
+                id="email"
+                type="text"
+                placeholder="name@company.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                autoFocus
+                className="h-11 rounded-xl bg-muted/30 px-4 transition-all focus:bg-background focus:ring-2 focus:ring-primary/20"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <Label htmlFor="password" className="text-sm font-medium">
+                  Password
                 </Label>
-                <Input
-                  id="email"
-                  type="text"
-                  placeholder="name@company.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  autoFocus
-                  className="h-11 rounded-xl bg-muted/30 px-4 transition-all focus:bg-background focus:ring-2 focus:ring-primary/20"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <Label htmlFor="password" className="text-sm font-medium">
-                    Password
-                  </Label>
-                  <button
-                    type="button"
-                    onClick={handleForgotPassword}
-                    className="text-xs font-medium text-primary hover:underline"
-                  >
-                    Forgot password?
-                  </button>
-                </div>
-                <div className="relative">
-                  <Input
-                    id="password"
-                    type={showPassword ? "text" : "password"}
-                    placeholder="••••••••"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="h-11 rounded-xl bg-muted/30 px-4 pr-10 transition-all focus:bg-background focus:ring-2 focus:ring-primary/20"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-0 top-0 flex h-full w-10 items-center justify-center text-muted-foreground hover:text-foreground"
-                  >
-                    {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-                  </button>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-2">
-                <Checkbox id="remember" />
-                <label
-                  htmlFor="remember"
-                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-muted-foreground"
+                <button
+                  type="button"
+                  onClick={handleForgotPassword}
+                  className="text-xs font-medium text-primary hover:underline"
                 >
-                  Remember me for 30 days
-                </label>
+                  Forgot password?
+                </button>
               </div>
-
-              <Button
-                type="submit"
-                disabled={loading}
-                className="h-11 w-full rounded-full bg-[#111111] text-sm font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-all hover:opacity-90"
-              >
-                {loading ? "Signing in..." : "Sign in"}
-              </Button>
-            </form>
-
-            <div className="relative">
-              <div className="absolute inset-0 flex items-center">
-                <span className="w-full border-t border-muted" />
-              </div>
-              <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-background px-2 text-muted-foreground">Or continue with</span>
+              <div className="relative">
+                <Input
+                  id="password"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="••••••••"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="h-11 rounded-xl bg-muted/30 px-4 pr-10 transition-all focus:bg-background focus:ring-2 focus:ring-primary/20"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-0 top-0 flex h-full w-10 items-center justify-center text-muted-foreground hover:text-foreground"
+                >
+                  {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                </button>
               </div>
             </div>
 
+            <div className="flex items-center space-x-2">
+              <Checkbox id="remember" />
+              <label
+                htmlFor="remember"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-muted-foreground"
+              >
+                Remember me for 30 days
+              </label>
+            </div>
+
             <Button
-              type="button"
-              onClick={() => navigate("/scan")}
-              className="h-11 w-full rounded-full bg-[#EAEAEA] text-sm font-medium text-[#111111] shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-80"
+              type="submit"
+              disabled={loading}
+              className="h-11 w-full rounded-full bg-primary text-sm font-medium text-primary-foreground shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-all hover:opacity-90"
             >
-              <QrCode className="mr-2 h-4 w-4" />
-              Scan QR Code
+              {loading ? "Signing in..." : "Sign in"}
             </Button>
+          </form>
+
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <span className="w-full border-t border-muted" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-background px-2 text-muted-foreground">Or continue with</span>
+            </div>
           </div>
 
-          <p className="mt-10 text-center text-xs text-muted-foreground">
-            © {currentYear} Folonite. All rights reserved.
-          </p>
+          <Button
+            type="button"
+            onClick={() => navigate("/scan")}
+            className="h-11 w-full rounded-full bg-secondary text-sm font-medium text-secondary-foreground shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-80"
+          >
+            <QrCode className="mr-2 h-4 w-4" />
+            Scan QR Code
+          </Button>
+        </div>
+
+        <p className="mt-10 text-center text-xs text-muted-foreground">
+          © {currentYear} Folonite. All rights reserved.
+        </p>
       </div>
 
       <Dialog
@@ -472,7 +472,7 @@ export default function Login() {
                 </div>
                 <Button
                   type="submit"
-                  className="h-11 w-full rounded-full bg-[#111111] text-sm font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition hover:opacity-90 disabled:opacity-60"
+                  className="h-11 w-full rounded-full bg-primary text-sm font-medium text-primary-foreground shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition hover:opacity-90 disabled:opacity-60"
                   disabled={requestingCode}
                 >
                   {requestingCode ? "Sending…" : "Send security code"}
@@ -521,7 +521,7 @@ export default function Login() {
                 </div>
                 <Button
                   type="submit"
-                  className="h-11 w-full rounded-full bg-[#111111] text-sm font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition hover:opacity-90 disabled:opacity-60"
+                  className="h-11 w-full rounded-full bg-primary text-sm font-medium text-primary-foreground shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition hover:opacity-90 disabled:opacity-60"
                   disabled={otpLoading}
                 >
                   {otpLoading ? "Verifying…" : "Confirm identity"}
@@ -565,7 +565,7 @@ export default function Login() {
                 </div>
                 <Button
                   type="submit"
-                  className="h-11 w-full rounded-full bg-[#111111] text-sm font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition hover:opacity-90 disabled:opacity-60"
+                  className="h-11 w-full rounded-full bg-primary text-sm font-medium text-primary-foreground shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition hover:opacity-90 disabled:opacity-60"
                   disabled={passwordLoading}
                 >
                   {passwordLoading ? "Updating…" : "Save & continue"}

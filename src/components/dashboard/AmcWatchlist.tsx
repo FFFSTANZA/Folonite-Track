@@ -32,8 +32,8 @@ const ChartTooltip = ({ active, payload, label }: any) => {
         <div className="text-xs font-medium text-muted-foreground mb-1">{label}</div>
         {payload.map((entry: any, index: number) => (
           <div key={index} className="flex items-center gap-2 text-sm">
-            <div 
-              className="w-2 h-2 rounded-full" 
+            <div
+              className="w-2 h-2 rounded-full"
               style={{ backgroundColor: entry.color || entry.fill || entry.stroke }}
             />
             <span className="text-muted-foreground">
@@ -72,7 +72,7 @@ export function AmcWatchlist({ items, trackedCount, overdueCount, hasSupabase }:
     <Card className="rounded-xl border border-border/60 bg-card shadow-sm h-full flex flex-col">
       <CardHeader className="flex flex-row items-start justify-between gap-3 space-y-0 pb-4">
         <div className="flex items-start gap-3">
-          <span className="rounded-full bg-orange-500/10 p-2 text-orange-600 dark:text-orange-400">
+          <span className="rounded-full bg-primary/10 p-2 text-primary">
             <AlertTriangle className="h-4 w-4" />
           </span>
           <div className="space-y-1">
@@ -83,11 +83,11 @@ export function AmcWatchlist({ items, trackedCount, overdueCount, hasSupabase }:
           </div>
         </div>
         <div className="flex items-center gap-2">
-           {overdueCount > 0 && (
-             <Badge variant="destructive" className="h-6 px-2 text-[10px] font-semibold uppercase tracking-wider">
-               {overdueCount} Overdue
-             </Badge>
-           )}
+          {overdueCount > 0 && (
+            <Badge variant="destructive" className="h-6 px-2 text-[10px] font-semibold uppercase tracking-wider">
+              {overdueCount} Overdue
+            </Badge>
+          )}
         </div>
       </CardHeader>
       <CardContent className="flex-1 flex flex-col gap-4 p-4 pt-0">
@@ -116,31 +116,32 @@ export function AmcWatchlist({ items, trackedCount, overdueCount, hasSupabase }:
                   <AreaChart data={trendData} margin={{ top: 5, right: 5, left: -20, bottom: 0 }}>
                     <defs>
                       <linearGradient id="amcTrend" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#f97316" stopOpacity={0.3}/>
-                        <stop offset="95%" stopColor="#f97316" stopOpacity={0}/>
+                        <stop offset="5%" stopColor="currentColor" stopOpacity={0.3} className="text-primary" />
+                        <stop offset="95%" stopColor="currentColor" stopOpacity={0} className="text-primary" />
                       </linearGradient>
                     </defs>
                     <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="hsl(var(--border) / 0.5)" />
-                    <XAxis 
-                      dataKey="name" 
-                      tick={{ fontSize: 10, fill: 'hsl(var(--muted-foreground))' }} 
+                    <XAxis
+                      dataKey="name"
+                      tick={{ fontSize: 10, fill: 'hsl(var(--muted-foreground))' }}
                       tickLine={false}
                       axisLine={false}
                       dy={5}
                     />
-                    <YAxis 
-                      tick={{ fontSize: 10, fill: 'hsl(var(--muted-foreground))' }} 
+                    <YAxis
+                      tick={{ fontSize: 10, fill: 'hsl(var(--muted-foreground))' }}
                       tickLine={false}
                       axisLine={false}
                       allowDecimals={false}
                     />
                     <Tooltip content={<ChartTooltip />} />
-                    <Area 
-                      type="monotone" 
-                      dataKey="value" 
-                      stroke="#f97316" 
-                      fillOpacity={1} 
-                      fill="url(#amcTrend)" 
+                    <Area
+                      type="monotone"
+                      dataKey="value"
+                      stroke="currentColor"
+                      className="text-primary"
+                      fillOpacity={1}
+                      fill="url(#amcTrend)"
                       strokeWidth={2}
                     />
                   </AreaChart>
@@ -155,29 +156,29 @@ export function AmcWatchlist({ items, trackedCount, overdueCount, hasSupabase }:
                   {displayedItems.map((item) => {
                     const isUrgent = item.severity === 'urgent';
                     const isSoon = item.severity === 'soon';
-                    
+
                     return (
                       <div
                         key={item.id}
                         className="flex items-center gap-2.5 rounded-md border border-border/40 bg-muted/30 p-2 transition hover:border-border/70"
                       >
-                        <div className={cn("flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-background border", 
-                           isUrgent ? "border-red-200 text-red-600 dark:border-red-900/30 dark:text-red-400" : 
-                           isSoon ? "border-orange-200 text-orange-600 dark:border-orange-900/30 dark:text-orange-400" : 
-                           "border-blue-200 text-blue-600 dark:border-blue-900/30 dark:text-blue-400"
+                        <div className={cn("flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-background border",
+                          isUrgent ? "border-red-200 text-red-600 dark:border-red-900/30 dark:text-red-400" :
+                            isSoon ? "border-primary/30 text-primary" :
+                              "border-blue-200 text-blue-600 dark:border-blue-900/30 dark:text-blue-400"
                         )}>
-                           <CalendarClock className="h-3.5 w-3.5" />
+                          <CalendarClock className="h-3.5 w-3.5" />
                         </div>
-                        
+
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center justify-between mb-0.5">
                             <h5 className="truncate text-xs font-medium text-foreground" title={item.name}>
                               {item.name}
                             </h5>
                             <span className={cn("text-[9px] font-bold uppercase tracking-wider",
-                              isUrgent ? "text-red-600 dark:text-red-400" : 
-                              isSoon ? "text-orange-600 dark:text-orange-400" : 
-                              "text-blue-600 dark:text-blue-400"
+                              isUrgent ? "text-red-600 dark:text-red-400" :
+                                isSoon ? "text-primary" :
+                                  "text-blue-600 dark:text-blue-400"
                             )}>
                               {item.daysRemaining <= 0 ? `${Math.abs(item.daysRemaining)}d Overdue` : `${item.daysRemaining}d Left`}
                             </span>
@@ -190,7 +191,7 @@ export function AmcWatchlist({ items, trackedCount, overdueCount, hasSupabase }:
                       </div>
                     );
                   })}
-                  
+
                   {items.length > WATCHLIST_DISPLAY_LIMIT && (
                     <Button
                       variant="ghost"

@@ -1,5 +1,15 @@
 export const ACCENT_COLORS = [
-  { id: 'orange', label: 'Terracotta (Default)', value: '16 52% 58%', hover: '16 52% 64%', light: '16 52% 92%', sidebar: '16 52% 96%' },
+  {
+    id: 'zinc',
+    label: 'Default (Zinc)',
+    value: '240 5.9% 10%',
+    darkValue: '0 0% 98%',
+    hover: '240 5.9% 15%',
+    darkHover: '0 0% 92%',
+    light: '240 4.8% 95.9%',
+    sidebar: '240 4.8% 98%'
+  },
+  { id: 'orange', label: 'Terracotta', value: '16 52% 58%', hover: '16 52% 64%', light: '16 52% 92%', sidebar: '16 52% 96%' },
   { id: 'blue', label: 'Ocean Blue', value: '221 83% 53%', hover: '221 83% 60%', light: '221 83% 92%', sidebar: '221 83% 96%' },
   { id: 'green', label: 'Emerald', value: '142 71% 45%', hover: '142 71% 50%', light: '142 71% 92%', sidebar: '142 71% 96%' },
   { id: 'violet', label: 'Royal Violet', value: '262 83% 58%', hover: '262 83% 65%', light: '262 83% 92%', sidebar: '262 83% 96%' },
@@ -14,3 +24,4 @@ export const DARK_LEVELS = [
   { id: 'forest', label: 'Forest Night', bg: '150 20% 8%', card: '150 15% 12%', headerOpacity: 0.15 },
   { id: 'obsidian', label: 'Obsidian', bg: '240 5% 8%', card: '240 4% 12%', headerOpacity: 0.12 },
 ];
+
