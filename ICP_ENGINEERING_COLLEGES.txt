@@ -1,0 +1,791 @@
+================================================================================
+   FOLONITE TRACK — ICP GUIDE
+   Target: Private Engineering Colleges & Technical Institutes (India)
+   Prepared for: Internal Sales & Onboarding Team
+   Last Updated: February 2026
+================================================================================
+
+This document is a complete internal guide for targeting, pitching, selling,
+and onboarding Private Engineering Colleges with Folonite Track. Every team
+member involved in sales, onboarding, or customer success should read this
+before engaging any college prospect.
+
+================================================================================
+PART 1: UNDERSTANDING THE CUSTOMER
+================================================================================
+
+WHO IS A PRIVATE ENGINEERING COLLEGE?
+--------------------------------------
+India has approximately 10,000 AICTE-approved private engineering colleges
+and 4,500 polytechnic institutes. These are privately owned and operated
+institutions — not IITs, NITs, or central government colleges.
+
+They operate with:
+  - 300 to 5,000 students
+  - 8 to 30+ departments (CSE, Mechanical, Civil, ECE, EEE, etc.)
+  - 1 to 3 campus buildings or multiple blocks
+  - A Principal/Director at the top
+  - HODs (Heads of Department) managing each department
+  - A dedicated IQAC (Internal Quality Assurance Cell) team
+  - A Finance/Accounts department managing budgets and procurement
+  - Lab technicians/assistants managing equipment day-to-day
+
+These colleges operate on a constrained annual budget, typically ₹2–₹15 crore
+per year in operational expenses, with a portion allocated for infrastructure
+and equipment.
+
+
+WHAT ASSETS DOES A TYPICAL ENGINEERING COLLEGE MANAGE?
+--------------------------------------------------------
+Every engineering college has a large, diverse, and expensive asset base
+spread across multiple physical locations. Here is a realistic breakdown:
+
+COMPUTER LABS:
+  - 200 to 1,500 desktop computers / workstations
+  - Servers, networking switches, routers, UPS units
+  - Monitors, peripherals, keyboards, webcams
+  - Licensed software installed on each machine
+
+SCIENCE & ENGINEERING LABS:
+  - Oscilloscopes, function generators, multimeters (ECE/EEE)
+  - CNC machines, lathes, welding equipment, drilling machines (Mech)
+  - 3D printers, robotic arms, microcontroller kits (emerging labs)
+  - Surveying instruments, theodolites, total stations (Civil)
+  - Chemical equipment, spectrophotometers, distillation units (Chemistry)
+  - Biology/pharmacy lab equipment (if applicable)
+
+CLASSROOM & COMMON INFRASTRUCTURE:
+  - Projectors and screens in each classroom
+  - Smart boards / interactive displays
+  - Air conditioning units across classrooms and labs
+  - CCTV cameras and security infrastructure
+  - PA systems and audio equipment
+
+FURNITURE:
+  - Desks and chairs across classrooms, labs, offices
+  - Lab benches and stools
+  - Office furniture (staff rooms, principal cabin, reception)
+
+LIBRARY:
+  - Computers at reading terminals
+  - Printers, scanners, barcode readers
+  - Server/NAS for digital library
+
+TOTAL ROUGH ASSET COUNT (Mid-sized engineering college, 1,000 students):
+  - Approximately 800 to 2,500 individual trackable assets
+  - Spread across 6 to 20 distinct departments/labs
+
+
+WHAT ARE THEIR BIGGEST PROBLEMS?
+----------------------------------
+Here are the problems they face every single day. These are not theoretical.
+These are problems that HODs, lab technicians, and IQAC coordinators complain
+about constantly. Understand these deeply before you talk to a prospect.
+
+PROBLEM 1: "We don't know what we have."
+  - No centralized asset register exists.
+  - Each lab technician maintains a personal diary or Excel sheet.
+  - The Principal cannot see college-wide asset data.
+  - Equipment purchased 5 years ago is untraceable — no one knows if it exists.
+  - Departments hoard assets; other departments buy duplicates because they
+    don't know a working unit exists 2 floors away.
+
+PROBLEM 2: "Our annual stock verification is a nightmare."
+  - AICTE, UGC, and NAAC all require formal stock verification records.
+  - Every year (or before every inspection), the admin team manually walks
+    through every lab, cross-checking physical items against old registers.
+  - This process takes 2 to 4 weeks, involves 10-20 staff members,
+    produces paper-based stock verification reports that are inconsistent
+    and easily disputed.
+  - Equipment goes missing between the count and the submission of the report.
+  - If NAAC inspectors ask for documentation, the college scrambles.
+
+PROBLEM 3: "Equipment breaks and nobody fixes it on time."
+  - There is no formal maintenance request system.
+  - A broken oscilloscope means a lab technician calls the HOD,
+    who calls the admin office, who calls a vendor — on WhatsApp.
+  - No tracking of when the request was raised.
+  - No accountability for who is responsible.
+  - Expensive equipment stays broken for months.
+  - AMC (Annual Maintenance Contract) renewals are missed because no one
+    tracks expiry dates.
+
+PROBLEM 4: "NAAC is coming and we are not ready."
+  - NAAC assesses colleges on Criterion 4 (Infrastructure and Learning
+    Resources) which directly requires asset documentation.
+  - Colleges need to show asset utilization, maintenance records, and
+    systematic stock verification.
+  - The IQAC coordinator (the person responsible for NAAC documentation)
+    is manually collecting spreadsheets from every HOD, compiling them,
+    and creating a master document — this takes months.
+  - NAAC now does e-inspections. Documents submitted digitally must be
+    consistent, traceable, and audit-ready. Excel files don't cut it.
+
+PROBLEM 5: "Equipment goes missing and no one is accountable."
+  - High-value portable equipment (laptops, oscilloscopes, robotic kits)
+    moves between labs, classrooms, and sometimes off-campus.
+  - No tracking means no accountability.
+  - Colleges lose ₹10–₹50 lakhs per year in untracked equipment.
+  - When asked "who last used/moved this item?", there is no answer.
+
+PROBLEM 6: "We have multiple buildings and no visibility."
+  - Multi-block campuses have assets distributed across Block A, B, C,
+    hostels, admin buildings, and sports facilities.
+  - There is no single view across all locations.
+  - Lab technicians in Block A don't know what assets exist in Block B.
+
+================================================================================
+PART 2: HOW FOLONITE TRACK SOLVES EACH PROBLEM
+================================================================================
+
+This section maps every problem above to one or more Folonite Track features,
+with a clear explanation of how the feature works and what value it creates.
+
+------------------------------------------------------------------------
+PROBLEM 1 SOLVED: "We don't know what we have."
+FEATURE: Asset Registry + Department & Property Scoping
+------------------------------------------------------------------------
+
+HOW IT WORKS:
+  Every asset in the college is registered in Folonite Track's central
+  Asset Registry. Each asset gets:
+    - A unique Asset ID (auto-generated, e.g., ETLAB001, MECHLAB004)
+    - A name, type, and description
+    - Assignment to a specific Property (Block/Building) and Department (Lab)
+    - Status: Active, Expiring Soon, Under Maintenance
+    - Quantity (for consumables) or individual serial number
+    - Purchase date, PO number, and expiry/warranty date
+
+  Role-based access means:
+    - Lab Technician sees only their lab's assets
+    - HOD sees all assets in their department
+    - Principal / Admin sees all assets across all departments and buildings
+    - IQAC Coordinator gets a full cross-department view for reporting
+
+WHAT THIS MEANS FOR THE COLLEGE:
+  For the first time, the Principal can open a single screen and see:
+  "We have 1,247 active assets across 14 departments."
+  HODs can see their department's full asset list without relying on a
+  technician's personal notebook.
+  Finance can export an asset register for audit purposes in seconds.
+
+SETUP GUIDE FOR TEAM:
+  Step 1: Create Properties — one for each campus block
+          (Example: Block A - Main Building, Block B - Labs Wing,
+           Admin Block, Hostel)
+  Step 2: Create Departments — one per lab or department
+          (Example: CSE Lab 1, CSE Lab 2, Mechanical Workshop, ECE Lab,
+           Library, Admin Office)
+  Step 3: Add Item Types — Computer, Furniture, Lab Equipment,
+          Network Device, Projector, AC Unit, etc.
+  Step 4: Bulk Import existing assets via CSV if the college has a
+          prior Excel register (use the Bulk Import feature)
+  Step 5: For new installs, do a physical walkthrough with the lab
+          technician and add assets one-by-one using mobile
+
+------------------------------------------------------------------------
+PROBLEM 2 SOLVED: "Our annual stock verification is a nightmare."
+FEATURE: Audit Sessions + QR Scan Verification + PDF Audit Reports
+------------------------------------------------------------------------
+
+HOW IT WORKS:
+  ADMIN STARTS AN AUDIT SESSION:
+    The admin (Principal's Office or IQAC Coordinator) starts an Audit
+    Session in Folonite Track. This creates an active audit window across
+    the entire college or a specific building.
+
+  DEPARTMENTS GET ASSIGNED:
+    Each department (lab) is assigned to the relevant lab technician
+    or HOD. They receive their assignment within the system.
+
+  STAFF VERIFY ASSETS USING QR CODES:
+    Every asset has a printed QR sticker (generated and printed from the
+    QR Codes page). The lab technician:
+      - Opens Folonite Track on their phone
+      - Goes to the Audit page
+      - Scans each QR code in the lab
+      - Marks each item: Verified / Missing / Damaged
+      - Adds a comment if needed (e.g., "screen cracked")
+    This happens in real-time, from any mobile device.
+
+  ADMIN MONITORS PROGRESS LIVE:
+    While the audit is running, the admin sees a live dashboard:
+      - How many departments have submitted
+      - How many assets verified vs. missing vs. damaged
+      - Per-department progress rings
+    No need to chase HODs manually.
+
+  AUDIT REPORT GENERATED AUTOMATICALLY:
+    When the admin ends the session, Folonite Track generates a
+    structured audit report:
+      - Summary: X verified, Y missing, Z damaged
+      - Department-by-department breakdown
+      - Asset-level detail with status and comments
+      - Exported as a print-ready PDF with college branding elements,
+        auditor name, date/time, and session name
+    This is exactly what NAAC inspectors and internal auditors need.
+
+WHAT THIS MEANS FOR THE COLLEGE:
+  Annual stock verification drops from 3 weeks of paper chaos to
+  2-3 days of structured digital verification.
+  The IQAC coordinator gets a ready-to-submit report. Period.
+
+SETUP GUIDE FOR TEAM:
+  Step 1: Before onboarding, confirm all assets are registered in the system
+  Step 2: Print QR stickers for all assets (use the QR Codes page,
+          bulk print as A4 sheet or individual labels)
+  Step 3: Physically stick QR labels on every asset
+          (ideally done by lab technicians themselves during onboarding)
+  Step 4: Create user accounts for all lab technicians and HODs
+  Step 5: Assign departments to users (department-level access)
+  Step 6: Train lab technicians on QR scanning (30-minute walkthrough)
+  Step 7: Run a test audit — start a session, each person scans 5 items,
+          confirm admin sees live progress, generate the test report
+  Step 8: College is ready for their first real audit cycle
+
+------------------------------------------------------------------------
+PROBLEM 3 SOLVED: "Equipment breaks and nobody fixes it on time."
+FEATURE: Maintenance Tickets + Priority + SLA Tracking + Assignee Management
+------------------------------------------------------------------------
+
+HOW IT WORKS:
+  Anyone in the system can raise a Maintenance Ticket:
+    - Title: "Oscilloscope in ECE Lab 2 not powering on"
+    - Description: detailed notes on the issue
+    - Priority: Low / Medium / High / Urgent
+    - Property and assignee selected
+
+  The assigned person (lab assistant, in-house technician, or admin) gets
+  the ticket and is responsible for resolution.
+
+  Ticket workflow:
+    - Open → In Progress → Resolved → Closed
+  
+  The admin can monitor:
+    - All open tickets across all departments
+    - Average resolution time
+    - Completion rate
+    - Overdue tickets (SLA breach shown in red)
+    - Tickets by priority (charts)
+    - Monthly trend of new vs. resolved tickets
+
+  Ticket comments allow back-and-forth between the reporter and assignee
+  without switching to WhatsApp or email.
+
+  For AMC-managed equipment:
+    - The asset entry stores AMC Start Date and AMC End Date
+    - Tickets can be raised when the vendor needs to be called for AMC service
+    - The system shows "Expiring Soon" status for assets near AMC expiry
+    - Admin gets a warning before the AMC lapses
+
+WHAT THIS MEANS FOR THE COLLEGE:
+  No more fixing equipment on WhatsApp with no record.
+  Every maintenance request is documented, tracked, and resolved within
+  a defined timeframe.
+  Finance can see total maintenance requests per term for budgeting.
+  HODs can see exactly how long their lab equipment stays broken on average.
+
+SETUP GUIDE FOR TEAM:
+  Step 1: Identify the college's internal maintenance person (electrician,
+          plumber, or in-house IT technician) — create their account
+  Step 2: For AMC vendors, the admin manages tickets on their behalf
+  Step 3: Configure priorities: set "Urgent" for equipment that blocks labs,
+          "High" for equipment used daily, "Medium/Low" for non-critical items
+  Step 4: Ask the admin to review open tickets every Monday morning
+          — build this into their workflow
+
+------------------------------------------------------------------------
+PROBLEM 4 SOLVED: "NAAC is coming and we are not ready."
+FEATURE: Reports + Audit History + PDF Exports + Multi-session History
+------------------------------------------------------------------------
+
+HOW IT WORKS:
+  Folonite Track maintains a full audit history — every session that was
+  conducted, when it happened, who participated, what was found.
+
+  The Reports page provides:
+    - Asset inventory summary (count by type, department, property)
+    - Asset status breakdown (Active, Under Maintenance, Expiring Soon)
+    - Audit session history with downloadable PDFs for each session
+    - Maintenance ticket analytics (open, resolved, average resolution time)
+
+  For NAAC:
+  The IQAC coordinator can access historical audit reports (all sessions),
+  export them as PDFs, and submit them as documentary evidence under
+  Criterion 4 (Infrastructure and Learning Resources).
+
+  They can also export the master asset register to show total assets,
+  value, department-wise breakdown — directly aligning with NAAC's
+  requirements for asset documentation.
+
+WHAT THIS MEANS FOR THE COLLEGE:
+  When the NAAC inspector asks: "Show us your stock verification records
+  for the past 2 years" — the IQAC coordinator opens Folonite Track,
+  selects the relevant audit sessions, downloads 2 formatted PDFs, and
+  hands them over.
+  That's it.
+
+SETUP GUIDE FOR TEAM:
+  Step 1: For colleges preparing for NAAC, onboard them at minimum
+          3 months before their scheduled assessment.
+  Step 2: Run at least one full audit cycle before the NAAC visit
+          so they have at least one documented audit report.
+  Step 3: Help them print and organize the PDF reports in their
+          NAAC documentation folder (physical + digital).
+  Step 4: Advise them: conduct an audit every term (twice a year) for
+          ongoing NAAC compliance — this becomes your retention hook.
+
+------------------------------------------------------------------------
+PROBLEM 5 SOLVED: "Equipment goes missing and no one is accountable."
+FEATURE: QR Code Tracking + Audit Trail + Department Scoping + Activity Log
+------------------------------------------------------------------------
+
+HOW IT WORKS:
+  Every asset has a unique QR sticker permanently attached to it.
+  The QR code links to that exact asset's profile in Folonite Track.
+  Any team member can scan the QR code and see:
+    - What the asset is
+    - Which department it belongs to
+    - Its current status
+    - Its full audit history (was it verified in the last audit? When?)
+
+  During audit, if an asset is found in the WRONG department,
+  it's flagged as a discrepancy. The admin sees the mismatch.
+
+  The Activity Log records who created, modified, or deleted any asset.
+  Admin-level users can see: "Asset ECE002 was last updated by John (Lab Tech)
+  on 14-Feb-2026 at 3:45 PM."
+
+  The Approval Workflow adds another layer:
+  Non-admin users cannot delete or significantly edit an asset without
+  manager/admin approval. Every change goes through a documented approval
+  chain. No silent deletions.
+
+WHAT THIS MEANS FOR THE COLLEGE:
+  High-value portable equipment (laptops, robotic kits, oscilloscopes)
+  can be tracked to its last known verified location.
+  If an asset goes missing, there is a clear record of its last audit
+  verification — narrowing down accountability significantly.
+  The approval workflow prevents staff from "deleting" assets that are
+  actually just misplaced.
+
+------------------------------------------------------------------------
+PROBLEM 6 SOLVED: "We have multiple buildings and no visibility."
+FEATURE: Multi-Property Management + Property-Scoped Access
+------------------------------------------------------------------------
+
+HOW IT WORKS:
+  Each campus building or block is set up as a "Property" in Folonite Track.
+  Examples:
+    - Property: Block A — Main Academic Block
+    - Property: Block B — Labs and Workshops
+    - Property: Block C — New Extension Building
+    - Property: Admin Block
+    - Property: Library Building
+
+  Assets are assigned to their Property (building) AND Department (lab/room).
+  Users are assigned access to specific Properties — a lab technician in
+  Block B only sees Block B's assets, not Block A's.
+
+  The admin/Principal sees ALL properties in one unified dashboard.
+  They can filter the asset list by Property to get a per-building view.
+  Audit sessions can be scoped to a specific property so that only
+  Block B runs an audit while Block A is separate.
+
+WHAT THIS MEANS FOR THE COLLEGE:
+  A multi-campus or multi-block college gets ONE unified system with
+  clear separation between locations.
+  The admin controls who sees what — a lab tech in Mechanical Workshop
+  cannot accidentally edit assets in CSE Lab.
+
+================================================================================
+PART 3: DECISION MAKER MAP
+================================================================================
+
+Understanding WHO you are talking to at a college is critical.
+Different roles have different pain points and should be pitched differently.
+
+ROLE 1: PRINCIPAL / DIRECTOR
+  Pain: Accountability, reputation, NAAC grades, NIRF ranking
+  What they care about: Does this make NAAC easier? Does it bring order?
+  How to approach: Lead with NAAC compliance and institutional accountability.
+  Say: "This gives you a complete, verified asset record that your IQAC team
+       can submit directly for NAAC documentation. It replaces 4 weeks of
+       manual stock verification with 2 days of digital audit."
+  Decision Authority: FINAL sign-off. They say yes, it happens.
+
+ROLE 2: IQAC COORDINATOR / NAAC IN-CHARGE
+  Pain: Data collection from HODs, inconsistent Excel files, NAAC documentation
+  What they care about: Documentation quality, audit reports, inspection readiness
+  How to approach: This is your CHAMPION. Win this person and the deal is done.
+  Say: "We generate the exact stock verification report you need for Criterion 4.
+       One click. PDF. Done. Every HOD submits their department digitally."
+  Decision Authority: Strong influencer. Champion who takes it to the Principal.
+
+ROLE 3: HOD (HEAD OF DEPARTMENT)
+  Pain: Lab management, equipment downtime, accountability of lab staff
+  What they care about: Less time spent on paperwork, functional equipment
+  How to approach: Show them the department view — their assets, their audit,
+                   their maintenance tickets — all in one place.
+  Say: "Instead of sending your lab technician to fill paper registers,
+       they scan QR codes on their phone. You see the result in real-time."
+  Decision Authority: Operational buy-in. Their resistance = no adoption.
+                      Their enthusiasm = smooth rollout.
+
+ROLE 4: LAB TECHNICIAN / LAB ASSISTANT
+  Pain: Manual record-keeping, no accountability when things go wrong,
+        taking blame for missing equipment they didn't lose
+  What they care about: Simple tools, not more paperwork
+  How to approach: QR scan demo. Show them: one scan = asset verified.
+                   That's it. No forms to fill.
+  Say: "Your audit used to take 2 weeks of writing. Now it's 2 days of scanning."
+  Decision Authority: User. Adoption depends on their comfort level.
+                      Demo must be simple and fast.
+
+ROLE 5: FINANCE / ACCOUNTS OFFICER
+  Pain: Asset register maintenance for auditors, AMC budget tracking,
+        proof of asset purchase for government audits
+  What they care about: Financial asset records, AMC expiry alerts, export capability
+  How to approach: Show the PO number field, AMC dates, expiry tracking,
+                   and the ability to export the full asset register.
+  Say: "Every asset has its PO number, purchase date, and AMC dates stored.
+       When your CA asks for the asset register, you export it in seconds."
+  Decision Authority: Budget gatekeeper. Their approval speeds procurement.
+
+================================================================================
+PART 4: LEAD GENERATION — WHERE TO FIND THEM
+================================================================================
+
+PRIMARY CHANNELS:
+
+1. COLLEGE WEBSITES (DIRECT)
+   - Every college lists their Principal's contact and IQAC cell contact
+     publicly because NAAC mandates it.
+   - Go to college website → "About Us" or "IQAC" section
+   - You will find the IQAC Coordinator's name, email, and sometimes
+     phone number.
+   - This is your highest-priority lead source. These contacts are
+     decision-makers, not gatekeepers.
+
+2. AICTE COLLEGE PORTAL
+   - AICTE website lists all approved engineering colleges with state,
+     district, and contact information.
+   - You can filter by state/city and build a targeted lead list.
+   - Website: https://facilities.aicte-india.org/dashboard/pages/angulardashboard.php
+
+3. LINKEDIN
+   - Search: "IQAC Coordinator" + [City Name]
+   - Search: "NAAC Coordinator engineering college"
+   - Search: "Principal engineering college" + [City Name]
+   - These professionals are often active on LinkedIn.
+   - Connect with a note: "I help engineering colleges prepare for NAAC stock
+     verification audits. I'd love to show you a quick demo."
+
+4. NAAC-RELATED EVENTS AND WORKSHOPS
+   - NAAC conducts orientation workshops for colleges preparing for assessment.
+   - State-level IQAC meets are common — attend or sponsor.
+   - These are rooms full of your ideal champions.
+
+5. ENGINEERING COLLEGE ASSOCIATIONS
+   - Each state has an Association of Private Engineering Colleges
+     (e.g., APECEA in Andhra Pradesh, TANCA in Tamil Nadu).
+   - A single tie-up with an association can get you introductions to
+     100+ colleges at once.
+
+6. REFERRALS FROM PILOT CUSTOMERS
+   - IQAC coordinators attend state-level NAAC preparation meetings.
+   - A happy customer's word-of-mouth to 2-3 colleges is your fastest
+     growth channel once you have 3-5 live clients.
+
+
+WHAT TO AVOID:
+  - Cold calling reception desks — they cannot connect you to IQAC.
+  - Emailing generic "info@college.edu" — zero response rate.
+  - Targeting colleges that just completed NAAC assessment (they won't
+    pay for 5 years until the next cycle approaches).
+  - Targeting colleges under government control — procurement takes 6-12
+    months through committee approvals.
+
+PRIORITY TARGETING:
+  Best targets are colleges that:
+  (a) Are 18-24 months away from NAAC re-assessment, OR
+  (b) Are applying for NAAC accreditation for the first time, OR
+  (c) Recently got a lower grade and are working to improve, OR
+  (d) Have recently had a government audit that exposed asset record gaps
+
+================================================================================
+PART 5: THE SALES CONVERSATION
+================================================================================
+
+COLD EMAIL TEMPLATE (for IQAC Coordinator):
+--------------------------------------------------------------------
+Subject: NAAC stock verification in 2 days, not 3 weeks
+
+Hi [Name],
+
+I know IQAC coordinators spend weeks preparing stock verification records
+every year for NAAC documentation — collecting Excel files from HODs,
+reconciling discrepancies, compiling a master register.
+
+We built Folonite Track specifically to fix this. With QR-coded asset labels
+and digital audit sessions, your staff scan assets on their phones,
+and you get a formatted PDF report ready for NAAC submission.
+
+No more paper registers. No more chasing HODs. No more last-minute scrambling.
+
+I'd love to show you a 15-minute demo at your convenience.
+Are you available this week or next?
+
+[Your Name]
+Folonite Track | folonite.in
+--------------------------------------------------------------------
+
+
+OPENING QUESTIONS (to understand their situation):
+  - "How do you currently track your lab assets and equipment?"
+  - "When was your last NAAC assessment and when is the next one?"
+  - "How long does your annual stock verification take?"
+  - "Do you have someone dedicated to maintaining an asset register?"
+  - "What happens when equipment breaks in a lab — what's the process?"
+
+DISCOVERY RED FLAGS (these are BIG signals — lean in):
+  - "We still use Excel / paper registers" → Perfect prospect
+  - "Our last NAAC visit was rough on Infrastructure" → Urgent prospect
+  - "We are preparing for NAAC next year" → Hot prospect
+  - "Lab equipment goes missing and we don't know where" → Immediate pain
+  - "Our HODs submit stock records at the last minute" → Audit pain
+
+THE DEMO FLOW (15-20 minutes — stick to this sequence):
+  1. Show the Asset Registry: "This is your entire college in one view.
+     Every asset, every department, every building."
+  2. Show Property + Department structure: "Block A is here, Block B here.
+     CSE Lab 1, ECE Lab 2 — all separate, all visible together."
+  3. Open the QR Code page: "Each asset gets this QR label. Printed and
+     stuck to the equipment. Takes 1 minute per lab."
+  4. LIVE DEMO — QR Scan on phone: Open Folonite on mobile, scan a QR code
+     on any nearby object (for demo purposes), show it resolving to an asset.
+     Say: "Your lab technician does this for every item. Takes 2 days."
+  5. Show the Audit page — admin view: Progress rings per department,
+     verified/missing/damaged counts updating live.
+  6. Generate the PDF: "This is what your IQAC coordinator submits to NAAC."
+  7. Show Maintenance Tickets: "Lab equipment breakdown? Ticket raised here.
+     Assigned, tracked, resolved. No more WhatsApp chasing."
+  8. Ask: "How much time do you currently spend on stock verification
+     each year? What would 2 days instead of 3 weeks mean to your team?"
+
+
+HANDLING COMMON OBJECTIONS:
+--------------------------------------------------------------------
+OBJECTION: "We already have an ERP that handles this."
+RESPONSE:  "Most college ERPs have a basic asset module — a glorified
+           spreadsheet. Does yours let lab technicians scan QR codes from
+           their phones and submit audit results in real-time? Does it
+           generate a NAAC-formatted stock verification report?
+           If yes, great. If not, we fill exactly that gap."
+
+OBJECTION: "Our staff won't use new software — they're not tech-savvy."
+RESPONSE:  "The lab technician's job is simple: open the app, point camera,
+           scan, mark verified. That's it. We've designed this specifically
+           for non-tech users. If they can use WhatsApp, they can use this."
+
+OBJECTION: "We don't have the budget for this."
+RESPONSE:  "At ₹5,000 a month, this is the cost of 2-3 days of admin staff
+           time. You're currently spending 3 weeks of multiple staff members
+           on stock verification. Folonite cuts that to 2 days. The ROI is
+           immediate and measurable."
+
+OBJECTION: "Let's wait until after NAAC."
+RESPONSE:  "That's exactly when your next preparation begins. Colleges that
+           set up Folonite now do their audit mid-year, have records ready
+           by the time assessment approaches. The ones who wait start
+           scrambling again. When is your next NAAC cycle?"
+
+OBJECTION: "How long does setup take?"
+RESPONSE:  "We do a guided onboarding. Week 1: system setup and data entry.
+           Week 2: print QR labels and stick them. Week 3: first test audit.
+           You are production-ready within 3 weeks."
+
+================================================================================
+PART 6: ONBOARDING PLAYBOOK
+================================================================================
+
+STEP 1 — PRE-ONBOARDING CALL (Day 0)
+  Participants: Your team + IQAC Coordinator + IT admin (if any)
+  Agenda:
+    - Understand campus structure (number of blocks, departments, labs)
+    - Understand current asset tracking method (Excel/paper/nothing)
+    - Get a rough count of total assets if available
+    - Agree on a go-live timeline
+    - Share the Folonite Track login credentials
+
+STEP 2 — SYSTEM SETUP (Days 1–3)
+  Your team or the college admin does this:
+    - Create Properties: one per campus block/building
+    - Create Departments: one per lab, department, or area
+    - Create Item Types: Computer, Projector, Lab Equipment, Furniture, etc.
+    - Create User accounts for all staff who will use the system:
+        * Admin (Principal's office / IQAC Coordinator — full access)
+        * Manager (HODs — department-level management)
+        * User (Lab Technicians — audit and ticket submission only)
+
+STEP 3 — DATA ENTRY / ASSET IMPORT (Days 3–7)
+  Option A (Recommended): Bulk CSV Import
+    - If the college has any existing Excel register, export it as CSV
+    - Map columns to Folonite Track's asset fields
+    - Import using the Bulk Import feature
+    - Clean up any duplicates or missing data after import
+
+  Option B: Fresh Entry During Physical Walkthrough
+    - Walk each lab with the lab technician
+    - Add assets one by one using mobile or desktop
+    - This doubles as a "discovery audit" — you find unlisted assets
+
+  Target: All assets for at least 3-4 key departments registered before
+          moving to the next step.
+
+STEP 4 — QR LABEL PRINTING AND STICKING (Days 5–10)
+  - Go to the QR Codes page in Folonite Track
+  - Select assets and print QR labels (A4 sheet grid or individual labels)
+  - For label printing, use standard A4 sticker sheets (available at any
+    stationery shop for ₹5–₹10 per sheet)
+  - Physical labeling: lab technicians paste labels on each asset
+  - Recommendations:
+      * Laptops/computers: inside the lid or bottom panel
+      * Lab equipment: side panel or back face
+      * Furniture: underside of desk or chair leg
+      * Projectors: base or cable port area
+
+STEP 5 — USER TRAINING (Day 7–10)
+  Two separate sessions:
+
+  Session A: Admin / IQAC Coordinator (60 minutes)
+    - Creating and managing audit sessions
+    - Viewing live audit progress
+    - Generating and exporting PDF reports
+    - Managing user accounts and permissions
+    - Viewing the Reports page
+    - Raising and managing maintenance tickets
+
+  Session B: Lab Technicians / HODs (30 minutes)
+    - Logging in on mobile
+    - Navigating to the Audit page
+    - Selecting their department
+    - Scanning QR codes with the phone camera
+    - Marking assets as Verified / Damaged / Missing
+    - Submitting their department audit
+    - Raising a maintenance ticket
+
+STEP 6 — FIRST LIVE AUDIT (Day 10–14)
+  - Admin starts an Audit Session
+  - Each department lead runs their QR scan in their assigned area
+  - Admin monitors live progress
+  - Session ends, report is generated
+  - Review the report together with the IQAC coordinator
+  - Note any discrepancies and resolve them (missing assets tracked down,
+    damaged assets ticketed for maintenance)
+
+STEP 7 — POST-ONBOARDING REVIEW (Day 30)
+  Check in after 30 days:
+    - Are all lab technicians actively using the system?
+    - Have any maintenance tickets been raised and resolved?
+    - Are there any new assets to add?
+    - Is the IQAC coordinator comfortable generating reports?
+    - Schedule the next audit session (recommend quarterly)
+
+================================================================================
+PART 7: PRICING FOR THIS ICP
+================================================================================
+
+RECOMMENDED PRICING STRUCTURE:
+
+STARTER PLAN — ₹5,000/month
+  Best for: Small college, 1 block/campus, up to 500 assets, up to 10 users
+  Includes: Full asset registry, QR codes, audits, tickets, reports
+
+GROWTH PLAN — ₹10,000/month
+  Best for: Mid-sized college, 2-3 blocks, up to 2,000 assets, up to 30 users
+  Includes: Everything in Starter + multi-property management, advanced reports
+
+ENTERPRISE PLAN — ₹20,000+/month
+  Best for: Large college group (multiple campuses), 5,000+ assets, 50+ users
+  Includes: Everything in Growth + dedicated onboarding support, SLA
+
+ONE-TIME ONBOARDING FEE: ₹30,000 – ₹60,000
+  Covers: System setup, data migration, QR label printing assistance,
+          user training (2 sessions), and 30-day post-launch support.
+  This is MANDATORY for new clients — it ensures proper adoption.
+
+ANNUAL BILLING DISCOUNT: Offer 10-15% discount for annual upfront payment.
+  Many colleges prefer annual payments aligned with their academic year budget.
+  This also reduces your churn risk.
+
+ROI FRAMING FOR THE PROSPECT:
+  - 3 weeks of annual stock verification = ~15 staff-days × ₹1,000/day
+    = ₹15,000 of staff time per year, MINIMUM.
+  - Folonite Track costs ₹5,000/month = ₹60,000/year.
+  - But it saves not just time — it saves NAAC grade points, prevents
+    asset loss (₹5–₹50 lakhs per year for an average college),
+    and eliminates missed AMC renewals (which cost ₹50,000+ per incident).
+  - Frame it: "Your AMC for one lab's equipment costs more than a year
+    of Folonite Track."
+
+================================================================================
+PART 8: SUCCESS METRICS — HOW TO MEASURE WIN
+================================================================================
+
+After onboarding a college, track these metrics to measure success:
+
+  Onboarding Completion Rate:
+    - % of assets imported into the system within 30 days
+    - % of assets with QR labels physically applied
+    - Target: 90% within 30 days
+
+  Audit Adoption:
+    - Number of audit sessions conducted within first 3 months
+    - Target: At least 1 full college-wide audit in first 60 days
+
+  Active Users:
+    - Number of users logging in at least once per week
+    - Target: All lab technicians using the system during audit cycles
+
+  Ticket Resolution:
+    - Average time from ticket creation to resolution
+    - Track if it improves month over month
+
+  Renewal Trigger:
+    - Create calendar reminder for 60 days before NAAC assessment
+    - Proactively contact the IQAC coordinator to prepare audit reports
+    - This is your strongest retention and upsell moment
+
+================================================================================
+PART 9: QUICK REFERENCE — PRODUCT FEATURE TO PROBLEM MAPPING
+================================================================================
+
+  FEATURE                    →  PROBLEM SOLVED
+  ─────────────────────────────────────────────
+  Asset Registry             →  "We don't know what we have"
+  Multi-Property Scoping     →  "Multiple buildings, no visibility"
+  Department Access Control  →  "No accountability, anyone can access anything"
+  Bulk CSV Import            →  "We have old Excel data"
+  QR Code Generation         →  "We can't track movement between labs"
+  QR Scan Verification       →  "Stock verification takes 3 weeks"
+  Audit Sessions             →  "No structured audit process"
+  Audit Progress Dashboard   →  "HODs don't submit on time"
+  PDF Audit Report           →  "NAAC needs documented stock verification"
+  Audit History              →  "Can't show records for past years"
+  Maintenance Tickets        →  "Equipment breaks and nobody fixes it"
+  SLA Tracking               →  "Repairs drag on with no accountability"
+  AMC Date Tracking          →  "AMC renewals get missed"
+  Expiry Alerts              →  "Warranty lapses unnoticed"
+  Approval Workflow          →  "Assets get deleted/modified without oversight"
+  Activity Log               →  "Who changed what? No audit trail"
+  Role-Based Access          →  "Staff should only see their own area"
+  Reports Page               →  "Finance wants an asset register export"
+  User Management            →  "Managing 20+ staff in one system"
+  License Management         →  "Control how many assets each campus tracks"
+
+================================================================================
+END OF DOCUMENT
+Folonite Track | Internal ICP Guide | Engineering Colleges & Technical Institutes
+For internal team use only. Last updated: February 2026.
+================================================================================
