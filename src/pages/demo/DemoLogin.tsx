@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
+import { Label } from "@/components/ui/label";
+import { Eye, EyeOff } from "lucide-react";
 import { demoAuthKeys } from "@/lib/demo";
 
 export default function DemoLogin() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("demo@folonite.in");
   const [password, setPassword] = useState("demo@123");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string>("");
 
   useEffect(() => {
@@ -22,87 +23,89 @@ export default function DemoLogin() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background text-foreground md:flex-row">
-      <aside className="relative hidden w-full flex-1 overflow-hidden md:block">
-        <img
-          src="/login_image.png"
-          alt="Folonite workspace"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-background/40 via-background/55 to-primary/25" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-background via-background/85 to-transparent" />
-        <div className="relative z-10 flex h-full flex-col justify-between p-10">
-          <div className="max-w-[200px]">
-            <span className="text-2xl font-semibold tracking-tight text-[#111111]">Folonite</span>
+    <div className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-primary/5 via-primary/10 to-background px-4 py-12">
+      <div className="w-full max-w-md">
+        <div className="mb-10 text-center">
+          <div className="mb-6">
+            <span className="text-3xl font-serif font-medium tracking-tight text-foreground">Folonite</span>
           </div>
-          <p className="text-xs text-foreground/70">
-            © {currentYear} Folonite Demo. Experience the platform risk-free.
+          <h2 className="font-serif text-3xl font-medium tracking-tight text-foreground">Demo Login</h2>
+          <p className="mt-3 text-[17px] leading-[1.6] text-muted-foreground">
+            Use the prefilled credentials or tweak them to simulate sign-in.
           </p>
         </div>
-      </aside>
-      <main className="flex min-h-dvh w-full flex-1 items-center justify-center px-5 py-12 sm:px-8">
-        <div className="w-full max-w-md space-y-8">
-          <div className="overflow-hidden rounded-3xl border border-border/60 bg-card/80 shadow-soft md:hidden">
-            <div className="relative h-40 w-full">
-              <img src="/login_image.png" alt="Folonite workspace" className="h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-br from-background/40 via-background/35 to-primary/20" />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-background via-background/85 to-transparent" />
-              <div className="absolute bottom-4 left-4 flex items-center gap-3">
-                <div className="max-w-[160px]">
-                </div>
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.32em] text-primary">Folonite Demo</p>
-                </div>
+
+        <div className="space-y-6">
+          <form
+            className="space-y-5"
+            onSubmit={(e) => {
+              e.preventDefault();
+              setError("");
+              if (email.trim().toLowerCase() === "demo@folonite.in" && password === "demo@123") {
+                try {
+                  const keys = demoAuthKeys();
+                  const user = { id: "demo-user", name: "Demo User", email: "demo@folonite.in", role: "admin" };
+                  sessionStorage.setItem(keys.current, user.id);
+                  sessionStorage.setItem(keys.auth, JSON.stringify(user));
+                  try { localStorage.removeItem(keys.current); localStorage.removeItem(keys.auth); } catch { }
+                } catch { }
+                navigate("/demo", { replace: true });
+              } else {
+                setError("Invalid demo credentials");
+              }
+            }}
+          >
+            <div className="space-y-2">
+              <Label htmlFor="email" className="text-sm font-medium">
+                Email
+              </Label>
+              <Input
+                id="email"
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                autoFocus
+                className="h-11 rounded-xl bg-muted/30 px-4 transition-all focus:bg-background focus:ring-2 focus:ring-primary/20"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="password" className="text-sm font-medium">
+                Password
+              </Label>
+              <div className="relative">
+                <Input
+                  id="password"
+                  type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="h-11 rounded-xl bg-muted/30 px-4 pr-10 transition-all focus:bg-background focus:ring-2 focus:ring-primary/20"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-0 top-0 flex h-full w-10 items-center justify-center text-muted-foreground hover:text-foreground"
+                >
+                  {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                </button>
               </div>
             </div>
-          </div>
-          <Card className="rounded-2xl border border-border/60 bg-card/95 shadow-soft">
-            <CardHeader className="space-y-2 text-center">
-              <div className="mb-4">
-                <span className="text-2xl font-semibold tracking-tight text-[#111111]">Folonite</span>
-              </div>
-              <CardTitle className="text-2xl font-semibold">Demo Login</CardTitle>
-              <p className="text-sm text-muted-foreground">
-                Use the prefilled credentials or tweak them to simulate sign-in.
-              </p>
-            </CardHeader>
-            <CardContent>
-              <form
-                className="space-y-4"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setError("");
-                  if (email.trim().toLowerCase() === "demo@folonite.in" && password === "demo@123") {
-                    try {
-                      const keys = demoAuthKeys();
-                      const user = { id: "demo-user", name: "Demo User", email: "demo@folonite.in", role: "admin" };
-                      // Demo-scoped keys (session only for isolation; no cross-contamination)
-                      sessionStorage.setItem(keys.current, user.id);
-                      sessionStorage.setItem(keys.auth, JSON.stringify(user));
-                      // Ensure any stale demo keys in localStorage are cleared
-                      try { localStorage.removeItem(keys.current); localStorage.removeItem(keys.auth); } catch { }
-                    } catch { }
-                    navigate("/demo", { replace: true });
-                  } else {
-                    setError("Invalid demo credentials");
-                  }
-                }}
-              >
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Email</label>
-                  <Input value={email} onChange={(e) => setEmail(e.target.value)} />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Password</label>
-                  <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                </div>
-                {error && <p className="text-sm text-destructive">{error}</p>}
-                <Button type="submit" className="h-11 w-full rounded-full bg-[#111111] text-sm font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-90">Sign in to Demo</Button>
-              </form>
-            </CardContent>
-          </Card>
+
+            {error && <p className="text-sm text-destructive">{error}</p>}
+
+            <Button
+              type="submit"
+              className="h-11 w-full rounded-full bg-primary text-sm font-medium text-primary-foreground shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-all hover:opacity-90"
+            >
+              Sign in to Demo
+            </Button>
+          </form>
         </div>
-      </main>
+
+        <p className="mt-10 text-center text-xs text-muted-foreground">
+          © {currentYear} Folonite Demo. Experience the platform risk-free.
+        </p>
+      </div>
     </div>
   );
 }
