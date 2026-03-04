@@ -151,13 +151,21 @@ export default function Website() {
                   ].map((metric) => (
                     <div
                       key={metric.label}
-                      className="flex flex-col justify-between rounded-2xl bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)] h-full"
+                      className="rounded-2xl bg-white p-5 shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
                     >
-                      <div className="flex items-center justify-between text-xs font-medium text-[#6B7280] mb-4">
-                        <span>{metric.label}</span>
-                        <span className="text-[#2563EB]">{metric.trend}</span>
+                      <div className="mb-4">
+                        <p className="text-xs font-medium text-[#6B7280] leading-relaxed">
+                          {metric.label}
+                        </p>
                       </div>
-                      <p className="text-2xl font-semibold text-[#111111]">{metric.value}</p>
+                      <div className="flex items-end justify-between gap-2">
+                        <p className="text-2xl font-semibold text-[#111111] leading-tight">
+                          {metric.value}
+                        </p>
+                        <span className="text-sm font-medium text-[#2563EB] leading-tight whitespace-nowrap">
+                          {metric.trend}
+                        </span>
+                      </div>
                     </div>
                   ))}
                 </div>
