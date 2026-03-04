@@ -144,10 +144,10 @@ export default function Website() {
               <div className="rounded-3xl bg-[#F3F4F6] p-6 lg:p-8">
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                   {[
-                    { label: "Assets tracked", value: "14,832", trend: "+12%" },
-                    { label: "Audit completion", value: "96%", trend: "On track" },
-                    { label: "Active tickets", value: "38", trend: "-9%" },
-                    { label: "Compliance score", value: "98.7", trend: "Stable" },
+                    { label: "Assets tracked", value: "14,832" },
+                    { label: "Audit completion", value: "96%" },
+                    { label: "Active tickets", value: "38" },
+                    { label: "Compliance score", value: "98.7" },
                   ].map((metric) => (
                     <div
                       key={metric.label}
@@ -162,9 +162,6 @@ export default function Website() {
                         <p className="text-2xl font-semibold text-[#111111] leading-tight">
                           {metric.value}
                         </p>
-                        <span className="text-sm font-medium text-[#2563EB] leading-tight whitespace-nowrap">
-                          {metric.trend}
-                        </span>
                       </div>
                     </div>
                   ))}
