@@ -215,6 +215,172 @@ export default function Website() {
           </div>
         </section>
 
+        <section id="comparison" className="py-20 lg:py-28">
+          <div className="mx-auto w-full max-w-7xl px-6">
+            <div className="mb-12 max-w-2xl space-y-4">
+              <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#6B7280]">
+                Why make the switch
+              </p>
+              <h2 className="text-3xl font-semibold text-[#111111] md:text-4xl">
+                Spreadsheets were never built for asset management.
+              </h2>
+              <p className="text-[17px] leading-[1.6] text-[#6B7280]">
+                See how Folonite transforms chaotic Excel workflows into streamlined, audit-ready operations.
+              </p>
+            </div>
+
+            <div className="rounded-3xl bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)] overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-[#E5E7EB]">
+                      <th className="py-4 pr-6 text-left text-sm font-medium text-[#6B7280]">Capability</th>
+                      <th className="py-4 px-6 text-left text-sm font-medium text-[#6B7280]">Excel / Sheets</th>
+                      <th className="py-4 pl-6 text-left text-sm font-medium text-[#2563EB]">Folonite</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      {
+                        feature: "Real-time collaboration",
+                        excel: "Version conflicts, overwritten data",
+                        folonite: "Live updates with conflict-free editing",
+                      },
+                      {
+                        feature: "QR code generation",
+                        excel: "Manual creation, no native support",
+                        folonite: "Bulk QR generation with one click",
+                      },
+                      {
+                        feature: "Audit trail",
+                        excel: "No history tracking",
+                        folonite: "Complete audit log for every change",
+                      },
+                      {
+                        feature: "Mobile access",
+                        excel: "Limited, formatting breaks",
+                        folonite: "Native mobile experience with scanning",
+                      },
+                      {
+                        feature: "Role-based access",
+                        excel: "File-level permissions only",
+                        folonite: "Granular field-level permissions",
+                      },
+                      {
+                        feature: "Depreciation tracking",
+                        excel: "Manual formulas, error-prone",
+                        folonite: "Automated calculations with reports",
+                      },
+                      {
+                        feature: "Integration APIs",
+                        excel: "Limited connectivity",
+                        folonite: "RESTful APIs, webhooks, exports",
+                      },
+                      {
+                        feature: "Data validation",
+                        excel: "Basic cell rules",
+                        folonite: "Schema-enforced, relationship-aware",
+                      },
+                    ].map((row, idx) => (
+                      <tr key={row.feature} className={idx !== 7 ? "border-b border-[#F3F4F6]" : ""}>
+                        <td className="py-5 pr-6 text-sm font-medium text-[#111111]">{row.feature}</td>
+                        <td className="py-5 px-6 text-sm text-[#6B7280]">{row.excel}</td>
+                        <td className="py-5 pl-6 text-sm font-medium text-[#111111]">
+                          <span className="inline-flex items-center gap-2">
+                            <svg className="h-4 w-4 text-[#2563EB]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                            {row.folonite}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="roi" className="py-20 lg:py-28 bg-[#F3F4F6]">
+          <div className="mx-auto w-full max-w-7xl px-6">
+            <div className="mb-12 max-w-2xl space-y-4">
+              <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#6B7280]">
+                Return on investment
+              </p>
+              <h2 className="text-3xl font-semibold text-[#111111] md:text-4xl">
+                Measurable impact from day one.
+              </h2>
+              <p className="text-[17px] leading-[1.6] text-[#6B7280]">
+                Teams that switch to Folonite see immediate improvements across efficiency, accuracy, and compliance.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  metric: "75%",
+                  label: "Faster audits",
+                  description: "Cut audit preparation from weeks to days with instant reports and verified data.",
+                },
+                {
+                  metric: "60%",
+                  label: "Less admin time",
+                  description: "Automated workflows eliminate manual data entry and reconciliation tasks.",
+                },
+                {
+                  metric: "99.5%",
+                  label: "Data accuracy",
+                  description: "Schema validation and QR verification ensure your records are always trustworthy.",
+                },
+                {
+                  metric: "Zero",
+                  label: "Lost assets",
+                  description: "Real-time location tracking means nothing falls through the cracks again.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-2xl bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+                >
+                  <p className="text-4xl font-semibold text-[#2563EB]">{item.metric}</p>
+                  <h4 className="mt-3 text-lg font-semibold text-[#111111]">{item.label}</h4>
+                  <p className="mt-2 text-sm leading-[1.6] text-[#6B7280]">{item.description}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 rounded-2xl bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
+              <div className="grid gap-10 lg:grid-cols-2">
+                <div>
+                  <h3 className="text-xl font-semibold text-[#111111]">The hidden cost of spreadsheets</h3>
+                  <p className="mt-4 text-[15px] leading-[1.6] text-[#6B7280]">
+                    Every hour spent reconciling data, chasing missing assets, or fixing errors is an hour not spent on strategic work. Folonite pays for itself by eliminating the invisible tax of spreadsheet management.
+                  </p>
+                </div>
+                <div className="space-y-4">
+                  {[
+                    { label: "Annual audit preparation", excel: "120+ hours", folonite: "30 hours" },
+                    { label: "Monthly reconciliation", excel: "16 hours", folonite: "2 hours" },
+                    { label: "Asset discovery & tagging", excel: "40 hours", folonite: "8 hours" },
+                  ].map((item) => (
+                    <div key={item.label} className="flex items-center justify-between rounded-xl bg-[#F3F4F6] px-5 py-4">
+                      <span className="text-sm font-medium text-[#111111]">{item.label}</span>
+                      <div className="flex items-center gap-6">
+                        <span className="text-sm text-[#6B7280]">{item.excel}</span>
+                        <svg className="h-4 w-4 text-[#6B7280]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                        <span className="text-sm font-semibold text-[#2563EB]">{item.folonite}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="support" className="py-20 lg:py-28">
           <div className="mx-auto w-full max-w-7xl px-6">
             <div className="grid gap-12 md:grid-cols-2">
