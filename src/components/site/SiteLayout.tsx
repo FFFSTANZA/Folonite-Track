@@ -14,7 +14,8 @@ export function SiteLayout({ children }: SiteLayoutProps) {
           <nav className="hidden flex-1 items-center justify-center gap-8 text-sm font-medium text-[#111111] md:flex">
             <a href="#overview" className="transition-opacity hover:opacity-70">Overview</a>
             <a href="#features" className="transition-opacity hover:opacity-70">Features</a>
-            <a href="#modules" className="transition-opacity hover:opacity-70">Modules</a>
+            <a href="#comparison" className="transition-opacity hover:opacity-70">Comparison</a>
+            <a href="#roi" className="transition-opacity hover:opacity-70">ROI</a>
             <a href="#demo" className="transition-opacity hover:opacity-70">Demo</a>
           </nav>
           <div className="flex items-center">
@@ -44,6 +45,8 @@ export function SiteLayout({ children }: SiteLayoutProps) {
             <div className="flex flex-col gap-2">
               <span className="font-semibold text-[#111111]">Product</span>
               <a href="#features" className="hover:text-[#111111]">Features</a>
+              <a href="#comparison" className="hover:text-[#111111]">Comparison</a>
+              <a href="#roi" className="hover:text-[#111111]">ROI</a>
               <a href="#modules" className="hover:text-[#111111]">Modules</a>
               <a href="#demo" className="hover:text-[#111111]">Demo</a>
             </div>
