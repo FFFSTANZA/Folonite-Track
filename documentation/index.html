@@ -8,442 +8,613 @@
   <link rel="icon" type="image/png" href="/favicon.png" sizes="any" />
   <style>
     :root {
-      --primary: #2563eb;
-      --primary-light: #eff6ff;
-      --text: #111827;
-      --text-muted: #6b7280;
-      --border: #e5e7eb;
+      --primary: #111111;
+      --accent: #2563EB;
+      --text: #111111;
+      --text-muted: #6B7280;
+      --text-light: #9CA3AF;
+      --border: #E5E7EB;
       --bg: #ffffff;
-      --bg-muted: #f9fafb;
+      --bg-muted: #F3F4F6;
+      --shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
       line-height: 1.6;
       color: var(--text);
       background: var(--bg);
     }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    
+    .container { 
+      max-width: 80rem; 
+      margin: 0 auto; 
+      padding: 0 1.5rem; 
+    }
+    
+    /* Typography */
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: var(--text-muted);
+    }
+    
+    h1, h2, h3, h4 {
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      color: var(--text);
+    }
+    
+    h1 {
+      font-size: clamp(3rem, 5vw, 4.5rem);
+    }
+    
+    h2 {
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+    }
+    
+    h3 {
+      font-size: 1.25rem;
+    }
+    
+    h4 {
+      font-size: 1.125rem;
+    }
+    
+    p {
+      line-height: 1.6;
+    }
     
     /* Header */
     header {
-      border-bottom: 1px solid var(--border);
-      background: var(--bg);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 50;
+      background: var(--bg-muted);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
     }
+    
     header .container {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 64px;
+      height: 5rem;
     }
+    
     .brand {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       font-weight: 600;
+      letter-spacing: -0.025em;
       text-decoration: none;
       color: var(--text);
     }
-    nav { display: flex; gap: 24px; }
+    
+    nav { 
+      display: flex; 
+      align-items: center;
+      gap: 2rem; 
+    }
+    
     nav a {
-      text-decoration: none;
-      color: var(--text-muted);
       font-size: 0.875rem;
       font-weight: 500;
-      transition: color 0.2s;
+      text-decoration: none;
+      color: var(--text);
+      transition: opacity 0.2s;
     }
-    nav a:hover, nav a.active { color: var(--primary); }
     
-    /* Hero */
-    .hero {
-      background: linear-gradient(to bottom, var(--primary-light), transparent);
-      padding: 80px 0 60px;
-      text-align: center;
+    nav a:hover { 
+      opacity: 0.7; 
     }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--primary);
-      color: white;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      margin-bottom: 20px;
-    }
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 700;
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
-    .hero p {
-      font-size: 1.125rem;
-      color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 auto 32px;
-    }
+    
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 12px 24px;
-      border-radius: 8px;
+      justify-content: center;
+      padding: 0.625rem 1.25rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
       font-weight: 500;
       text-decoration: none;
-      transition: all 0.2s;
+      transition: opacity 0.2s;
+      border: none;
+      cursor: pointer;
     }
+    
     .btn-primary {
       background: var(--primary);
       color: white;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     }
-    .btn-primary:hover { background: #1d4ed8; }
+    
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+    
+    .btn-secondary {
+      background: #EAEAEA;
+      color: var(--text);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+    
+    .btn-secondary:hover {
+      opacity: 0.8;
+    }
+    
     .btn-outline {
       background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: white;
     }
-    .btn-outline:hover { background: var(--bg-muted); }
     
-    /* Quick Nav */
-    .quick-nav {
-      padding: 24px 0;
-      border-bottom: 1px solid var(--border);
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
     }
-    .quick-nav .container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .quick-nav span { font-size: 0.875rem; color: var(--text-muted); margin-right: 8px; }
-    .quick-nav a {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      text-decoration: none;
-      padding: 6px 14px;
-      border-radius: 20px;
-      transition: all 0.2s;
-    }
-    .quick-nav a:hover {
+    
+    .btn-white {
+      background: white;
       color: var(--primary);
-      background: var(--primary-light);
+    }
+    
+    .btn-white:hover {
+      opacity: 0.9;
+    }
+    
+    /* Hero */
+    .hero {
+      padding: 8rem 0 5rem;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      max-width: 64rem;
+      margin: 1.5rem auto 0;
+    }
+    
+    .hero > .container > p {
+      max-width: 43.75rem;
+      margin: 1.5rem auto 0;
+      font-size: 1.0625rem;
+      color: #333;
+    }
+    
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
     }
     
     /* Sections */
-    section { padding: 60px 0; }
-    section.alt { background: var(--bg-muted); }
+    section {
+      padding: 5rem 0;
+    }
+    
+    section.alt {
+      background: var(--bg-muted);
+    }
     
     .section-header {
-      text-align: center;
-      margin-bottom: 48px;
+      max-width: 42rem;
+      margin-bottom: 3rem;
     }
-    .section-header span {
-      display: inline-block;
-      background: var(--primary-light);
-      color: var(--primary);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      margin-bottom: 12px;
-    }
+    
     .section-header h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 12px;
+      margin-top: 1rem;
     }
+    
     .section-header p {
+      margin-top: 1rem;
+      font-size: 1.0625rem;
       color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 auto;
     }
     
     /* Cards */
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+      gap: 1.5rem;
     }
+    
+    .card-grid-4 {
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    }
+    
     .card {
       background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      transition: box-shadow 0.2s, border-color 0.2s;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
     }
-    .card:hover {
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      border-color: var(--primary);
+    
+    .card h4 {
+      margin-top: 0;
     }
-    .card-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 16px;
-    }
-    .card h3 {
-      font-size: 1.125rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
+    
     .card p {
+      margin-top: 0.5rem;
       font-size: 0.875rem;
       color: var(--text-muted);
       line-height: 1.6;
     }
     
-    /* Role Cards */
-    .role-card {
-      border-left: 4px solid;
+    .card-step .step-number {
+      font-size: 1.875rem;
+      font-weight: 600;
+      color: var(--accent);
     }
-    .role-card.admin {
-      border-color: #2563eb;
-      background: linear-gradient(135deg, #eff6ff, #ffffff);
-    }
-    .role-card.manager {
-      border-color: #059669;
-      background: linear-gradient(135deg, #ecfdf5, #ffffff);
-    }
-    .role-card.user {
-      border-color: #d97706;
-      background: linear-gradient(135deg, #fffbeb, #ffffff);
-    }
-    .role-card .card-icon {
-      background: transparent;
-      border: 2px solid currentColor;
-    }
-    .role-card.admin .card-icon { color: #2563eb; }
-    .role-card.manager .card-icon { color: #059669; }
-    .role-card.user .card-icon { color: #d97706; }
     
-    .tag {
+    .card-step h4 {
+      margin-top: 1rem;
+    }
+    
+    /* Role cards */
+    .role-card .role-tag {
       display: inline-block;
       font-size: 0.75rem;
       font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 4px;
-      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      background: #EFF6FF;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
     }
-    .tag.admin { background: #dbeafe; color: #1e40af; }
-    .tag.manager { background: #d1fae5; color: #065f46; }
-    .tag.user { background: #fef3c7; color: #92400e; }
     
-    .feature-list {
+    .role-card ul {
       list-style: none;
-      margin-top: 16px;
+      margin-top: 1rem;
     }
-    .feature-list li {
+    
+    .role-card li {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 0.5rem;
       font-size: 0.875rem;
       color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-    .feature-list li::before {
-      content: "✓";
-      color: var(--primary);
-      font-weight: 700;
+      margin-bottom: 0.5rem;
     }
     
-    /* Steps */
-    .step-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
+    .role-card li::before {
+      content: "";
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%232563EB'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 13l4 4L19 7'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      flex-shrink: 0;
     }
-    .step-card {
-      position: relative;
-      padding-left: 56px;
+    
+    /* Info box */
+    .info-box {
+      background: var(--bg-muted);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-top: 3rem;
     }
-    .step-number {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 40px;
-      height: 40px;
-      background: var(--primary);
-      color: white;
-      border-radius: 50%;
+    
+    .info-box h3 {
+      margin-bottom: 1rem;
+    }
+    
+    .info-box p {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    
+    /* Highlight box */
+    .highlight-box {
+      background: var(--bg);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-top: 3rem;
+      box-shadow: var(--shadow);
+    }
+    
+    .highlight-box .icon-wrap {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
-      font-size: 1rem;
-    }
-    .step-card h4 {
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-    .step-card p {
-      font-size: 0.875rem;
-      color: var(--text-muted);
+      width: 3rem;
+      height: 3rem;
+      background: #EFF6FF;
+      border-radius: 0.5rem;
+      flex-shrink: 0;
     }
     
-    /* Info Box */
-    .info-box {
-      background: var(--primary-light);
-      border-radius: 12px;
-      padding: 24px;
-      margin-top: 40px;
-    }
-    .info-box h4 {
-      margin-bottom: 8px;
-    }
-    .info-box p {
-      font-size: 0.875rem;
-      color: var(--text-muted);
+    .highlight-box .icon-wrap svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: var(--accent);
     }
     
-    /* Accordion */
-    .accordion {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .accordion-item {
-      border-bottom: 1px solid var(--border);
-    }
-    .accordion-item:last-child { border-bottom: none; }
-    .accordion-header {
-      padding: 16px 24px;
-      cursor: pointer;
+    .highlight-box .content {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: 500;
-      transition: background 0.2s;
+      gap: 1rem;
     }
-    .accordion-header:hover { background: var(--bg-muted); }
-    .accordion-body {
-      padding: 0 24px 16px;
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      display: none;
-    }
-    .accordion-item.active .accordion-body { display: block; }
-    .accordion-item.active .accordion-header { color: var(--primary); }
     
-    /* Two Column */
+    .highlight-box .check {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      color: var(--accent);
+    }
+    
+    .highlight-box .check svg {
+      width: 1rem;
+      height: 1rem;
+    }
+    
+    /* Two column */
     .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: center;
+      gap: 1.5rem;
     }
+    
     @media (max-width: 768px) {
-      .two-col { grid-template-columns: 1fr; }
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Metric list */
+    .metric-list {
+      background: var(--bg-muted);
+      border-radius: 1rem;
+      padding: 1.5rem;
+    }
+    
+    .metric-list h3 {
+      margin-bottom: 1rem;
+    }
+    
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .metric-row:last-child {
+      border-bottom: none;
+    }
+    
+    .metric-row .label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    
+    .metric-row .value {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    
+    /* Keyboard shortcuts */
+    kbd {
+      display: inline-block;
+      background: var(--bg);
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+      font-size: 0.75rem;
+      color: var(--text);
+    }
+    
+    /* Guide grid */
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      gap: 2rem;
+    }
+    
+    .guide-col h4 {
+      margin-bottom: 0.75rem;
+    }
+    
+    .guide-col ol, .guide-col ul {
+      padding-left: 1.25rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    
+    .guide-col li {
+      margin-bottom: 0.25rem;
+    }
+    
+    /* Check list */
+    .check-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .check-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    
+    .check-list li::before {
+      content: "";
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%232563EB'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 13l4 4L19 7'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      flex-shrink: 0;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      background: var(--primary);
+      border-radius: 1.5rem;
+      padding: 3rem 2.5rem;
+    }
+    
+    .cta-section h2 {
+      color: white;
+    }
+    
+    .cta-section p {
+      color: var(--text-light);
+      margin-top: 1.5rem;
+    }
+    
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    
+    .cta-card {
+      background: #1F1F1F;
+      border-radius: 1rem;
+      padding: 1.5rem;
+    }
+    
+    .cta-card h3 {
+      color: white;
+      font-size: 0.875rem;
+    }
+    
+    .cta-card p {
+      color: var(--text-light);
+      margin-top: 1rem;
+      font-size: 0.875rem;
     }
     
     /* Footer */
     footer {
       border-top: 1px solid var(--border);
-      padding: 48px 0;
+      padding: 4rem 0;
+    }
+    
+    footer .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
       text-align: center;
+    }
+    
+    footer p {
       color: var(--text-muted);
       font-size: 0.875rem;
     }
-    footer a { color: var(--primary); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
     
-    /* CTA */
-    .cta-section {
-      background: var(--primary);
-      color: white;
-      border-radius: 20px;
-      padding: 48px;
-      text-align: center;
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
     }
-    .cta-section h2 {
-      font-size: 2rem;
-      margin-bottom: 12px;
+    
+    footer a:hover {
+      text-decoration: underline;
     }
-    .cta-section p {
-      opacity: 0.9;
-      margin-bottom: 24px;
+    
+    /* Divider */
+    .divider {
+      border-top: 1px solid var(--border);
+      margin: 1.5rem 0;
     }
-    .btn-white {
-      background: white;
-      color: var(--primary);
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      header nav {
+        display: none;
+      }
+      
+      .hero {
+        padding: 6rem 0 4rem;
+      }
+      
+      section {
+        padding: 4rem 0;
+      }
+      
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .cta-section {
+        padding: 2rem 1.5rem;
+      }
     }
-    .btn-white:hover { background: #f3f4f6; }
-    .btn-outline-white {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.3);
-      color: white;
-    }
-    .btn-outline-white:hover { background: rgba(255,255,255,0.1); }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
-      <a href="/" class="brand">📦 Folonite Docs</a>
+      <a href="/site" class="brand">Folonite</a>
       <nav>
-        <a href="#overview" class="active">Getting Started</a>
-        <a href="/guide">Back to App</a>
+        <a href="/site">Home</a>
+        <a href="/guide" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8125rem;">Open in App</a>
       </nav>
     </div>
   </header>
 
-  <div class="hero">
+  <section class="hero">
     <div class="container">
-      <div class="badge">📚 Phase 1: Getting Started</div>
+      <span class="eyebrow">Phase 1: Getting Started</span>
       <h1>Folonite User Guide</h1>
       <p>Everything you need to know to get started with Folonite — from navigating the interface to understanding your role and permissions.</p>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-        <a href="#overview" class="btn btn-primary">Start Learning</a>
-        <a href="/guide" class="btn btn-outline">Open Guide in App</a>
+      <div class="hero-actions">
+        <a href="#quickstart" class="btn btn-primary">Start Learning</a>
+        <a href="/help" class="btn btn-secondary">Help Center</a>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="quick-nav">
-    <div class="container">
-      <span>Jump to:</span>
-      <a href="#overview">Overview</a>
-      <a href="#interface">Interface</a>
-      <a href="#roles">Roles</a>
-      <a href="#concepts">Concepts</a>
-      <a href="#dashboard">Dashboard</a>
-      <a href="#mobile">Mobile</a>
-    </div>
-  </div>
-
-  <section id="overview">
+  <section id="quickstart">
     <div class="container">
       <div class="section-header">
-        <span>⏱️ 15-Minute Setup</span>
+        <span class="eyebrow">15-Minute Setup</span>
         <h2>Quick Start Guide</h2>
         <p>Get up and running with Folonite in four simple steps.</p>
       </div>
       
-      <div class="step-grid">
-        <div class="step-card">
-          <div class="step-number">1</div>
+      <div class="card-grid card-grid-4">
+        <div class="card card-step">
+          <div class="step-number">01</div>
           <h4>Log In</h4>
           <p>Use your email and password to access the system. Contact your admin if you need account access.</p>
         </div>
-        <div class="step-card">
-          <div class="step-number">2</div>
+        <div class="card card-step">
+          <div class="step-number">02</div>
           <h4>Explore the Dashboard</h4>
           <p>Review your metrics, check recent activity, and familiarize yourself with the quick actions.</p>
         </div>
-        <div class="step-card">
-          <div class="step-number">3</div>
+        <div class="card card-step">
+          <div class="step-number">03</div>
           <h4>Check Your Access</h4>
           <p>Navigate to different modules to see what's available based on your role and permissions.</p>
         </div>
-        <div class="step-card">
-          <div class="step-number">4</div>
+        <div class="card card-step">
+          <div class="step-number">04</div>
           <h4>Try a Quick Action</h4>
           <p>Create a test asset or explore existing records to get comfortable with the interface.</p>
         </div>
@@ -453,61 +624,28 @@
 
   <section id="interface" class="alt">
     <div class="container">
-      <div class="two-col">
-        <div>
-          <span style="display:inline-block;background:#dbeafe;color:#1e40af;padding:6px 14px;border-radius:20px;font-size:0.8rem;font-weight:500;margin-bottom:16px;">🖥️ Interface Overview</span>
-          <h2 style="font-size:2rem;font-weight:700;margin-bottom:16px;">Understanding the Folonite Interface</h2>
-          <p style="color:var(--text-muted);margin-bottom:24px;">The Folonite interface is designed for clarity and efficiency. Here's what you'll find on every screen.</p>
-          
-          <div style="space-y:16px;">
-            <div style="display:flex;gap:16px;margin-bottom:16px;">
-              <div style="color:#2563eb;font-weight:700;">✓</div>
-              <div>
-                <h4 style="font-weight:600;">Left Navigation Panel</h4>
-                <p style="font-size:0.875rem;color:var(--text-muted);">Access all modules from the collapsible sidebar. The menu adapts based on your role and permissions.</p>
-              </div>
-            </div>
-            <div style="display:flex;gap:16px;margin-bottom:16px;">
-              <div style="color:#2563eb;font-weight:700;">✓</div>
-              <div>
-                <h4 style="font-weight:600;">Top Bar</h4>
-                <p style="font-size:0.875rem;color:var(--text-muted);">Contains user profile menu, notifications bell, theme toggle, and the global search/command palette.</p>
-              </div>
-            </div>
-            <div style="display:flex;gap:16px;margin-bottom:16px;">
-              <div style="color:#2563eb;font-weight:700;">✓</div>
-              <div>
-                <h4 style="font-weight:600;">Dashboard Widgets</h4>
-                <p style="font-size:0.875rem;color:var(--text-muted);">Configurable cards showing key metrics and recent activity relevant to your role.</p>
-              </div>
-            </div>
-            <div style="display:flex;gap:16px;">
-              <div style="color:#2563eb;font-weight:700;">✓</div>
-              <div>
-                <h4 style="font-weight:600;">Responsive Layout</h4>
-                <p style="font-size:0.875rem;color:var(--text-muted);">The interface automatically adapts for desktop, tablet, and mobile views while maintaining full functionality.</p>
-              </div>
-            </div>
-          </div>
+      <div class="section-header">
+        <span class="eyebrow">Interface Overview</span>
+        <h2>Understanding the Folonite Interface</h2>
+        <p>The Folonite interface is designed for clarity and efficiency. Here is what you'll find on every screen.</p>
+      </div>
+      
+      <div class="card-grid">
+        <div class="card">
+          <h4>Left Navigation Panel</h4>
+          <p>Access all modules from the collapsible sidebar. The menu adapts based on your role and permissions.</p>
         </div>
-        
-        <div style="display:grid;gap:16px;">
-          <div class="card">
-            <h4 style="font-weight:600;margin-bottom:8px;">🧭 Navigation Panel</h4>
-            <p style="font-size:0.875rem;color:var(--text-muted);">Collapsible sidebar with module icons and labels. Access Dashboard, Assets, Properties, QR Codes, Reports, and more.</p>
-          </div>
-          <div class="card">
-            <h4 style="font-weight:600;margin-bottom:8px;">🔔 Top Bar</h4>
-            <div style="font-size:0.875rem;color:var(--text-muted);">
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><span>⌘K</span> Global search with shortcut</div>
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><span>🔔</span> Notification bell with unread count</div>
-              <div style="display:flex;align-items:center;gap:8px;"><span>🌙</span> Theme toggle (light/dark mode)</div>
-            </div>
-          </div>
-          <div class="card">
-            <h4 style="font-weight:600;margin-bottom:8px;">📊 Dashboard Widgets</h4>
-            <p style="font-size:0.875rem;color:var(--text-muted);">Metric cards showing key numbers. Activity feed tracking recent changes. Quick action buttons for common tasks.</p>
-          </div>
+        <div class="card">
+          <h4>Top Bar</h4>
+          <p>Contains user profile menu, notifications bell, theme toggle, and the global search/command palette.</p>
+        </div>
+        <div class="card">
+          <h4>Dashboard Widgets</h4>
+          <p>Configurable cards showing key metrics and recent activity relevant to your role.</p>
+        </div>
+        <div class="card">
+          <h4>Responsive Layout</h4>
+          <p>The interface automatically adapts for desktop, tablet, and mobile views while maintaining full functionality.</p>
         </div>
       </div>
     </div>
@@ -516,18 +654,16 @@
   <section id="roles">
     <div class="container">
       <div class="section-header">
-        <span>🛡️ Access Control</span>
+        <span class="eyebrow">Access Control</span>
         <h2>Understanding User Roles</h2>
         <p>Folonite uses role-based access control to ensure users only see and modify what they're authorized for.</p>
       </div>
       
       <div class="card-grid">
-        <div class="card role-card admin">
-          <div class="card-icon">🛡️</div>
-          <span class="tag admin">ADMIN</span>
-          <h3>Admin</h3>
-          <p>Full system access with complete control over users, settings, and configurations.</p>
-          <ul class="feature-list">
+        <div class="card role-card">
+          <span class="role-tag">Admin</span>
+          <p style="margin-top: 1rem;">Full system access with complete control over users, settings, and configurations.</p>
+          <ul>
             <li>Create and manage users</li>
             <li>Configure system settings</li>
             <li>Access all modules</li>
@@ -535,13 +671,10 @@
             <li>Manage approvals</li>
           </ul>
         </div>
-        
-        <div class="card role-card manager">
-          <div class="card-icon">👥</div>
-          <span class="tag manager">MANAGER</span>
-          <h3>Manager</h3>
-          <p>Department-level oversight with audit and reporting capabilities.</p>
-          <ul class="feature-list">
+        <div class="card role-card">
+          <span class="role-tag">Manager</span>
+          <p style="margin-top: 1rem;">Department-level oversight with audit and reporting capabilities.</p>
+          <ul>
             <li>Manage assigned properties</li>
             <li>Run audit sessions</li>
             <li>Generate reports</li>
@@ -549,13 +682,10 @@
             <li>View team assets</li>
           </ul>
         </div>
-        
-        <div class="card role-card user">
-          <div class="card-icon">📦</div>
-          <span class="tag user">USER</span>
-          <h3>User</h3>
-          <p>Operational access for day-to-day asset management tasks.</p>
-          <ul class="feature-list">
+        <div class="card role-card">
+          <span class="role-tag">User</span>
+          <p style="margin-top: 1rem;">Operational access for day-to-day asset management tasks.</p>
+          <ul>
             <li>Add and edit assets</li>
             <li>Generate QR codes</li>
             <li>Create tickets</li>
@@ -566,7 +696,7 @@
       </div>
       
       <div class="info-box">
-        <h4>Permission Scoping</h4>
+        <h3>Permission Scoping</h3>
         <p>Beyond role-based access, Folonite supports property and department-level scoping. This means a Manager might only see assets for specific properties they're assigned to, while an Admin sees everything. Users can be granted access to multiple properties and departments as needed.</p>
       </div>
     </div>
@@ -575,53 +705,55 @@
   <section id="concepts" class="alt">
     <div class="container">
       <div class="section-header">
-        <span>💡 Core Concepts</span>
+        <span class="eyebrow">Core Concepts</span>
         <h2>Key Concepts in Folonite</h2>
         <p>Understanding these fundamental concepts will help you work more effectively with the system.</p>
       </div>
       
       <div class="card-grid">
         <div class="card">
-          <div class="card-icon" style="background:#dbeafe;color:#1e40af;">📦</div>
-          <h3>Assets</h3>
+          <h4>Assets</h4>
           <p>Physical items being tracked with rich metadata including status, ownership, procurement details, and lifecycle information.</p>
         </div>
         <div class="card">
-          <div class="card-icon" style="background:#d1fae5;color:#065f46;">🏢</div>
-          <h3>Properties</h3>
+          <h4>Properties</h4>
           <p>Physical locations or facilities where assets are stored. Assets are organized by property for easier management and auditing.</p>
         </div>
         <div class="card">
-          <div class="card-icon" style="background:#fef3c7;color:#92400e;">👥</div>
-          <h3>Departments</h3>
+          <h4>Departments</h4>
           <p>Organizational units within properties that help scope access and organize assets by functional areas.</p>
         </div>
         <div class="card">
-          <div class="card-icon" style="background:#fce7f3;color:#be185d;">🔳</div>
-          <h3>QR Codes</h3>
+          <h4>QR Codes</h4>
           <p>Physical labels generated for each asset that enable quick identification and mobile scanning for audits and lookups.</p>
         </div>
         <div class="card">
-          <div class="card-icon" style="background:#f3e8ff;color:#7c3aed;">🎫</div>
-          <h3>Tickets</h3>
+          <h4>Tickets</h4>
           <p>Maintenance and support requests that track issues from creation through resolution with full comment history.</p>
         </div>
         <div class="card">
-          <div class="card-icon" style="background:#ecfdf5;color:#059669;">✓</div>
-          <h3>Audits</h3>
+          <h4>Audits</h4>
           <p>Compliance verification processes that verify asset existence, condition, and location against the system records.</p>
         </div>
       </div>
       
-      <div class="card" style="margin-top:40px;border-color:#2563eb;background:linear-gradient(135deg,#eff6ff,#ffffff);">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-          <span style="font-size:1.5rem;">📊</span>
-          <h3 style="font-weight:600;">Quantity Normalization</h3>
-        </div>
-        <p style="color:var(--text-muted);margin-bottom:16px;">When you create an asset with quantity greater than 1, Folonite automatically creates individual unit-level records. For example, if you add "Office Chairs — Quantity: 5", the system generates 5 unique asset IDs (AST-001 through AST-005), each with its own QR code and tracking history.</p>
-        <div style="display:flex;align-items:center;gap:8px;color:#2563eb;font-size:0.875rem;">
-          <span style="font-weight:700;">✓</span>
-          <span>This enables precise audit verification and individual unit tracking</span>
+      <div class="highlight-box">
+        <div class="content">
+          <div class="icon-wrap">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z" />
+            </svg>
+          </div>
+          <div>
+            <h3>Quantity Normalization</h3>
+            <p>When you create an asset with quantity greater than 1, Folonite automatically creates individual unit-level records. For example, if you add "Office Chairs — Quantity: 5", the system generates 5 unique asset IDs (AST-001 through AST-005), each with its own QR code and tracking history.</p>
+            <div class="check">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>This enables precise audit verification and individual unit tracking</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -629,79 +761,65 @@
 
   <section id="dashboard">
     <div class="container">
-      <div class="section-header" style="text-align:left;margin-bottom:32px;">
-        <span>🧭 Navigation</span>
-        <h2 style="margin-top:12px;">Dashboard Navigation</h2>
-        <p style="margin-top:12px;">The dashboard is your command center. Here's how to make the most of it.</p>
+      <div class="section-header">
+        <span class="eyebrow">Navigation</span>
+        <h2>Dashboard Navigation</h2>
+        <p>The dashboard is your command center. Here's how to make the most of it.</p>
       </div>
       
-      <div class="two-col">
-        <div>
-          <div style="display:flex;gap:16px;margin-bottom:24px;">
-            <div class="card-icon" style="background:#dbeafe;color:#1e40af;">→</div>
-            <div>
-              <h4 style="font-weight:600;">Quick Actions</h4>
-              <p style="font-size:0.875rem;color:var(--text-muted);">One-click access to common tasks: create assets, raise tickets, and start audit sessions.</p>
-            </div>
+      <div class="card-grid">
+        <div class="card">
+          <h4>Quick Actions</h4>
+          <p>One-click access to common tasks: create assets, raise tickets, and start audit sessions.</p>
+        </div>
+        <div class="card">
+          <h4>Metric Cards</h4>
+          <p>At-a-glance view of total assets, active tickets, audit readiness, and compliance status.</p>
+        </div>
+        <div class="card">
+          <h4>Activity Feed</h4>
+          <p>Real-time stream of recent system events including asset changes, ticket updates, and audit activities.</p>
+        </div>
+        <div class="card">
+          <h4>Navigation Breadcrumbs</h4>
+          <p>Track your navigation history and easily jump back to previous pages or sections.</p>
+        </div>
+      </div>
+      
+      <div class="two-col" style="margin-top: 3rem;">
+        <div class="metric-list">
+          <h3>Metric Cards Explained</h3>
+          <div class="metric-row">
+            <span class="label">Total Assets</span>
+            <span class="value">All assets you have access to</span>
           </div>
-          <div style="display:flex;gap:16px;margin-bottom:24px;">
-            <div class="card-icon" style="background:#d1fae5;color:#065f46;">📊</div>
-            <div>
-              <h4 style="font-weight:600;">Metric Cards</h4>
-              <p style="font-size:0.875rem;color:var(--text-muted);">At-a-glance view of total assets, active tickets, audit readiness, and compliance status.</p>
-            </div>
+          <div class="metric-row">
+            <span class="label">Active Tickets</span>
+            <span class="value">Open or in-progress tickets</span>
           </div>
-          <div style="display:flex;gap:16px;margin-bottom:24px;">
-            <div class="card-icon" style="background:#fef3c7;color:#92400e;">📈</div>
-            <div>
-              <h4 style="font-weight:600;">Activity Feed</h4>
-              <p style="font-size:0.875rem;color:var(--text-muted);">Real-time stream of recent system events including asset changes, ticket updates, and audit activities.</p>
-            </div>
+          <div class="metric-row">
+            <span class="label">Audit Readiness</span>
+            <span class="value">% of assets verified this cycle</span>
           </div>
-          <div style="display:flex;gap:16px;">
-            <div class="card-icon" style="background:#f3e8ff;color:#7c3aed;">☰</div>
-            <div>
-              <h4 style="font-weight:600;">Navigation Breadcrumbs</h4>
-              <p style="font-size:0.875rem;color:var(--text-muted);">Track your navigation history and easily jump back to previous pages or sections.</p>
-            </div>
+          <div class="metric-row">
+            <span class="label">Compliance Score</span>
+            <span class="value">Overall system health indicator</span>
           </div>
         </div>
         
-        <div>
-          <div class="card" style="margin-bottom:16px;">
-            <h4 style="font-weight:600;margin-bottom:16px;">Metric Cards Explained</h4>
-            <div style="border-bottom:1px solid var(--border);padding:12px 0;display:flex;justify-content:space-between;">
-              <span style="font-weight:500;">Total Assets</span>
-              <span style="font-size:0.875rem;color:var(--text-muted);">All assets you have access to</span>
-            </div>
-            <div style="border-bottom:1px solid var(--border);padding:12px 0;display:flex;justify-content:space-between;">
-              <span style="font-weight:500;">Active Tickets</span>
-              <span style="font-size:0.875rem;color:var(--text-muted);">Open or in-progress tickets</span>
-            </div>
-            <div style="border-bottom:1px solid var(--border);padding:12px 0;display:flex;justify-content:space-between;">
-              <span style="font-weight:500;">Audit Readiness</span>
-              <span style="font-size:0.875rem;color:var(--text-muted);">% of assets verified this cycle</span>
-            </div>
-            <div style="padding-top:12px;display:flex;justify-content:space-between;">
-              <span style="font-weight:500;">Compliance Score</span>
-              <span style="font-size:0.875rem;color:var(--text-muted);">Overall system health indicator</span>
-            </div>
+        <div class="metric-list">
+          <h3>Keyboard Shortcuts</h3>
+          <div class="metric-row">
+            <span class="label">Open Command Palette</span>
+            <kbd>⌘K / Ctrl+K</kbd>
           </div>
-          
-          <div class="card">
-            <h4 style="font-weight:600;margin-bottom:16px;">Keyboard Shortcuts</h4>
-            <div style="display:flex;justify-content:space-between;padding:8px 0;">
-              <span style="color:var(--text-muted);">Open Command Palette</span>
-              <kbd style="background:var(--bg-muted);padding:4px 8px;border-radius:4px;font-size:0.75rem;">⌘K / Ctrl+K</kbd>
-            </div>
-            <div style="display:flex;justify-content:space-between;padding:8px 0;">
-              <span style="color:var(--text-muted);">Focus Search</span>
-              <kbd style="background:var(--bg-muted);padding:4px 8px;border-radius:4px;font-size:0.75rem;">/</kbd>
-            </div>
-            <div style="display:flex;justify-content:space-between;padding:8px 0;">
-              <span style="color:var(--text-muted);">Toggle Sidebar</span>
-              <kbd style="background:var(--bg-muted);padding:4px 8px;border-radius:4px;font-size:0.75rem;">B</kbd>
-            </div>
+          <div class="metric-row">
+            <span class="label">Focus Search</span>
+            <kbd>/</kbd>
+          </div>
+          <div class="metric-row">
+            <span class="label">Toggle Sidebar</span>
+            <kbd>B</kbd>
           </div>
         </div>
       </div>
@@ -711,42 +829,36 @@
   <section id="mobile" class="alt">
     <div class="container">
       <div class="section-header">
-        <span>📱 Mobile Access</span>
+        <span class="eyebrow">Mobile Access</span>
         <h2>PWA Installation for Field Use</h2>
         <p>Folonite works great on mobile devices. Install it as a Progressive Web App for the best experience.</p>
       </div>
       
-      <div class="card-grid">
-        <div class="card" style="text-align:center;">
-          <div style="width:64px;height:64px;background:var(--primary-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.5rem;">📲</div>
-          <h3>Install as App</h3>
+      <div class="card-grid card-grid-4">
+        <div class="card">
+          <h4>Install as App</h4>
           <p>Add Folonite to your home screen for quick access without opening the browser each time.</p>
         </div>
-        <div class="card" style="text-align:center;">
-          <div style="width:64px;height:64px;background:var(--primary-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.5rem;">🔳</div>
-          <h3>QR Scanning</h3>
+        <div class="card">
+          <h4>QR Scanning</h4>
           <p>Use your device camera to scan asset QR codes for instant lookup and verification.</p>
         </div>
-        <div class="card" style="text-align:center;">
-          <div style="width:64px;height:64px;background:var(--primary-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.5rem;">✈️</div>
-          <h3>Offline Access</h3>
+        <div class="card">
+          <h4>Offline Access</h4>
           <p>View cached asset lists even without connectivity. Changes sync automatically when back online.</p>
         </div>
-        <div class="card" style="text-align:center;">
-          <div style="width:64px;height:64px;background:var(--primary-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.5rem;">⚡</div>
-          <h3>Field Operations</h3>
+        <div class="card">
+          <h4>Field Operations</h4>
           <p>Perform audits, update asset status, and create tickets directly from mobile devices.</p>
         </div>
       </div>
       
-      <div class="accordion" style="margin-top:40px;">
-        <div class="accordion-item">
-          <div class="accordion-header" onclick="this.parentElement.classList.toggle('active')">
-            <span>Installing on iOS (iPhone/iPad)</span>
-            <span>▼</span>
-          </div>
-          <div class="accordion-body">
-            <ol style="padding-left:20px;line-height:1.8;">
+      <div class="highlight-box" style="margin-top: 3rem;">
+        <h3 style="margin-bottom: 1.5rem;">Installation Guides</h3>
+        <div class="guide-grid">
+          <div class="guide-col">
+            <h4>Installing on iOS (iPhone/iPad)</h4>
+            <ol>
               <li>Open Safari and navigate to your Folonite instance</li>
               <li>Tap the Share button (square with arrow up)</li>
               <li>Scroll down and tap "Add to Home Screen"</li>
@@ -754,14 +866,9 @@
               <li>Folonite will now appear as an app icon on your home screen</li>
             </ol>
           </div>
-        </div>
-        <div class="accordion-item">
-          <div class="accordion-header" onclick="this.parentElement.classList.toggle('active')">
-            <span>Installing on Android</span>
-            <span>▼</span>
-          </div>
-          <div class="accordion-body">
-            <ol style="padding-left:20px;line-height:1.8;">
+          <div class="guide-col">
+            <h4>Installing on Android</h4>
+            <ol>
               <li>Open Chrome and navigate to your Folonite instance</li>
               <li>Tap the menu button (three dots) in the top right</li>
               <li>Tap "Add to Home screen" or "Install app"</li>
@@ -770,33 +877,35 @@
             </ol>
           </div>
         </div>
-        <div class="accordion-item">
-          <div class="accordion-header" onclick="this.parentElement.classList.toggle('active')">
-            <span>Offline Capabilities</span>
-            <span>▼</span>
-          </div>
-          <div class="accordion-body">
-            <p style="margin-bottom:12px;">Folonite supports limited offline functionality for field operations:</p>
-            <ul style="padding-left:20px;line-height:1.8;">
-              <li>View cached asset lists from your last session</li>
-              <li>Scan QR codes and record verification status</li>
-              <li>Queue changes that sync when connectivity returns</li>
-              <li>View property and department information</li>
-            </ul>
-          </div>
-        </div>
+        <div class="divider"></div>
+        <h4 style="margin-bottom: 0.75rem;">Offline Capabilities</h4>
+        <p style="margin-bottom: 1rem;">Folonite supports limited offline functionality for field operations:</p>
+        <ul class="check-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 0.5rem;">
+          <li>View cached asset lists from your last session</li>
+          <li>Scan QR codes and record verification status</li>
+          <li>Queue changes that sync when connectivity returns</li>
+          <li>View property and department information</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section style="padding-bottom:60px;">
+  <section>
     <div class="container">
       <div class="cta-section">
-        <h2>Ready to explore more?</h2>
-        <p>Continue your journey with Phase 2: Property & Department Setup, or jump into the app and start managing assets.</p>
-        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-          <a href="/login" class="btn btn-white">Access Platform</a>
-          <a href="/help" class="btn btn-outline-white">Help Center</a>
+        <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2.5rem; align-items: center;">
+          <div>
+            <h2>Ready to explore more?</h2>
+            <p>Continue your journey with Phase 2: Property & Department Setup, or jump into the app and start managing assets.</p>
+            <div class="cta-actions">
+              <a href="/login" class="btn btn-white">Access Platform</a>
+              <a href="/help" class="btn btn-outline">Help Center</a>
+            </div>
+          </div>
+          <div class="cta-card">
+            <h3>Coming Soon</h3>
+            <p>Phase 2 documentation covering Property & Department Setup will be available shortly.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -804,7 +913,7 @@
 
   <footer>
     <div class="container">
-      <p>© 2025 Folonite. All rights reserved. <a href="/">Back to Home</a></p>
+      <p>&copy; 2025 Folonite. All rights reserved. <a href="/site">Back to Home</a></p>
     </div>
   </footer>
 </body>

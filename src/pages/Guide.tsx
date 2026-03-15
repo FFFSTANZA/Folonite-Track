@@ -1,128 +1,75 @@
 import { Helmet } from "react-helmet-async";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Link } from "react-router-dom";
-import {
-  BookOpen,
-  LayoutDashboard,
-  Shield,
-  Lightbulb,
-  ArrowRight,
-  CheckCircle2,
-  Menu,
-  Bell,
-  Moon,
-  Search,
-  BarChart3,
-  Activity,
-  Clock,
-  Building2,
-  Package,
-  QrCode,
-  FileText,
-  Users,
-  ClipboardCheck,
-  Smartphone,
-  Download
-} from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const BaseUrl = "https://folonite.in/guide";
 const MetaDescription = "Complete user guide for Folonite — Smart Asset Management System. Learn how to track assets, manage audits, and collaborate effectively.";
 
-const navLinks = [
-  { label: "Overview", href: "#overview" },
-  { label: "Interface", href: "#interface" },
-  { label: "Roles", href: "#roles" },
-  { label: "Concepts", href: "#concepts" },
-  { label: "Dashboard", href: "#dashboard" },
-  { label: "Mobile", href: "#mobile" },
+const quickStartSteps = [
+  {
+    step: "01",
+    title: "Log In",
+    description: "Use your email and password to access the system. Contact your admin if you need account access.",
+  },
+  {
+    step: "02",
+    title: "Explore the Dashboard",
+    description: "Review your metrics, check recent activity, and familiarize yourself with the quick actions.",
+  },
+  {
+    step: "03",
+    title: "Check Your Access",
+    description: "Navigate to different modules to see what's available based on your role and permissions.",
+  },
+  {
+    step: "04",
+    title: "Try a Quick Action",
+    description: "Create a test asset or explore existing records to get comfortable with the interface.",
+  },
 ];
 
 const roleCards = [
   {
     role: "Admin",
-    icon: Shield,
     description: "Full system access with complete control over users, settings, and configurations.",
     capabilities: ["Create and manage users", "Configure system settings", "Access all modules", "Generate all reports", "Manage approvals"],
-    color: "text-blue-600",
-    bgColor: "bg-blue-50 dark:bg-blue-950/30",
-    borderColor: "border-blue-200 dark:border-blue-800",
   },
   {
     role: "Manager",
-    icon: Users,
     description: "Department-level oversight with audit and reporting capabilities.",
     capabilities: ["Manage assigned properties", "Run audit sessions", "Generate reports", "Approve changes", "View team assets"],
-    color: "text-emerald-600",
-    bgColor: "bg-emerald-50 dark:bg-emerald-950/30",
-    borderColor: "border-emerald-200 dark:border-emerald-800",
   },
   {
     role: "User",
-    icon: Package,
     description: "Operational access for day-to-day asset management tasks.",
     capabilities: ["Add and edit assets", "Generate QR codes", "Create tickets", "View assigned assets", "Scan QR codes"],
-    color: "text-amber-600",
-    bgColor: "bg-amber-50 dark:bg-amber-950/30",
-    borderColor: "border-amber-200 dark:border-amber-800",
   },
 ];
 
 const coreConcepts = [
   {
     title: "Assets",
-    icon: Package,
     description: "Physical items being tracked with rich metadata including status, ownership, procurement details, and lifecycle information.",
   },
   {
     title: "Properties",
-    icon: Building2,
     description: "Physical locations or facilities where assets are stored. Assets are organized by property for easier management and auditing.",
   },
   {
     title: "Departments",
-    icon: Users,
     description: "Organizational units within properties that help scope access and organize assets by functional areas.",
   },
   {
     title: "QR Codes",
-    icon: QrCode,
     description: "Physical labels generated for each asset that enable quick identification and mobile scanning for audits and lookups.",
   },
   {
     title: "Tickets",
-    icon: FileText,
     description: "Maintenance and support requests that track issues from creation through resolution with full comment history.",
   },
   {
     title: "Audits",
-    icon: ClipboardCheck,
     description: "Compliance verification processes that verify asset existence, condition, and location against the system records.",
-  },
-];
-
-const dashboardFeatures = [
-  {
-    title: "Quick Actions",
-    icon: ArrowRight,
-    description: "One-click access to common tasks: create assets, raise tickets, and start audit sessions.",
-  },
-  {
-    title: "Metric Cards",
-    icon: BarChart3,
-    description: "At-a-glance view of total assets, active tickets, audit readiness, and compliance status.",
-  },
-  {
-    title: "Activity Feed",
-    icon: Activity,
-    description: "Real-time stream of recent system events including asset changes, ticket updates, and audit activities.",
-  },
-  {
-    title: "Navigation Breadcrumbs",
-    icon: Menu,
-    description: "Track your navigation history and easily jump back to previous pages or sections.",
   },
 ];
 
@@ -145,49 +92,41 @@ const interfaceElements = [
   },
 ];
 
+const dashboardFeatures = [
+  {
+    title: "Quick Actions",
+    description: "One-click access to common tasks: create assets, raise tickets, and start audit sessions.",
+  },
+  {
+    title: "Metric Cards",
+    description: "At-a-glance view of total assets, active tickets, audit readiness, and compliance status.",
+  },
+  {
+    title: "Activity Feed",
+    description: "Real-time stream of recent system events including asset changes, ticket updates, and audit activities.",
+  },
+  {
+    title: "Navigation Breadcrumbs",
+    description: "Track your navigation history and easily jump back to previous pages or sections.",
+  },
+];
+
 const mobileFeatures = [
   {
     title: "Install as App",
-    icon: Download,
     description: "Add Folonite to your home screen for quick access without opening the browser each time.",
   },
   {
     title: "QR Scanning",
-    icon: QrCode,
     description: "Use your device camera to scan asset QR codes for instant lookup and verification.",
   },
   {
     title: "Offline Access",
-    icon: Smartphone,
     description: "View cached asset lists even without connectivity. Changes sync automatically when back online.",
   },
   {
     title: "Field Operations",
-    icon: CheckCircle2,
     description: "Perform audits, update asset status, and create tickets directly from mobile devices.",
-  },
-];
-
-const quickStartSteps = [
-  {
-    step: 1,
-    title: "Log In",
-    description: "Use your email and password to access the system. Contact your admin if you need account access.",
-  },
-  {
-    step: 2,
-    title: "Explore the Dashboard",
-    description: "Review your metrics, check recent activity, and familiarize yourself with the quick actions.",
-  },
-  {
-    step: 3,
-    title: "Check Your Access",
-    description: "Navigate to different modules to see what's available based on your role and permissions.",
-  },
-  {
-    step: 4,
-    title: "Try a Quick Action",
-    description: "Create a test asset or explore existing records to get comfortable with the interface.",
   },
 ];
 
@@ -206,216 +145,137 @@ export default function Guide() {
 
       <div className="flex flex-col">
         {/* Hero */}
-        <section className="pt-24 pb-16 lg:pt-32 bg-gradient-to-b from-blue-50/50 to-transparent dark:from-blue-950/20">
-          <div className="mx-auto w-full max-w-7xl px-6">
-            <div className="text-center space-y-6">
-              <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
-                <BookOpen className="h-4 w-4" />
-                <span>Phase 1: Getting Started</span>
-              </div>
-              <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+        <section id="overview" className="pt-32 pb-20 lg:pt-40">
+          <div className="mx-auto flex w-full max-w-7xl flex-col items-center px-6 text-center">
+            <span className="text-xs font-medium uppercase tracking-[0.28em] text-[#6B7280]">
+              Phase 1: Getting Started
+            </span>
+            <div className="mt-6 space-y-6">
+              <h1 className="max-w-4xl font-serif text-[clamp(3rem,5vw,4.5rem)] font-medium leading-[1.1] tracking-[-0.5px] text-[#111111]">
                 Folonite User Guide
               </h1>
-              <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+              <p className="mx-auto max-w-[700px] text-[17px] leading-[1.6] text-[#333333]">
                 Everything you need to know to get started with Folonite — from navigating the interface to understanding your role and permissions.
               </p>
-              <div className="flex flex-wrap justify-center gap-4 pt-4">
-                <Button size="lg" asChild className="rounded-full px-8">
-                  <a href="#overview">Start Learning</a>
-                </Button>
-                <Button variant="outline" size="lg" asChild className="rounded-full px-8">
-                  <Link to="/help">Help Center</Link>
-                </Button>
-              </div>
             </div>
-          </div>
-        </section>
-
-        {/* Quick Navigation */}
-        <section className="py-8 border-b">
-          <div className="mx-auto w-full max-w-7xl px-6">
-            <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4">
-              <span className="text-sm text-muted-foreground hidden md:block">Jump to:</span>
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors px-3 py-1 rounded-full hover:bg-accent"
-                >
-                  {link.label}
-                </a>
-              ))}
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="#quickstart"
+                className="inline-flex items-center justify-center rounded-full bg-[#111111] px-5 py-2.5 text-sm font-medium text-white shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-90"
+              >
+                Start Learning
+              </a>
+              <Link
+                to="/help"
+                className="inline-flex items-center justify-center rounded-full bg-[#EAEAEA] px-5 py-2.5 text-sm font-medium text-[#111111] shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-80"
+              >
+                Help Center
+              </Link>
             </div>
           </div>
         </section>
 
         {/* Quick Start */}
-        <section id="overview" className="py-20">
+        <section id="quickstart" className="py-20 lg:py-28">
           <div className="mx-auto w-full max-w-7xl px-6">
-            <div className="mb-12 text-center">
-              <span className="text-xs font-medium uppercase tracking-[0.28em] text-muted-foreground">
+            <div className="mb-12 max-w-2xl">
+              <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#6B7280]">
                 15-Minute Setup
-              </span>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold text-[#111111] md:text-4xl">
                 Quick Start Guide
               </h2>
-              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="mt-4 text-[17px] leading-[1.6] text-[#6B7280]">
                 Get up and running with Folonite in four simple steps.
               </p>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {quickStartSteps.map((item) => (
-                <Card key={item.step} className="relative overflow-hidden border-l-4 border-l-primary">
-                  <CardHeader className="pb-4">
-                    <div className="flex items-center gap-3">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-bold">
-                        {item.step}
-                      </span>
-                      <CardTitle className="text-lg">{item.title}</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-sm leading-relaxed">
-                      {item.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
+                <div
+                  key={item.step}
+                  className="rounded-2xl bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+                >
+                  <p className="text-3xl font-semibold text-[#2563EB]">{item.step}</p>
+                  <h4 className="mt-4 text-lg font-semibold text-[#111111]">{item.title}</h4>
+                  <p className="mt-2 text-sm leading-[1.6] text-[#6B7280]">{item.description}</p>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* Interface Section */}
-        <section id="interface" className="py-20 bg-muted/30">
+        <section id="interface" className="py-20 lg:py-28 bg-[#F3F4F6]">
           <div className="mx-auto w-full max-w-7xl px-6">
-            <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-              <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
-                  <LayoutDashboard className="h-4 w-4" />
-                  Interface Overview
+            <div className="mb-12 max-w-2xl">
+              <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#6B7280]">
+                Interface Overview
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold text-[#111111] md:text-4xl">
+                Understanding the Folonite Interface
+              </h2>
+              <p className="mt-4 text-[17px] leading-[1.6] text-[#6B7280]">
+                The Folonite interface is designed for clarity and efficiency. Here is what you'll find on every screen.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2">
+              {interfaceElements.map((item) => (
+                <div
+                  key={item.element}
+                  className="rounded-2xl bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+                >
+                  <h4 className="text-lg font-semibold text-[#111111]">{item.element}</h4>
+                  <p className="mt-2 text-sm leading-[1.6] text-[#6B7280]">{item.description}</p>
                 </div>
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                  Understanding the Folonite Interface
-                </h2>
-                <p className="text-lg text-muted-foreground">
-                  The Folonite interface is designed for clarity and efficiency. Here's what you'll find on every screen.
-                </p>
-                <div className="space-y-4">
-                  {interfaceElements.map((item) => (
-                    <div key={item.element} className="flex gap-4">
-                      <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                      <div>
-                        <h4 className="font-medium">{item.element}</h4>
-                        <p className="text-sm text-muted-foreground">{item.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="grid gap-4">
-                <Card>
-                  <CardHeader className="pb-3">
-                    <div className="flex items-center gap-2">
-                      <Menu className="h-5 w-5 text-primary" />
-                      <CardTitle className="text-base">Navigation Panel</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">
-                      Collapsible sidebar with module icons and labels. Access Dashboard, Assets, Properties, QR Codes, Reports, and more.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader className="pb-3">
-                    <div className="flex items-center gap-2">
-                      <Bell className="h-5 w-5 text-primary" />
-                      <CardTitle className="text-base">Top Bar</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="space-y-2">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Search className="h-4 w-4" />
-                      <span>Global search with ⌘K shortcut</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Bell className="h-4 w-4" />
-                      <span>Notification bell with unread count</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Moon className="h-4 w-4" />
-                      <span>Theme toggle (light/dark mode)</span>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader className="pb-3">
-                    <div className="flex items-center gap-2">
-                      <BarChart3 className="h-5 w-5 text-primary" />
-                      <CardTitle className="text-base">Dashboard Widgets</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">
-                      Metric cards showing key numbers. Activity feed tracking recent changes. Quick action buttons for common tasks.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Roles Section */}
-        <section id="roles" className="py-20">
+        <section id="roles" className="py-20 lg:py-28">
           <div className="mx-auto w-full max-w-7xl px-6">
-            <div className="mb-12 text-center">
-              <div className="inline-flex items-center gap-2 rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
-                <Shield className="h-4 w-4" />
+            <div className="mb-12 max-w-2xl">
+              <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#6B7280]">
                 Access Control
-              </div>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold text-[#111111] md:text-4xl">
                 Understanding User Roles
               </h2>
-              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="mt-4 text-[17px] leading-[1.6] text-[#6B7280]">
                 Folonite uses role-based access control to ensure users only see and modify what they're authorized for.
               </p>
             </div>
 
             <div className="grid gap-6 md:grid-cols-3">
               {roleCards.map((role) => (
-                <Card key={role.role} className={`${role.bgColor} ${role.borderColor} border-2`}>
-                  <CardHeader>
-                    <div className="flex items-center gap-3">
-                      <div className={`rounded-lg p-2 ${role.bgColor}`}>
-                        <role.icon className={`h-6 w-6 ${role.color}`} />
-                      </div>
-                      <CardTitle className={`text-xl ${role.color}`}>{role.role}</CardTitle>
-                    </div>
-                    <CardDescription className="pt-2">{role.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm font-medium mb-3">Capabilities:</p>
-                    <ul className="space-y-2">
-                      {role.capabilities.map((cap) => (
-                        <li key={cap} className="flex items-center gap-2 text-sm">
-                          <CheckCircle2 className={`h-4 w-4 ${role.color} shrink-0`} />
-                          <span className="text-muted-foreground">{cap}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
+                <div
+                  key={role.role}
+                  className="rounded-2xl bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+                >
+                  <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#2563EB] bg-[#EFF6FF] px-3 py-1 rounded-full">
+                    {role.role}
+                  </span>
+                  <p className="mt-4 text-sm leading-[1.6] text-[#6B7280]">{role.description}</p>
+                  <ul className="mt-4 space-y-2">
+                    {role.capabilities.map((cap) => (
+                      <li key={cap} className="flex items-center gap-2 text-sm text-[#6B7280]">
+                        <svg className="h-4 w-4 text-[#2563EB] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        {cap}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
             </div>
 
-            <div className="mt-12 rounded-xl bg-muted/50 p-6">
-              <h3 className="font-semibold mb-3">Permission Scoping</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+            <div className="mt-12 rounded-2xl bg-[#F3F4F6] p-8">
+              <h3 className="text-xl font-semibold text-[#111111]">Permission Scoping</h3>
+              <p className="mt-4 text-[15px] leading-[1.6] text-[#6B7280]">
                 Beyond role-based access, Folonite supports property and department-level scoping. 
                 This means a Manager might only see assets for specific properties they're assigned to, 
                 while an Admin sees everything. Users can be granted access to multiple properties and 
@@ -426,241 +286,249 @@ export default function Guide() {
         </section>
 
         {/* Core Concepts Section */}
-        <section id="concepts" className="py-20 bg-muted/30">
+        <section id="concepts" className="py-20 lg:py-28 bg-[#F3F4F6]">
           <div className="mx-auto w-full max-w-7xl px-6">
-            <div className="mb-12 text-center">
-              <div className="inline-flex items-center gap-2 rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
-                <Lightbulb className="h-4 w-4" />
+            <div className="mb-12 max-w-2xl">
+              <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#6B7280]">
                 Core Concepts
-              </div>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold text-[#111111] md:text-4xl">
                 Key Concepts in Folonite
               </h2>
-              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="mt-4 text-[17px] leading-[1.6] text-[#6B7280]">
                 Understanding these fundamental concepts will help you work more effectively with the system.
               </p>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {coreConcepts.map((concept) => (
-                <Card key={concept.title} className="group hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="flex items-center gap-3">
-                      <div className="rounded-lg bg-primary/10 p-2 group-hover:bg-primary/20 transition-colors">
-                        <concept.icon className="h-5 w-5 text-primary" />
-                      </div>
-                      <CardTitle className="text-lg">{concept.title}</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {concept.description}
-                    </p>
-                  </CardContent>
-                </Card>
+                <div
+                  key={concept.title}
+                  className="rounded-2xl bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+                >
+                  <h4 className="text-lg font-semibold text-[#111111]">{concept.title}</h4>
+                  <p className="mt-2 text-sm leading-[1.6] text-[#6B7280]">{concept.description}</p>
+                </div>
               ))}
             </div>
 
-            <div className="mt-12">
-              <Card className="bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20">
-                <CardHeader>
-                  <CardTitle>Quantity Normalization</CardTitle>
-                  <CardDescription>How bulk assets become individual records</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-sm text-muted-foreground">
+            <div className="mt-12 rounded-2xl bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
+              <div className="flex items-start gap-4">
+                <div className="rounded-lg bg-[#EFF6FF] p-3 shrink-0">
+                  <svg className="h-6 w-6 text-[#2563EB]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-[#111111]">Quantity Normalization</h3>
+                  <p className="mt-2 text-[15px] leading-[1.6] text-[#6B7280]">
                     When you create an asset with quantity greater than 1, Folonite automatically creates 
                     individual unit-level records. For example, if you add "Office Chairs — Quantity: 5", 
                     the system generates 5 unique asset IDs (AST-001 through AST-005), each with its own 
                     QR code and tracking history.
                   </p>
-                  <div className="flex items-center gap-2 text-sm">
-                    <CheckCircle2 className="h-4 w-4 text-primary" />
-                    <span>This enables precise audit verification and individual unit tracking</span>
+                  <div className="mt-4 flex items-center gap-2 text-sm text-[#2563EB]">
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="font-medium">This enables precise audit verification and individual unit tracking</span>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Dashboard Navigation Section */}
-        <section id="dashboard" className="py-20">
+        <section id="dashboard" className="py-20 lg:py-28">
           <div className="mx-auto w-full max-w-7xl px-6">
-            <div className="mb-12">
-              <div className="inline-flex items-center gap-2 rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
-                <LayoutDashboard className="h-4 w-4" />
+            <div className="mb-12 max-w-2xl">
+              <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#6B7280]">
                 Navigation
-              </div>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold text-[#111111] md:text-4xl">
                 Dashboard Navigation
               </h2>
-              <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
+              <p className="mt-4 text-[17px] leading-[1.6] text-[#6B7280]">
                 The dashboard is your command center. Here's how to make the most of it.
               </p>
             </div>
 
-            <div className="grid gap-8 lg:grid-cols-2">
-              <div className="space-y-6">
-                {dashboardFeatures.map((feature) => (
-                  <div key={feature.title} className="flex gap-4">
-                    <div className="rounded-lg bg-primary/10 p-2 h-fit">
-                      <feature.icon className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium">{feature.title}</h4>
-                      <p className="text-sm text-muted-foreground mt-1">{feature.description}</p>
-                    </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              {dashboardFeatures.map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-2xl bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+                >
+                  <h4 className="text-lg font-semibold text-[#111111]">{feature.title}</h4>
+                  <p className="mt-2 text-sm leading-[1.6] text-[#6B7280]">{feature.description}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 grid gap-6 md:grid-cols-2">
+              <div className="rounded-2xl bg-[#F3F4F6] p-6">
+                <h3 className="text-lg font-semibold text-[#111111] mb-4">Metric Cards Explained</h3>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between py-2 border-b border-[#E5E7EB]">
+                    <span className="text-sm font-medium text-[#111111]">Total Assets</span>
+                    <span className="text-xs text-[#6B7280]">All assets you have access to</span>
                   </div>
-                ))}
+                  <div className="flex items-center justify-between py-2 border-b border-[#E5E7EB]">
+                    <span className="text-sm font-medium text-[#111111]">Active Tickets</span>
+                    <span className="text-xs text-[#6B7280]">Open or in-progress tickets</span>
+                  </div>
+                  <div className="flex items-center justify-between py-2 border-b border-[#E5E7EB]">
+                    <span className="text-sm font-medium text-[#111111]">Audit Readiness</span>
+                    <span className="text-xs text-[#6B7280]">% of assets verified this cycle</span>
+                  </div>
+                  <div className="flex items-center justify-between py-2">
+                    <span className="text-sm font-medium text-[#111111]">Compliance Score</span>
+                    <span className="text-xs text-[#6B7280]">Overall system health indicator</span>
+                  </div>
+                </div>
               </div>
 
-              <div className="space-y-4">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-base">Metric Cards Explained</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3">
-                    <div className="flex items-center justify-between py-2 border-b">
-                      <span className="text-sm font-medium">Total Assets</span>
-                      <span className="text-xs text-muted-foreground">All assets you have access to</span>
-                    </div>
-                    <div className="flex items-center justify-between py-2 border-b">
-                      <span className="text-sm font-medium">Active Tickets</span>
-                      <span className="text-xs text-muted-foreground">Open or in-progress tickets</span>
-                    </div>
-                    <div className="flex items-center justify-between py-2 border-b">
-                      <span className="text-sm font-medium">Audit Readiness</span>
-                      <span className="text-xs text-muted-foreground">% of assets verified this cycle</span>
-                    </div>
-                    <div className="flex items-center justify-between py-2">
-                      <span className="text-sm font-medium">Compliance Score</span>
-                      <span className="text-xs text-muted-foreground">Overall system health indicator</span>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-base">Keyboard Shortcuts</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-2">
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-muted-foreground">Open Command Palette</span>
-                      <kbd className="rounded bg-muted px-2 py-1 text-xs">⌘K / Ctrl+K</kbd>
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-muted-foreground">Focus Search</span>
-                      <kbd className="rounded bg-muted px-2 py-1 text-xs">/</kbd>
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-muted-foreground">Toggle Sidebar</span>
-                      <kbd className="rounded bg-muted px-2 py-1 text-xs">B</kbd>
-                    </div>
-                  </CardContent>
-                </Card>
+              <div className="rounded-2xl bg-[#F3F4F6] p-6">
+                <h3 className="text-lg font-semibold text-[#111111] mb-4">Keyboard Shortcuts</h3>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between py-2">
+                    <span className="text-sm text-[#6B7280]">Open Command Palette</span>
+                    <kbd className="rounded bg-white px-2 py-1 text-xs font-mono text-[#111111]">⌘K / Ctrl+K</kbd>
+                  </div>
+                  <div className="flex items-center justify-between py-2">
+                    <span className="text-sm text-[#6B7280]">Focus Search</span>
+                    <kbd className="rounded bg-white px-2 py-1 text-xs font-mono text-[#111111]">/</kbd>
+                  </div>
+                  <div className="flex items-center justify-between py-2">
+                    <span className="text-sm text-[#6B7280]">Toggle Sidebar</span>
+                    <kbd className="rounded bg-white px-2 py-1 text-xs font-mono text-[#111111]">B</kbd>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Mobile Section */}
-        <section id="mobile" className="py-20 bg-muted/30">
+        <section id="mobile" className="py-20 lg:py-28 bg-[#F3F4F6]">
           <div className="mx-auto w-full max-w-7xl px-6">
-            <div className="mb-12 text-center">
-              <div className="inline-flex items-center gap-2 rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
-                <Smartphone className="h-4 w-4" />
+            <div className="mb-12 max-w-2xl">
+              <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#6B7280]">
                 Mobile Access
-              </div>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold text-[#111111] md:text-4xl">
                 PWA Installation for Field Use
               </h2>
-              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="mt-4 text-[17px] leading-[1.6] text-[#6B7280]">
                 Folonite works great on mobile devices. Install it as a Progressive Web App for the best experience.
               </p>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {mobileFeatures.map((feature) => (
-                <Card key={feature.title} className="text-center">
-                  <CardHeader>
-                    <div className="mx-auto rounded-full bg-primary/10 p-3 w-fit">
-                      <feature.icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <CardTitle className="text-lg pt-2">{feature.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{feature.description}</p>
-                  </CardContent>
-                </Card>
+                <div
+                  key={feature.title}
+                  className="rounded-2xl bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+                >
+                  <h4 className="text-lg font-semibold text-[#111111]">{feature.title}</h4>
+                  <p className="mt-2 text-sm leading-[1.6] text-[#6B7280]">{feature.description}</p>
+                </div>
               ))}
             </div>
 
-            <div className="mt-12">
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="install-ios">
-                  <AccordionTrigger>Installing on iOS (iPhone/iPad)</AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    <ol className="list-decimal list-inside space-y-2 text-sm">
-                      <li>Open Safari and navigate to your Folonite instance</li>
-                      <li>Tap the Share button (square with arrow up)</li>
-                      <li>Scroll down and tap "Add to Home Screen"</li>
-                      <li>Tap "Add" in the top right corner</li>
-                      <li>Folonite will now appear as an app icon on your home screen</li>
-                    </ol>
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="install-android">
-                  <AccordionTrigger>Installing on Android</AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    <ol className="list-decimal list-inside space-y-2 text-sm">
-                      <li>Open Chrome and navigate to your Folonite instance</li>
-                      <li>Tap the menu button (three dots) in the top right</li>
-                      <li>Tap "Add to Home screen" or "Install app"</li>
-                      <li>Tap "Add" or "Install" to confirm</li>
-                      <li>Folonite will now appear as an app icon in your app drawer</li>
-                    </ol>
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="offline">
-                  <AccordionTrigger>Offline Capabilities</AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    <p className="text-sm mb-2">
-                      Folonite supports limited offline functionality for field operations:
-                    </p>
-                    <ul className="list-disc list-inside space-y-1 text-sm">
-                      <li>View cached asset lists from your last session</li>
-                      <li>Scan QR codes and record verification status</li>
-                      <li>Queue changes that sync when connectivity returns</li>
-                      <li>View property and department information</li>
-                    </ul>
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+            <div className="mt-12 rounded-2xl bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
+              <h3 className="text-xl font-semibold text-[#111111] mb-6">Installation Guides</h3>
+              <div className="grid gap-8 md:grid-cols-2">
+                <div>
+                  <h4 className="font-semibold text-[#111111] mb-3">Installing on iOS (iPhone/iPad)</h4>
+                  <ol className="space-y-2 text-sm text-[#6B7280] list-decimal list-inside">
+                    <li>Open Safari and navigate to your Folonite instance</li>
+                    <li>Tap the Share button (square with arrow up)</li>
+                    <li>Scroll down and tap "Add to Home Screen"</li>
+                    <li>Tap "Add" in the top right corner</li>
+                    <li>Folonite will now appear as an app icon on your home screen</li>
+                  </ol>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-[#111111] mb-3">Installing on Android</h4>
+                  <ol className="space-y-2 text-sm text-[#6B7280] list-decimal list-inside">
+                    <li>Open Chrome and navigate to your Folonite instance</li>
+                    <li>Tap the menu button (three dots) in the top right</li>
+                    <li>Tap "Add to Home screen" or "Install app"</li>
+                    <li>Tap "Add" or "Install" to confirm</li>
+                    <li>Folonite will now appear as an app icon in your app drawer</li>
+                  </ol>
+                </div>
+              </div>
+              <div className="mt-8 pt-6 border-t border-[#E5E7EB]">
+                <h4 className="font-semibold text-[#111111] mb-3">Offline Capabilities</h4>
+                <p className="text-sm text-[#6B7280] mb-3">
+                  Folonite supports limited offline functionality for field operations:
+                </p>
+                <ul className="grid gap-2 md:grid-cols-2 text-sm text-[#6B7280]">
+                  <li className="flex items-center gap-2">
+                    <svg className="h-4 w-4 text-[#2563EB]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    View cached asset lists from your last session
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <svg className="h-4 w-4 text-[#2563EB]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Scan QR codes and record verification status
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <svg className="h-4 w-4 text-[#2563EB]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Queue changes that sync when connectivity returns
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <svg className="h-4 w-4 text-[#2563EB]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    View property and department information
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Next Steps */}
-        <section className="py-20">
+        {/* CTA Section */}
+        <section className="py-20 lg:py-28">
           <div className="mx-auto w-full max-w-7xl px-6">
-            <div className="rounded-3xl bg-primary p-8 text-primary-foreground sm:p-12">
-              <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-                <div className="space-y-4">
-                  <h2 className="text-3xl font-bold tracking-tight">
+            <div className="rounded-3xl bg-[#111111] p-10 sm:p-16">
+              <div className="grid gap-10 lg:grid-cols-[1.2fr,0.8fr] lg:items-center">
+                <div>
+                  <h2 className="text-3xl font-semibold text-white md:text-4xl">
                     Ready to explore more?
                   </h2>
-                  <p className="text-primary-foreground/80 text-lg">
+                  <p className="mt-6 text-[17px] leading-[1.6] text-[#9CA3AF]">
                     Continue your journey with Phase 2: Property & Department Setup, or jump into the app and start managing assets.
                   </p>
+                  <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                    <Link
+                      to="/login"
+                      className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-sm font-medium text-[#111111] shadow-[0_6px_18px_rgba(0,0,0,0.08)] transition-opacity hover:opacity-90"
+                    >
+                      Access Platform
+                    </Link>
+                    <Link
+                      to="/help"
+                      className="inline-flex items-center justify-center rounded-full bg-transparent border border-white/30 px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:bg-white/10"
+                    >
+                      Help Center
+                    </Link>
+                  </div>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-end">
-                  <Button size="lg" variant="secondary" asChild className="rounded-full px-8">
-                    <Link to="/login">Access Platform</Link>
-                  </Button>
-                  <Button size="lg" variant="outline" className="rounded-full px-8 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
-                    <Link to="/help">Help Center</Link>
-                  </Button>
+                <div className="rounded-2xl bg-[#1F1F1F] p-6">
+                  <h3 className="text-sm font-semibold text-white">Coming Soon</h3>
+                  <p className="mt-4 text-sm text-[#9CA3AF]">
+                    Phase 2 documentation covering Property & Department Setup will be available shortly.
+                  </p>
                 </div>
               </div>
             </div>
