@@ -98,6 +98,8 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           {/* Public minimal marketing website */}
           <Route path="/site" element={<Website />} />
+          {/* Public documentation guide */}
+          <Route path="/guide" element={<Guide />} />
           {/* Demo isolated routes */}
           <Route path="/demo/login" element={<DemoLogin />} />
           <Route path="/demo/*" element={<DemoAppRouter />} />
@@ -113,7 +115,6 @@ const App = () => (
             <Route path="/tickets" element={<Tickets />} />
             <Route path="/newsletter" element={<Newsletter />} />
             <Route path="/help" element={<Help />} />
-            <Route path="/guide" element={<Guide />} />
             <Route path="/reports" element={<RequireView page="reports"><Reports /></RequireView>} />
             <Route path="/audit" element={<RoleGate roles={["manager","admin"]}><Audit /></RoleGate>} />
             <Route path="/users" element={<RequireView page="users"><Users /></RequireView>} />

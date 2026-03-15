@@ -19,7 +19,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
             <a href="#comparison" className="transition-opacity hover:opacity-70">Comparison</a>
             <a href="#roi" className="transition-opacity hover:opacity-70">ROI</a>
             <a href="#demo" className="transition-opacity hover:opacity-70">Demo</a>
-            <Link to="/guide" className="transition-opacity hover:opacity-70">Guide</Link>
+            <a href="https://folonite.in/guide" className="transition-opacity hover:opacity-70">Guide</a>
           </nav>
           <div className="flex items-center">
             <a
@@ -55,7 +55,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
             </div>
             <div className="flex flex-col gap-2">
               <span className="font-semibold text-[#111111]">Resources</span>
-              <Link to="/guide" className="hover:text-[#111111]">User Guide</Link>
+              <a href="https://folonite.in/guide" className="hover:text-[#111111]">User Guide</a>
               <Link to="/help" className="hover:text-[#111111]">Help Center</Link>
             </div>
             <div className="flex flex-col gap-2">
