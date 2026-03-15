@@ -25,6 +25,7 @@ import Newsletter from "./pages/Newsletter";
 import Status from "@/pages/Status";
 import LicensePage from "./pages/License";
 import Help from "./pages/Help";
+import Guide from "./pages/Guide";
 // SingleDeviceGuard removed per user request
 import { isDemoMode } from "@/lib/demo";
 import RequireView from "@/components/session/RequireView";
@@ -112,6 +113,7 @@ const App = () => (
             <Route path="/tickets" element={<Tickets />} />
             <Route path="/newsletter" element={<Newsletter />} />
             <Route path="/help" element={<Help />} />
+            <Route path="/guide" element={<Guide />} />
             <Route path="/reports" element={<RequireView page="reports"><Reports /></RequireView>} />
             <Route path="/audit" element={<RoleGate roles={["manager","admin"]}><Audit /></RoleGate>} />
             <Route path="/users" element={<RequireView page="users"><Users /></RequireView>} />
