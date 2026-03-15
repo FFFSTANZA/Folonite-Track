@@ -1,0 +1,753 @@
+===============================================================================
+FOLONITE TRACK - USER GUIDE DOCUMENTATION PLAN
+===============================================================================
+
+This document outlines a comprehensive, usage-focused user guide for Folonite
+Track, organized into logical phases that guide users from basic navigation
+through advanced workflows. Each phase builds upon the previous one, enabling
+users to progressively master the platform.
+
+Note: This guide focuses exclusively on software usage. Installation, system
+requirements, and technical setup instructions are not covered in this plan.
+
+
+===============================================================================
+PHASE 1: GETTING STARTED & NAVIGATION
+===============================================================================
+
+1.1 Understanding the Folonite Track Interface
+   - Overview of the main dashboard layout
+   - Left navigation panel: Module access
+   - Top bar: User profile, notifications, theme toggle
+   - Dashboard widgets: Quick metrics and activity feed
+   - Responsive design: Desktop vs. mobile views
+
+1.2 User Roles and Access Levels
+   - Role overview: Admin, Manager, User
+   - What each role can access and control
+   - Understanding role-based visibility of modules
+   - Permission scoping by property and department
+
+1.3 Core Concepts
+   - Assets: Items being tracked with metadata
+   - Properties: Physical locations/facilities
+   - Departments: Organizational units within properties
+   - QR Codes: Physical labels for asset identification
+   - Tickets: Maintenance and support requests
+   - Audits: Compliance verification processes
+   - Quantity Normalization: How bulk assets become unit-level records
+
+1.4 Dashboard Navigation
+   - Quick actions: Create asset, raise ticket, start audit
+   - Metric cards interpretation (total assets, active tickets, audit readiness)
+   - Activity feed: Tracking recent system events
+   - Using breadcrumbs for navigation history
+
+1.5 PWA Installation for Field Use
+   - Installing Folonite Track as a mobile app
+   - Offline capabilities for asset lists
+   - Optimizing for field operations on mobile devices
+
+
+===============================================================================
+PHASE 2: PROPERTY & DEPARTMENT SETUP
+===============================================================================
+
+2.1 Property Management Overview
+   - Purpose of properties in the system
+   - Viewing the property directory
+   - Understanding property status flags
+
+2.2 Creating and Configuring Properties
+   - Adding new properties/facilities
+   - Setting property status (Active, Inactive, Under Maintenance)
+   - Property visibility settings per role
+   - Associating properties with organizations
+
+2.3 Department Structure
+   - Why departments matter for access control
+   - Creating departments within properties
+   - Department hierarchy and organization
+   - Linking departments to business units
+
+2.4 Property and Department Access Configuration
+   - Assigning users to specific properties
+   - Department-level access scoping
+   - Understanding cross-property visibility
+   - Managing access for users with multiple locations
+
+2.5 Best Practices for Property Setup
+   - Naming conventions for consistency
+   - Geographic vs. functional property grouping
+   - Planning for multi-site organizations
+   - Department structure alignment with organizational charts
+
+
+===============================================================================
+PHASE 3: ASSET LIFECYCLE MANAGEMENT
+===============================================================================
+
+3.1 Understanding the Asset Registry
+   - Asset table view: Columns and filters
+   - Grid view: Visual asset cards
+   - Asset ID structure and natural ordering
+   - Asset status meanings (Active, Retired, Under Maintenance, Lost)
+
+3.2 Creating Individual Assets
+   - Accessing the asset creation form
+   - Required fields: Name, Type, Property, Quantity
+   - Optional metadata: Purchase date, PO number, condition, AMC details
+   - Saving and auto-generated asset IDs
+
+3.3 Editing and Updating Assets
+   - Modifying asset information
+   - Changing asset status and condition
+   - Updating ownership details
+   - Editing restrictions based on role and approvals
+
+3.4 Bulk Asset Import via Excel
+   - Preparing the Excel import template
+   - Required columns and data format
+   - Mapping Excel columns to system fields
+   - Validating data before import
+   - Handling import errors and duplicates
+
+3.5 Quantity Normalization Explained
+   - How "Quantity: 5" creates 5 unit-level records
+   - Viewing individual units vs. bulk entries
+   - Benefits of unit-level tracking for audits
+   - Bulk operations on normalized assets
+
+3.6 Asset Search and Filtering
+   - Using the search bar for quick lookups
+   - Advanced filters: Property, Type, Status, Date Range
+   - Sorting by multiple columns
+   - Saving filter preferences
+
+3.7 Asset Details and History
+   - Viewing complete asset profiles
+   - Asset timeline and change history
+   - QR code association
+   - Related tickets and audit events
+
+3.8 Asset Deletion and Archival
+   - Soft delete vs. permanent deletion
+   - Impact on audit history and reports
+   - Role-based deletion permissions
+   - Recovering deleted assets
+
+
+===============================================================================
+PHASE 4: QR CODE GENERATION AND PRINTING
+===============================================================================
+
+4.1 QR Code System Overview
+   - Purpose of QR codes in Folonite Track
+   - QR code to asset linkage
+   - Benefits of physical labeling
+
+4.2 Generating Single QR Codes
+   - Selecting an asset for QR generation
+   - QR code preview and customization
+   - Adding asset names and codes to labels
+   - Setting label size and format
+
+4.3 Bulk QR Code Generation
+   - Selecting multiple assets
+   - Bulk generation workflow
+   - Property and department filtering for bulk ops
+   - Previewing before generation
+
+4.4 Label Presets and Customization
+   - Using built-in label presets
+   - Custom label sizing (width, height, margins)
+   - Adding text overlays (asset name, ID, property)
+   - Matching label dimensions to print hardware
+
+4.5 Export Formats
+   - PNG export: Individual images
+   - ZIP export: Multiple QR codes in archive
+   - PDF export: Print-ready documents
+   - A4 grid layouts for bulk printing
+
+4.6 Printing Workflows
+   - Direct printing from browser
+   - Print history tracking
+   - Reprint safeguards and audit evidence
+   - Print on A4 grid vs. individual labels
+
+4.7 Print History and Auditability
+   - Viewing past print operations
+   - Who printed which QR codes and when
+   - Exporting print logs for compliance
+   - Preventing unauthorized reprints
+
+4.8 Label Placement Best Practices
+   - Where to place QR codes on assets
+   - Ensuring scanability
+   - Weather-resistant labeling
+   - Label rotation and replacement
+
+
+===============================================================================
+PHASE 5: MAINTENANCE TICKETS AND COLLABORATION
+===============================================================================
+
+5.1 Ticket System Overview
+   - Purpose of the ticket module
+   - Ticket lifecycle: Open → Assigned → In Progress → Resolved → Closed
+   - Role-based ticket visibility
+   - SLA and priority badges
+
+5.2 Raising New Tickets
+   - Accessing ticket creation form
+   - Required fields: Title, Description, Priority
+   - Property selection for location context
+   - Assignee selection and role-based suggestions
+   - Using ticket templates for common requests
+
+5.3 Ticket Templates
+   - Available templates: Create user, license upgrade, bug, feature request
+   - Pre-filled fields for faster creation
+   - Customizing templates for organizational needs
+   - Saving tickets as drafts
+
+5.4 Ticket Views: List vs. Kanban
+   - List view: Detailed table format
+   - Kanban board: Drag-and-drop status management
+   - Filtering and sorting in both views
+   - Choosing the right view for your workflow
+
+5.5 Ticket Assignment and Reassignment
+   - Property-aware assignee suggestions
+   - Assigning to admins vs. managers
+   - Reassigning tickets during workflow
+   - Assignment notifications
+
+5.6 Priority and SLA Management
+   - Priority levels: Low, Medium, High, Urgent
+   - SLA indicators and due dates
+   - Priority-based sorting
+   - Escalating overdue tickets
+
+5.7 Ticket Comments and Collaboration
+   - Adding comments to tickets
+   - Threaded conversations
+   - Comment locking on closed tickets
+   - Tagging team members in comments
+   - Attachment support
+
+5.8 Ticket Status Updates
+   - Moving tickets through statuses
+   - Status change notifications
+   - Closing tickets with notes
+   - Reopening closed tickets when necessary
+
+5.9 Received vs. Raised Tickets
+   - View mode: Tickets assigned to you (Received)
+   - View mode: Tickets you created (Raised)
+   - Filtering by status, priority, and date
+   - My tickets dashboard
+
+5.10 Ticket Analytics
+   - Ticket volume charts
+   - Status distribution
+   - Priority breakdown
+   - Resolution time tracking
+
+
+===============================================================================
+PHASE 6: AUDIT AND COMPLIANCE WORKFLOWS
+===============================================================================
+
+6.1 Audit System Overview
+   - Purpose of audits in asset management
+   - Audit frequency options (Monthly, Quarterly, Semi-Annual)
+   - Audit roles: Auditor, Auditor Incharge, Reviewer
+   - Audit readiness indicators
+
+6.2 Starting an Audit Session
+   - Initiating audits by property and department
+   - Setting audit scope and frequency
+   - Assigning auditors to departments
+   - Audit session naming conventions
+
+6.3 Auditor Incharge Responsibilities
+   - Configuring audit settings
+   - Setting audit frequency and timelines
+   - Managing auditor assignments
+   - Monitoring overall audit progress
+
+6.4 Asset Verification Workflow
+   - Accessing the asset list for audit
+   - Manual verification: Marking assets as verified/missing/damaged
+   - Adding verification comments
+   - Progress tracking per department
+
+6.5 Mobile QR Scanning for Audits
+   - Opening the mobile scanning interface
+   - Camera access and permissions
+   - Scanning asset QR codes in the field
+   - Setting scan status (Verified vs. Damaged)
+   - Adding scan comments
+   - Offline scanning capabilities
+   - Syncing scans when back online
+
+6.6 My Scans and Assignment Tracking
+   - Viewing your scan history for the session
+   - Tracking assigned assets vs. scanned assets
+   - Viewing scan status and comments
+   - Completing your audit assignment
+
+6.7 Audit Review Process
+   - Reviewer access to scan results
+   - Verifying auditor submissions
+   - Identifying discrepancies
+   - Adding review comments
+   - Approving or requesting re-audit
+
+6.8 Submitting Audit Assignments
+   - Finalizing department audits
+   - Submission workflow for auditors
+   - Validation before submission
+   - Handling incomplete scans
+
+6.9 Audit Reports
+   - Generating audit reports automatically
+   - Report components: Verified, Missing, Damaged counts
+   - Discrepancy tracking and resolution
+   - Exporting reports for compliance
+   - Viewing historical audit reports
+
+6.10 Multi-Department Audits
+   - Coordinating across departments
+   - Progress dashboard for the organization
+   - Department-wise audit summaries
+   - Comparing audit results over time
+
+6.11 Audit Frequency and Scheduling
+   - Setting recurring audit schedules
+   - 1-month, 3-month, and 6-month cycles
+   - Automated reminders for upcoming audits
+   - Audit calendar view
+
+
+===============================================================================
+PHASE 7: REPORTS AND ANALYTICS
+===============================================================================
+
+7.1 Reports Module Overview
+   - Types of reports available
+   - Access control for reports
+   - Export formats (PDF, Excel, CSV)
+   - Report scheduling (if available)
+
+7.2 Operational Reports
+   - Asset inventory reports
+   - Property-wise asset distribution
+   - Department-level asset summaries
+   - Asset status breakdowns
+   - Age analysis of assets
+
+7.3 Audit Reports
+   - Detailed audit session reports
+   - Discrepancy reports
+   - Compliance trend analysis
+   - Auditor performance metrics
+   - Historical comparison reports
+
+7.4 Maintenance and Ticket Reports
+   - Ticket volume by property
+   - Resolution time analysis
+   - Priority distribution
+   - Assignee workload reports
+   - Recurring issue identification
+
+7.5 Financial Reports
+   - Asset valuation summaries
+   - Purchase date analysis
+   - AMC status and renewal tracking
+   - Procurement reports by PO number
+
+7.6 Custom Report Generation
+   - Building custom filters
+   - Selecting data dimensions
+   - Applying date ranges
+   - Saving report configurations
+
+7.7 Data Export Workflows
+   - Exporting full asset databases
+   - Partial exports by property/department
+   - Bulk QR code data export
+   - Audit log exports
+
+7.8 Dashboard Metrics Interpretation
+   - Total assets and active assets
+   - Ticket backlog and SLA compliance
+   - Audit completion percentage
+   - QR code coverage metrics
+   - Recent activity trends
+
+7.9 Analytics Visualizations
+   - Bar charts for categorical data
+   - Line charts for trends over time
+   - Pie charts for distribution analysis
+   - Heatmaps for property-level insights
+
+
+===============================================================================
+PHASE 8: USER MANAGEMENT AND PERMISSIONS
+===============================================================================
+
+8.1 User Management Overview
+   - Accessing the Users module
+   - User directory and search
+   - User status management (Active, Inactive)
+
+8.2 Creating New Users
+   - User creation form walkthrough
+   - Required fields: Name, Email, Role
+   - Setting initial passwords
+   - User activation process
+
+8.3 Role Definitions and Defaults
+   - Admin role: Full system access
+   - Manager role: Limited administration within scope
+   - User role: Operational access only
+   - Default permissions per role
+
+8.4 Property and Department Access Assignment
+   - Granting property access to users
+   - Assigning department-level permissions
+   - Multi-property and multi-department access
+   - Access inheritance patterns
+
+8.5 Granular Permission Configuration
+   - Page-level permissions (Assets, Tickets, Audits, etc.)
+   - View vs. Edit permissions per module
+   - Creating custom permission sets
+   - Merging defaults with custom overrides
+
+8.6 Special Role Assignments
+   - Auditor Incharge configuration
+   - Final Approver designation per property
+   - Email-based approver assignments
+   - Managing role changes over time
+
+8.7 User Profile Management
+   - Editing user information
+   - Updating contact details
+   - Changing passwords
+   - Deactivating and reactivating users
+
+8.8 User Deletion and Data Handling
+   - Impact of user deletion on historical records
+   - Reassigning assets and tickets before deletion
+   - Audit trail preservation
+   - Soft delete approach
+
+8.9 Department Management
+   - Creating and editing departments
+   - Department status management
+   - Linking departments to properties
+   - Department access rules
+
+8.10 Permission Auditing
+   - Reviewing who has access to what
+   - Permission audit reports
+   - Identifying excessive access
+   - Regular access reviews
+
+
+===============================================================================
+PHASE 9: APPROVALS AND WORKFLOW AUTOMATION
+===============================================================================
+
+9.1 Approval System Overview
+   - When approvals are required
+   - Approval request types
+   - Approval notification flow
+   - Approval history tracking
+
+9.2 Asset Creation Approvals
+   - Configuring approval requirements
+   - Submitting assets for approval
+   - Approver notification workflow
+   - Conditional approval triggers
+
+9.3 Asset Edit Approvals
+   - Requesting changes to restricted assets
+   - Approval workflow for edits
+   - Temporary vs. permanent changes
+   - Edit request modal usage
+
+9.4 Final Approver Configuration
+   - Setting final approvers per property
+   - Email-based approver assignments
+   - Backup approver configuration
+   - Multi-level approval chains
+
+9.5 Managing Approval Requests
+   - Viewing pending approvals
+   - Approval queue management
+   - Approving and rejecting requests
+   - Adding approval comments
+
+9.6 Approval Notifications
+   - Notification bell usage
+   - Deep links to approval context
+   - Email notifications for approvers
+   - Urgent approval indicators
+
+9.7 Approval History
+   - Tracking past approvals
+   - Who approved what and when
+   - Rejection reasons and resubmission
+   - Audit trail for compliance
+
+
+===============================================================================
+PHASE 10: SETTINGS AND CONFIGURATION
+===============================================================================
+
+10.1 Settings Module Overview
+    - Organization settings
+    - System-wide configurations
+    - Role-based settings access
+
+10.2 User Preferences
+    - Profile and account settings
+    - Notification preferences
+    - Theme selection (Light/Dark mode)
+    - Language settings (if available)
+
+10.3 System Configuration (Admin Only)
+    - Organization details
+    - Default property settings
+    - Audit frequency defaults
+    - SLA configuration
+
+10.4 Notification Management
+    - Viewing notification history
+    - Managing notification types
+    - Notification delivery preferences
+    - Bulk notification handling
+
+10.5 Data Management
+    - Bulk delete operations
+    - Data export from settings
+    - Database cleanup options
+    - Archive and retention policies
+
+10.6 Integration Settings
+    - Email configuration
+    - API access tokens
+    - Third-party integrations
+    - Webhook configurations
+
+10.7 Security Settings
+    - Password policies
+    - Session timeout settings
+    - Two-factor authentication (if available)
+    - Audit logging levels
+
+10.8 System Health Monitoring
+    - Database connection status
+    - Storage usage metrics
+    - License limits and usage
+    - System performance indicators
+
+
+===============================================================================
+PHASE 11: ADVANCED FEATURES AND TIPS
+===============================================================================
+
+11.1 Keyboard Shortcuts
+    - Navigation shortcuts
+    - Quick action shortcuts
+    - Form shortcuts
+    - Customizing keyboard preferences
+
+11.2 Bulk Operations
+    - Bulk asset actions
+    - Bulk QR code operations
+    - Bulk ticket updates
+    - Bulk user management
+
+11.3 Advanced Search Techniques
+    - Search operators and filters
+    - Boolean search combinations
+    - Saved search queries
+    - Search across modules
+
+11.4 Data Import Best Practices
+    - Preparing clean import files
+    - Handling large datasets
+    - Import validation strategies
+    - Error handling and correction
+
+11.5 Mobile Field Operations
+    - Optimizing mobile usage
+    - Offline mode best practices
+    - Camera and scanning tips
+    - Touch interface shortcuts
+
+11.6 Collaboration Tips
+    - Effective ticket communication
+    - Comment best practices
+    - Team coordination strategies
+    - Handoff processes
+
+11.7 Workflow Optimization
+    - Creating efficient processes
+    - Automating repetitive tasks
+    - Template customization
+    - Streamlining approval flows
+
+11.8 Troubleshooting Common Issues
+    - QR code scanning problems
+    - Sync issues with offline mode
+    - Permission denied errors
+    - Performance optimization tips
+
+11.9 Data Integrity Practices
+    - Regular audit scheduling
+    - Data validation routines
+    - Backup recommendations
+    - Recovery procedures
+
+
+===============================================================================
+PHASE 12: COMPLIANCE AND GOVERNANCE
+===============================================================================
+
+12.1 Regulatory Compliance
+    - Audit-ready data preparation
+    - Compliance report generation
+    - Evidence collection workflows
+    - Retention policy enforcement
+
+12.2 Audit Trail Management
+    - Complete activity logging
+    - User action tracking
+    - Change history preservation
+    - Tamper evidence
+
+12.3 Asset Lifecycle Compliance
+    - Procurement to disposal tracking
+    - Ownership transfer documentation
+    - Depreciation and valuation
+    - AMC contract management
+
+12.4 Access Control Governance
+    - Least privilege principles
+    - Regular access reviews
+    - Separation of duties
+    - Role certification
+
+12.5 Reporting for Stakeholders
+    - Executive summaries
+    - Board meeting materials
+    - Internal audit support
+    - External auditor handoff
+
+12.6 Data Privacy and Security
+    - Sensitive data handling
+    - Data export controls
+    - User privacy settings
+    - Secure authentication practices
+
+
+===============================================================================
+APPENDICES
+===============================================================================
+
+A. Glossary of Terms
+   - Asset, Property, Department, QR Code definitions
+   - Audit-related terminology
+   - Role and permission terms
+   - System-specific jargon
+
+B. Quick Reference Guides
+   - Common workflows in one page
+   - Keyboard shortcuts summary
+   - Role permission matrix
+   - Status code reference
+
+C. Role-Based Workflows
+   - Admin-specific task sequences
+   - Manager-specific operations
+   - User daily workflows
+   - Auditor and approver tasks
+
+D. Sample Scenarios
+   - Onboarding a new property
+   - Conducting a full asset audit
+   - Managing a bulk asset migration
+   - Resolving maintenance backlogs
+
+E. FAQs
+   - Frequently asked questions by module
+   - Troubleshooting common problems
+   - Best practice questions
+   - Feature limitation clarifications
+
+
+===============================================================================
+DOCUMENTATION STRUCTURE NOTES
+===============================================================================
+
+The final user guide should be organized as:
+
+1. Executive Overview (for new users)
+2. Role-Based Getting Started Guides (Admin, Manager, User, Auditor)
+3. Detailed Module Walkthroughs (Phases 1-12 as outlined above)
+4. Reference Material (Appendices)
+
+Each section should include:
+- Clear objectives
+- Step-by-step procedures
+- Screenshots/diagrams where helpful
+- Tips and best practices
+- Common pitfalls and how to avoid them
+- Related concepts cross-references
+
+The guide should be written in plain language accessible to non-technical users,
+with technical details separated into optional "advanced" subsections.
+
+
+===============================================================================
+RECOMMENDED DELIVERABLES
+===============================================================================
+
+1. Quick Start Guide (2-3 pages)
+   - Essential tasks for new users
+   - Role-specific 15-minute onboarding paths
+
+2. Complete User Guide (Full documentation plan as outlined above)
+   - Comprehensive coverage of all features
+   - Indexed and searchable
+
+3. Role-Based Cheat Sheets
+   - Admin operations checklist
+   - Manager operations checklist
+   - User field operations checklist
+   - Auditor workflow checklist
+
+4. Video Walkthrough Scripts (Optional future enhancement)
+   - Script outlines for key workflows
+   - Demo scenarios and use cases
+
+5. FAQ Document
+   - Top 50 questions by module
+   - Troubleshooting guide
+
+6. Release Notes Template
+   - Structured format for communicating updates
+   - Feature highlight sections
+   - Migration notes for breaking changes
+
+
+===============================================================================
+END OF DOCUMENTATION PLAN
+===============================================================================
